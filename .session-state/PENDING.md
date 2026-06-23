@@ -104,8 +104,8 @@ branch: develop
 
 1. 本ファイルを Read (RB-006 起動時必須)
 2. INDEX.md を Read
-3. current_session.md を Read (次は HW-D または HW-F の P0 で雛形作成)
-4. ユーザーには「前回からの継続: HW-G 完了。次は HW-D (v1.0 リリース整理) または HW-F (SDD/TDD 汎用化) から選択」を 1 行で通知
+3. current_session.md / HISTORY.md を Read (Session 3 = HW-D 完了、Session 4 = HW-F in_progress)
+4. ユーザーには「前回までに HW-D 完了 + HW-F 1/11 章完了。次は HW-F の続き (推奨: 30_sdd-phase/02 または 35_tdd-phase/01) または HW-B/HW-C/HW-H から選択」を 1 行で通知
 
 ## 注意 (本リポ MVP との関係)
 

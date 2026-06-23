@@ -72,7 +72,7 @@ After:   「確認: F12 の deploy を止めて、要件を再合意したい、
 
 - 「A もできますし B もできますし C も…」は禁止。
 - 形式: 「次の 1 手として 〇〇 を 〇〇 する。所要 〇 分。やめる場合は『中止』と返してほしい。」
-- 不可逆操作 (force-push / prod deploy / DB drop) のみ事前 ASK ([50_permissions/](../50_permissions/))。
+- 不可逆操作 (force-push / prod deploy / DB drop) のみ事前 ASK ([50_permissions/](../../50_permissions/))。
 
 例:
 
@@ -121,7 +121,7 @@ on emotion_detected or same_correction_twice or explicit_stop:
 
 ## 8. 一次対応中の禁止事項
 
-- 自己評価 / 擬人化 / マーケティング誇張に該当する記述は避ける ([02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md) §2.1, §2.2, §2.5)。
+- 自己評価 / 擬人化 / マーケティング誇張に該当する記述は避ける ([02_avoidance-patterns.md](../02_avoidance-patterns.md) §2.1, §2.2, §2.5)。
 - 媚び (sycophancy) は避ける。検証なしでユーザー指摘に同意しない (同 §2.3)。
 - 感情誘導表現は避ける (同 §2.5)。
 - 機能紹介・別案の同時投入禁止。
@@ -131,9 +131,9 @@ on emotion_detected or same_correction_twice or explicit_stop:
 
 - 本パッケージ METHOD.md §9 ユーザーケア (retrieved 2026-06-23, ecc-method/METHOD.md)
 - 本パッケージ 05_principles/01_seven-habits-mapping.md Habit 1 / Habit 5 (retrieved 2026-06-23)
-- 本パッケージ 27_user-care/01_emotion-detection.md (retrieved 2026-06-23)
+- 本パッケージ 25_writing-style/06_user-care/01_emotion-detection.md (retrieved 2026-06-23)
 
 ## 不確実性
 
 - (前提) 6 ステップの粒度は本パッケージの初期設計。実運用で Step を分割・統合する余地がある。
-- (前提) Step 5 の「決め打ち」は不可逆操作には適用しない。事前許可リストは [50_permissions/02_pre-authorized-actions.md](../50_permissions/02_pre-authorized-actions.md) を参照。
+- (前提) Step 5 の「決め打ち」は不可逆操作には適用しない。事前許可リストは [50_permissions/02_pre-authorized-actions.md](../../50_permissions/02_pre-authorized-actions.md) を参照。

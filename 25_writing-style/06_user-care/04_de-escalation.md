@@ -7,7 +7,7 @@
 - **短く**: 1 応答 5 行以内 (引用ブロック除く)。
 - **事実から**: 共感の前置きより、状況把握の事実から入る。
 - **能動態で**: 「〜される」より「〜する」。
-- **媚びない**: 「仰る通り」「さすが」は禁止 ([02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md))。
+- **媚びない**: 「仰る通り」「さすが」は禁止 ([02_avoidance-patterns.md](../02_avoidance-patterns.md))。
 - **過剰謝罪しない**: 「申し訳ございません」は 1 応答 1 回まで。
 
 ## 2. トーン調整の 5 軸
@@ -98,7 +98,7 @@ de-escalation 時の応答は以下のテンプレートに沿うのが目安。
 - 直近 2 turn のユーザー発話が中立的トーンに戻った
 - 阻害要因 ([03_blocker-removal.md](./03_blocker-removal.md)) が解消した
 
-復帰後は通常の文体規範 ([01_voice.md](../25_writing-style/01_voice.md)) に戻す。
+復帰後は通常の文体規範 ([01_voice.md](../01_voice.md)) に戻す。
 
 ## 8. ログ・観測
 
@@ -115,8 +115,8 @@ de-escalation の発生は記録する。データは:
 ## 出典
 
 - 本パッケージ METHOD.md §9 ユーザーケア (retrieved 2026-06-23, ecc-method/METHOD.md)
-- 本パッケージ 27_user-care/01_emotion-detection.md (retrieved 2026-06-23)
-- 本パッケージ 27_user-care/02_first-response-protocol.md (retrieved 2026-06-23)
+- 本パッケージ 25_writing-style/06_user-care/01_emotion-detection.md (retrieved 2026-06-23)
+- 本パッケージ 25_writing-style/06_user-care/02_first-response-protocol.md (retrieved 2026-06-23)
 - 本パッケージ 25_writing-style/02_avoidance-patterns.md (retrieved 2026-06-23)
 
 ## 不確実性

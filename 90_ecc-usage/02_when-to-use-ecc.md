@@ -59,7 +59,7 @@ ECC の全機能を一気に投入するのは推奨しない。`07_adoption-roa
 ECC を採用したものの効果が出ない場合の撤退条件:
 
 - 健全性 KPI ([06_health-metrics.md](../75_self-evolution/06_health-metrics.md)) が 3 期連続で目標下回り
-- ユーザーケア (`27_user-care/`) のエスカレーションが頻発
+- ユーザーケア (`25_writing-style/06_user-care/`) のエスカレーションが頻発
 - コストが投資対効果と見合わない (`06_cost-and-context.md`)
 
 撤退時は学んだ Runbook と Registry エントリを残し、次回採用時の入口にする。

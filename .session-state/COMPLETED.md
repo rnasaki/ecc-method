@@ -47,6 +47,24 @@ branch: develop
     RB-006 を「セッション状態プロトコル」へ全面書き直し。GOAL/current_session 主管を RB-007 に分離。
     README Step 3 を再設計し利用者の手動 cp を廃止。.template-agents/ ecc-orchestrator.md の起動時必須も RB-009 委譲形に書き直し。
   related_runbooks: [RB-006, RB-007, RB-009]
+
+- id: HW-D
+  title: Method v1.0 リリース整理 (採番再定義 + CHANGELOG + v1.0.0 tag 切り条件)
+  category: release
+  completed_at: 2026-06-24
+  session_id: 3
+  parallel_session: 4 (HW-F、別チャットで並列進行)
+  commit_hashes:
+    - "(本セッション完了 commit) (develop: HW-D Method v1.0 リリース整理 + 27_user-care 統合)"
+  outcome_summary: |
+    採番ポリシーを「5 刻み単一規律」で確定。トップレベル唯一の 5 刻み破り 27_user-care/ を
+    25_writing-style/06_user-care/ にサブディレクトリ化し、関連 18 箇所のリンクを張替え。
+    CHANGELOG.md を Keep a Changelog 1.1.0 形式で雛形作成 (v0.1.0 既往分 + Unreleased)。
+    99_distribution/03_v1.0.0-release-checklist.md を新設し、RB-008 §リリース判定基準を
+    進捗追跡可能な独立 checklist として抽出。LICENSE / README / 99_distribution/01-02 は v0.1.0 状態を維持。
+    主要学習: RB-003 L0/L1 で導出可能な判断は agent 主導が原則。委譲しすぎは
+    ユーザー疲れを発生させる。「45/85 散在」の問題提起は 27 のみが実態だった (誇張に注意)。
+  related_runbooks: [RB-008, RB-003]
 ```
 
 ---

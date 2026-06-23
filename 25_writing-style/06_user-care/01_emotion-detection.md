@@ -37,7 +37,7 @@
 | 突き放し | 関与の打ち切りを示す発話 | 諦め / 拒否を示す慣用句 |
 | 疲労の明示 | 体力・気力の消耗を直接表現 | 疲労を示す形容詞 |
 
-具体的な語彙リストは案件 / 言語 / 文化に応じて [`45_runbook/`](../45_runbook/) に Runbook として育てる。本ファイルでは概念のみを定義し、リテラル列挙はしない (汎用性 / 個人特定性回避のため)。
+具体的な語彙リストは案件 / 言語 / 文化に応じて [`45_runbook/`](../../45_runbook/) に Runbook として育てる。本ファイルでは概念のみを定義し、リテラル列挙はしない (汎用性 / 個人特定性回避のため)。
 
 ### 3.2 反復パターン (2 件以上で検知)
 
@@ -105,7 +105,7 @@ function detectEmotion(currentMessage, history):
 - 言い訳・自己弁護 (「〜のつもりでした」)
 - 過剰な謝罪の連発 (「申し訳ございません申し訳ございません」)
 - 機能紹介・別案の同時投入 (「代わりに A もできますし B も…」)
-- 自賛 / 媚び ([02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md) sycophancy)
+- 自賛 / 媚び ([02_avoidance-patterns.md](../02_avoidance-patterns.md) sycophancy)
 - 進行中タスクの継続 (止めずに「ついでに」進めるのは禁止)
 
 ## 7. 計測と改善
@@ -121,7 +121,7 @@ function detectEmotion(currentMessage, history):
 ## 出典
 
 - 本パッケージ METHOD.md §9 ユーザーケア (retrieved 2026-06-23, ecc-method/METHOD.md)
-- 本パッケージ 27_user-care/02_first-response-protocol.md (retrieved 2026-06-23)
+- 本パッケージ 25_writing-style/06_user-care/02_first-response-protocol.md (retrieved 2026-06-23)
 
 ## 不確実性
 

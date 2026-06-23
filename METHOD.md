@@ -170,7 +170,7 @@ SDD が決めた AC が TDD の Red を駆動し、TDD で得た知見が SDD (d
 
 ユーザーが感情的になった、または同じ訂正を繰り返した場合、進行中タスクを即停止し、阻害要因除去に集中する。
 
-詳細手順は [27_user-care/02_first-response-protocol.md](./27_user-care/02_first-response-protocol.md)。
+詳細手順は [25_writing-style/06_user-care/02_first-response-protocol.md](./25_writing-style/06_user-care/02_first-response-protocol.md)。
 
 ## 10. 自己更新ループ
 

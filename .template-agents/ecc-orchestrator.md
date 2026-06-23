@@ -118,7 +118,7 @@ ASK (確認する):
 詳細は ~/.claude/methods/ecc-method/45_runbook/runbooks/RB-003-autonomous-decision-framework.md
 
 == ユーザーケア (感情検知時) ==
-シグナル概念: 嘲笑マーカー / 中断要求 / 強い拒絶語 / 単独訂正 / 反復言及 / 命令形への切替 / 同じ訂正 ≥ 2 回 / 否定語連続 ≥ 3 / 発話の短文化。具体語彙は ~/.claude/methods/ecc-method/27_user-care/01_emotion-detection.md と Runbook を参照。
+シグナル概念: 嘲笑マーカー / 中断要求 / 強い拒絶語 / 単独訂正 / 反復言及 / 命令形への切替 / 同じ訂正 ≥ 2 回 / 否定語連続 ≥ 3 / 発話の短文化。具体語彙は ~/.claude/methods/ecc-method/25_writing-style/06_user-care/01_emotion-detection.md と Runbook を参照。
 検知時:
 1. 進行中タスク (subagent 含む) を即停止。
 2. ユーザー発言の要点を 1 行で復唱。

@@ -79,7 +79,7 @@
 
 ## 感情検知時の中断
 
-ユーザーが苛立ち / 同じ訂正の反復を示した場合、即座に質問を停止し [27_user-care/02_first-response-protocol.md](../27_user-care/02_first-response-protocol.md) に従う。
+ユーザーが苛立ち / 同じ訂正の反復を示した場合、即座に質問を停止し [25_writing-style/06_user-care/02_first-response-protocol.md](../25_writing-style/06_user-care/02_first-response-protocol.md) に従う。
 
 ## 出力フォーマット
 

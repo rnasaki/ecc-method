@@ -4,7 +4,7 @@
 
 ## 1. 目的
 
-- ゼロ重複原則 ([README.md §原則](../README.md)) を達成する。
+- ゼロ重複原則 ([README.md §原則](../../README.md)) を達成する。
 - 同種の衝突が再発したとき、検知 → 復唱 → 阻害要因絞り込みのステップを **省略** して直接対処に入れるようにする。
 - 衝突を「個別の事故」で終わらせず、Method の継続改善材料にする。
 
@@ -89,7 +89,7 @@
 | レベル | 内容 | 効果 |
 |---|---|---|
 | L1 | Runbook を書く | 次回検索すれば手順が出る |
-| L2 | Registry エントリに反映 ([40_delegation/01_expert-registry.md](../40_delegation/01_expert-registry.md)) | 委任先・モデル選定が自動で改善 |
+| L2 | Registry エントリに反映 ([40_delegation/01_expert-registry.md](../../40_delegation/01_expert-registry.md)) | 委任先・モデル選定が自動で改善 |
 | L3 | hook / lint で機械的に検知 | そもそも再発しない |
 | L4 | 設定ファイル / プリセットを更新 | 別案件にも横展開される |
 
@@ -114,7 +114,7 @@
 - 同一カテゴリの再発間隔
 - L3 / L4 まで永続化された割合
 
-カテゴリ分布が偏っている場合、Method 側の章 (例: 失敗連鎖が多いなら [60_quality-gates/](../60_quality-gates/)) を強化する。
+カテゴリ分布が偏っている場合、Method 側の章 (例: 失敗連鎖が多いなら [60_quality-gates/](../../60_quality-gates/)) を強化する。
 
 ## 9. アンチパターン
 
@@ -123,7 +123,7 @@
 | 「次回気をつける」だけで終わる | 何の永続化もない。再発する |
 | 直接原因止まりで 5 Whys を回さない | 表層対処になる |
 | Runbook を書いて INDEX を更新しない | grep で見つからず再発する |
-| ユーザー名・組織名を Runbook に書く | 配布不能になる ([01_voice.md](../25_writing-style/01_voice.md) §2.5) |
+| ユーザー名・組織名を Runbook に書く | 配布不能になる ([01_voice.md](../01_voice.md) §2.5) |
 | 「ユーザーが悪かった」で締める | 根本原因の特定を放棄している |
 
 ## 10. 完了基準
@@ -141,7 +141,7 @@
 
 - 本パッケージ METHOD.md §7 Runbook System (retrieved 2026-06-23, ecc-method/METHOD.md)
 - 本パッケージ METHOD.md §9 ユーザーケア (retrieved 2026-06-23, ecc-method/METHOD.md)
-- 本パッケージ 27_user-care/02_first-response-protocol.md (retrieved 2026-06-23)
+- 本パッケージ 25_writing-style/06_user-care/02_first-response-protocol.md (retrieved 2026-06-23)
 - 本パッケージ 05_principles/01_seven-habits-mapping.md Habit 7 (retrieved 2026-06-23)
 
 ## 不確実性
