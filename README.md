@@ -2,6 +2,10 @@
 
 Claude Code (ECC) を使った AI 駆動開発の運用 Method。案件リポに `.handover/` を 1 つ置き、`ecc-orchestrator` agent を起動すれば、セッション間引き継ぎ・ゴール逸脱検知・サイコファンシー抑止が自動で効くようになる規律集。
 
+> **Version**: v0.1.0 (試行錯誤期、API 変更の可能性あり) / v1.0 リリース予定
+> **Branch**: `main` = 配布版 / `develop` = 開発版 (`.handover/` 等の開発資産を含む)
+> 利用者は `main` を clone してください (`git clone https://github.com/rnasaki/ecc-method.git`)。
+
 ## 何を解決するか
 
 - セッションをまたぐと前回の続きを忘れる → `.handover/` が状態を永続化

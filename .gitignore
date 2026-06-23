@@ -1,0 +1,21 @@
+# 開発用ハンドオーバーは develop branch のみで追跡 (配布版に混入させない)
+.handover/
+
+# 一時ファイル
+_tmp/
+*.tmp
+*.bak
+
+# Python (検証スクリプト用)
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
