@@ -1,0 +1,319 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-06-23",
+  "description": "Best Practice catalog for ecc-method. Each entry has L1 source URL. BP-NNN IDs are referenced from chapter docs.",
+  "topics": [
+    "subagent_design",
+    "delegation_first",
+    "context_economy",
+    "permissions",
+    "hooks",
+    "skills_memory",
+    "multi_llm_routing",
+    "spec_test_code_loop",
+    "adversarial_verification",
+    "anti_sycophancy"
+  ],
+  "entries": [
+    {
+      "id": "BP-001",
+      "topic": "subagent_design",
+      "principle": "Each subagent runs in its own isolated context window with a custom system prompt and scoped tool access.",
+      "rationale": "Independent context windows prevent exploration logs and file reads from polluting the main conversation, and scoped tools enforce least privilege per task.",
+      "source_url": "https://code.claude.com/docs/en/sub-agents",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Any long-running session that needs research or verification side-tasks.",
+      "anti_pattern": "Running a single monolithic agent that accumulates all file reads and tool outputs in one window."
+    },
+    {
+      "id": "BP-002",
+      "topic": "subagent_design",
+      "principle": "Route subagents to the cheapest model that can do the job (e.g. Haiku for narrow workers, Opus for orchestration).",
+      "rationale": "Subagent frontmatter accepts a model field so cost-sensitive lookups go to faster, cheaper models without sacrificing main-loop reasoning quality.",
+      "source_url": "https://code.claude.com/docs/en/sub-agents",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Any agent fleet with mixed reasoning depth.",
+      "anti_pattern": "Using the highest-capability model uniformly for all subagents regardless of task difficulty."
+    },
+    {
+      "id": "BP-003",
+      "topic": "subagent_design",
+      "principle": "Spawn subagents in parallel for independent research aspects of one query.",
+      "rationale": "Parallel tool calling and subagent spawning cut research time by up to 90% for complex queries by removing sequential waits.",
+      "source_url": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Branchable research, audits, multi-source verification.",
+      "anti_pattern": "Sequentially issuing one subagent task at a time when no dependency requires it."
+    },
+    {
+      "id": "BP-004",
+      "topic": "delegation_first",
+      "principle": "Lead agents must hand off with explicit objectives, expected output format, tool guidance, and scope boundaries.",
+      "rationale": "Without detailed task descriptions, subagents duplicate work, leave gaps, or fail to find necessary information.",
+      "source_url": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Every orchestrator-worker delegation.",
+      "anti_pattern": "Open-ended directives like 'research X' with no scope, output schema, or tool hints."
+    },
+    {
+      "id": "BP-005",
+      "topic": "delegation_first",
+      "principle": "Compose specialized agents with handoffs rather than building a monolithic agent.",
+      "rationale": "Handoffs let each agent focus on a narrow capability, improving modularity and reuse across workflows.",
+      "source_url": "https://openai.github.io/openai-agents-python/",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Multi-step workflows that span domains (e.g. plan, code, review).",
+      "anti_pattern": "One agent attempting all responsibilities, creating bottlenecks."
+    },
+    {
+      "id": "BP-006",
+      "topic": "delegation_first",
+      "principle": "Scale agent count and token budget proportionally to query complexity.",
+      "rationale": "Simple fact-finding needs ~1 agent and 3-10 tool calls; complex research can justify 10+ subagents. Explicit scaling avoids over- and under-investment.",
+      "source_url": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Orchestrator deciding fan-out width.",
+      "anti_pattern": "Fixed agent count per task class regardless of difficulty signals."
+    },
+    {
+      "id": "BP-007",
+      "topic": "context_economy",
+      "principle": "Treat the main context window as a scarce resource; clear or compact between unrelated tasks.",
+      "rationale": "LLM performance degrades as context fills, with earlier instructions getting forgotten and mistakes increasing.",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "retrieved_at": "2026-06-23",
+      "applicability": "All long sessions.",
+      "anti_pattern": "The 'kitchen sink session' where unrelated tasks accumulate context until performance collapses."
+    },
+    {
+      "id": "BP-008",
+      "topic": "context_economy",
+      "principle": "Delegate file-heavy investigation to subagents and consume only their summary.",
+      "rationale": "The subagent reads and discards lots of files in its own window and returns a compressed summary, preserving the main context.",
+      "source_url": "https://code.claude.com/docs/en/sub-agents",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Codebase exploration, log triage, multi-file audits.",
+      "anti_pattern": "Reading dozens of files directly in the main loop just to answer a single sub-question."
+    },
+    {
+      "id": "BP-009",
+      "topic": "context_economy",
+      "principle": "Multi-agent systems consume ~15x more tokens than chats; budget accordingly and store persistent state externally.",
+      "rationale": "Strategic distribution across agents and external memory prevents wasteful re-processing and keeps complex research economically viable.",
+      "source_url": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Production multi-agent deployments with cost SLOs.",
+      "anti_pattern": "Concentrating all information in one agent's context, forcing repeated re-reads."
+    },
+    {
+      "id": "BP-010",
+      "topic": "context_economy",
+      "principle": "Place prompt-cache breakpoints on the last block that stays identical across requests.",
+      "rationale": "Cache reads cost ~10% of normal input tokens; placing breakpoints on stable prefixes (large system prompts, tool defs, KB docs) yields large savings.",
+      "source_url": "https://platform.claude.com/docs/en/docs/build-with-claude/prompt-caching",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Any agent with stable system prompts >1K tokens.",
+      "anti_pattern": "Marking dynamic content (timestamps, per-request user input) as cacheable, guaranteeing zero cache hits."
+    },
+    {
+      "id": "BP-011",
+      "topic": "permissions",
+      "principle": "Prefer permission allowlists for known-safe tools over broad auto-accept.",
+      "rationale": "Allowlisting specific tools (e.g. lint, git commit) reduces interruptions while preserving deny-by-default for novel actions.",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Repeated, deterministic CI-style tasks.",
+      "anti_pattern": "Using --dangerously-skip-permissions or blanket auto-accept for all tools."
+    },
+    {
+      "id": "BP-012",
+      "topic": "permissions",
+      "principle": "Use OS-level sandboxing to bound the blast radius of an autonomous agent.",
+      "rationale": "Sandboxing restricts filesystem and network access so the agent can work freely within defined boundaries without risking the host.",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Unattended runs, untrusted prompts, third-party MCP usage.",
+      "anti_pattern": "Granting full host access for convenience during long unattended runs."
+    },
+    {
+      "id": "BP-013",
+      "topic": "hooks",
+      "principle": "Use PreToolUse hooks to block destructive operations before execution.",
+      "rationale": "Hooks are deterministic and run every time, unlike CLAUDE.md instructions which are advisory; PreToolUse is the earliest interception point.",
+      "source_url": "https://code.claude.com/docs/en/hooks",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Risky commands like rm, force-push, prod deploys.",
+      "anti_pattern": "Detecting destructive actions only in PostToolUse, after damage is done."
+    },
+    {
+      "id": "BP-014",
+      "topic": "hooks",
+      "principle": "Use narrow matchers and `if` filters to minimize hook blast radius.",
+      "rationale": "Broad matchers like `*` run on every tool call, slowing sessions and creating maintenance debt.",
+      "source_url": "https://code.claude.com/docs/en/hooks",
+      "retrieved_at": "2026-06-23",
+      "applicability": "All hook authoring.",
+      "anti_pattern": "matcher: '*' triggering a heavy script on every tool invocation."
+    },
+    {
+      "id": "BP-015",
+      "topic": "hooks",
+      "principle": "Use Stop hooks to gate task completion on a deterministic check (tests, build, screenshot diff).",
+      "rationale": "A Stop hook re-runs the verification script after each turn and blocks ending until it passes, closing the verification loop without human attention.",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Unattended CI / overnight runs that need verifiable completion.",
+      "anti_pattern": "Trusting 'looks done' as the only stop signal."
+    },
+    {
+      "id": "BP-016",
+      "topic": "skills_memory",
+      "principle": "Put broadly-applicable, every-session facts in CLAUDE.md; put on-demand procedures in Skills.",
+      "rationale": "CLAUDE.md loads every session so long content gets ignored; Skills load only when relevant, so reference material costs nothing until used.",
+      "source_url": "https://code.claude.com/docs/en/skills",
+      "retrieved_at": "2026-06-23",
+      "applicability": "All Claude Code projects.",
+      "anti_pattern": "Stuffing 1000-line procedure docs into CLAUDE.md and watching the model ignore the rules."
+    },
+    {
+      "id": "BP-017",
+      "topic": "skills_memory",
+      "principle": "Prune CLAUDE.md ruthlessly: for each line ask 'would removing this cause Claude to make a mistake?'",
+      "rationale": "Bloated CLAUDE.md files cause important rules to get lost in the noise.",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Maturing projects whose CLAUDE.md has grown organically.",
+      "anti_pattern": "Adding rules without ever deleting any, until CLAUDE.md becomes self-defeating."
+    },
+    {
+      "id": "BP-018",
+      "topic": "multi_llm_routing",
+      "principle": "Reserve the most capable model for orchestration and route narrow workers to faster, cheaper models.",
+      "rationale": "Subagents support per-agent model selection; using Haiku for narrow workers controls cost while Opus/Sonnet handles synthesis.",
+      "source_url": "https://code.claude.com/docs/en/sub-agents",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Any multi-agent harness.",
+      "anti_pattern": "Uniform model choice that either overpays for trivial tasks or underpowers reasoning."
+    },
+    {
+      "id": "BP-019",
+      "topic": "multi_llm_routing",
+      "principle": "When `tool_choice: auto`, steer tool-calling behavior with explicit prompt phrasing rather than hard-coding decisions.",
+      "rationale": "Light instructions like 'use the tools to investigate before responding' measurably increase tool use; `tool_choice` forces a hard guarantee when needed.",
+      "source_url": "https://platform.claude.com/docs/en/docs/agents-and-tools/tool-use/overview",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Any agent with multiple tools where calling behavior matters.",
+      "anti_pattern": "Hard-coded decision trees that cannot adapt to new query shapes."
+    },
+    {
+      "id": "BP-020",
+      "topic": "spec_test_code_loop",
+      "principle": "Spec-First: produce an executable spec before any code is written.",
+      "rationale": "Specifications become executable artifacts that generate implementations; this reduces rework and aligns intent.",
+      "source_url": "https://github.com/github/spec-kit",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Any non-trivial feature.",
+      "anti_pattern": "Jumping straight to code, then discovering misalignment mid-implementation."
+    },
+    {
+      "id": "BP-021",
+      "topic": "spec_test_code_loop",
+      "principle": "Follow Red-Green-Refactor: write a failing test, make it pass, then refactor.",
+      "rationale": "Test-first forces interface-design thinking before implementation, and produces self-testing code as a side effect.",
+      "source_url": "https://martinfowler.com/bliki/TestDrivenDevelopment.html",
+      "retrieved_at": "2026-06-23",
+      "applicability": "All new features and bug fixes.",
+      "anti_pattern": "Skipping the refactor step and accumulating tested-but-messy code."
+    },
+    {
+      "id": "BP-022",
+      "topic": "spec_test_code_loop",
+      "principle": "Separate Explore -> Plan -> Implement -> Commit phases; don't let the model jump straight to coding.",
+      "rationale": "Plan mode keeps research read-only; explicit planning prevents solving the wrong problem.",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Any feature that touches >1 file or uses unfamiliar code.",
+      "anti_pattern": "Asking the model to 'just implement X' and discovering halfway through that the spec was wrong."
+    },
+    {
+      "id": "BP-023",
+      "topic": "spec_test_code_loop",
+      "principle": "Trunk-Based Development: integrate to a single mainline frequently with short-lived branches.",
+      "rationale": "Short-lived branches and continuous integration keep the codebase releasable and avoid merge hell.",
+      "source_url": "https://trunkbaseddevelopment.com/",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Teams pursuing CI/CD with multiple agents committing.",
+      "anti_pattern": "Long-running parallel feature branches that diverge for weeks."
+    },
+    {
+      "id": "BP-024",
+      "topic": "adversarial_verification",
+      "principle": "Add an adversarial review step in a fresh subagent context that sees only the diff and the criteria.",
+      "rationale": "A reviewer that did not produce the change evaluates results on its own terms, catching gaps the implementer rationalized away.",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Any non-trivial autonomous edit before merge.",
+      "anti_pattern": "The implementing agent grading its own work."
+    },
+    {
+      "id": "BP-025",
+      "topic": "adversarial_verification",
+      "principle": "Tell the reviewer to flag only gaps that affect correctness or stated requirements.",
+      "rationale": "A reviewer prompted to 'find gaps' will always find some; chasing every finding leads to over-engineering.",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Any adversarial review prompt.",
+      "anti_pattern": "Treating every reviewer comment as blocking, producing defensive code and tests for impossible cases."
+    },
+    {
+      "id": "BP-026",
+      "topic": "adversarial_verification",
+      "principle": "Judge multi-agent outcomes with rubric-based LLM judges plus human spot-checking, not rigid step-by-step process checks.",
+      "rationale": "Even with identical starting points, agents take different valid paths; rubrics evaluate factual accuracy and citation quality, while humans catch edge-case biases automation misses.",
+      "source_url": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Evals for research / synthesis agents.",
+      "anti_pattern": "Penalizing valid alternative paths or relying purely on automated metrics."
+    },
+    {
+      "id": "BP-027",
+      "topic": "anti_sycophancy",
+      "principle": "Have the agent show evidence (test output, command + return, screenshot) rather than asserting success.",
+      "rationale": "Reviewing evidence is faster than re-running the verification, and it works for unattended runs where 'looks done' is unreliable.",
+      "source_url": "https://code.claude.com/docs/en/best-practices",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Every completion claim.",
+      "anti_pattern": "Accepting 'I implemented X and it should work' with no artifact."
+    },
+    {
+      "id": "BP-028",
+      "topic": "anti_sycophancy",
+      "principle": "Pass facts via additionalContext, not imperative directives, to avoid prompt-injection-style hardening that triggers refusals.",
+      "rationale": "Factual context like 'target is production' reads naturally; imperative 'YOU MUST CONFIRM' phrasing can trigger defensive behaviors.",
+      "source_url": "https://code.claude.com/docs/en/hooks",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Hook-injected context and system prompts.",
+      "anti_pattern": "Stacking ALL-CAPS imperatives that the model either ignores or over-refuses on."
+    },
+    {
+      "id": "BP-029",
+      "topic": "anti_sycophancy",
+      "principle": "Encode research heuristics ('start broad, then narrow') as guidance, not rigid rules.",
+      "rationale": "Heuristic prompts mirror expert behavior and adapt to emerging information; rigid decision trees can't.",
+      "source_url": "https://www.anthropic.com/engineering/built-multi-agent-research-system",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Research and discovery agents.",
+      "anti_pattern": "Hardcoded step lists that lock the agent into a single interpretation of the query."
+    },
+    {
+      "id": "BP-030",
+      "topic": "context_economy",
+      "principle": "Pre-warm prompt caches before user-facing latency matters.",
+      "rationale": "First-request latency includes cache write; a no-op pre-warm with max_tokens=0 puts the cache in a hot state before real users arrive.",
+      "source_url": "https://platform.claude.com/docs/en/docs/build-with-claude/prompt-caching",
+      "retrieved_at": "2026-06-23",
+      "applicability": "Latency-sensitive prod systems with long static prefixes.",
+      "anti_pattern": "Letting the first real user pay the cache-write penalty."
+    }
+  ]
+}
