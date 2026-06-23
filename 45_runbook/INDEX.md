@@ -45,13 +45,23 @@ runbooks:
     last_verified: 2026-06-24
     status: active
   - id: RB-004-subagent-final-report-narration
-    title: subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保
+    title: subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (妥協案、リアルタイム諦め)
     category: tooling
-    tags: [subagent, observability, final-report, heartbeat, context-economy, isolation]
-    trigger: subagent 起動時、parent context を汚染せず「何を考え、どこで詰まり、どう抜けたか」を観測したい / Codex 風の中間出力代替
+    tags: [subagent, observability, final-report, heartbeat, context-economy, isolation, compromise]
+    trigger: subagent 起動時、parent context を汚染せず「何を考え、どこで詰まり、どう抜けたか」を観測したい (リアルタイム性は諦める)
     path: ./runbooks/RB-004-subagent-final-report-narration.md
     last_verified: 2026-06-24
     status: active
+    note: RB-005 が active 化したら deprecated 化予定
+  - id: RB-005-subagent-realtime-streaming-via-hooks
+    title: subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (draft、要検証)
+    category: tooling
+    tags: [subagent, observability, hooks, streaming, realtime, codex-parity, deferred-verification]
+    trigger: subagent のリアルタイム中間出力をユーザー負荷ゼロで実現したい / RB-004 の妥協を本質解決したい / Codex 風の日本語ストリーミング観測を Claude Code で再現したい
+    path: ./runbooks/RB-005-subagent-realtime-streaming-via-hooks.md
+    last_verified: 未検証
+    status: draft
+    note: 次セッションで Hooks 仕様確認 + 実証 → active 化、その後 RB-004 を deprecated 化
 # 案件導入時に runbooks/ 配下を生成し、本リストに追記する。
 # 自動更新: 新 Runbook 作成時に scripts/index-update.sh または手動で追記。
 ```
@@ -67,7 +77,7 @@ runbooks:
 | review | 1 |
 | domain | 0 |
 | pitfall | 1 |
-| tooling | 1 |
+| tooling | 2 |
 
 ## 鮮度ステータス
 
