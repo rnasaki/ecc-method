@@ -1,15 +1,17 @@
 ---
-last_updated: 2026-06-24
+last_updated: <YYYY-MM-DD>
 schema: RB-006
 ---
 
-# COMPLETED - 完了済宿題アーカイブ
+# COMPLETED - 完了済宿題アーカイブ (雛形)
+
+このファイルは **案件固有** のため、案件リポの `.handover/COMPLETED.md` にコピーして使用する。
 
 完了した宿題の永続記録。検索性のため category / completed_at / commit_hash で索引化。
 
 ---
 
-(初版時点では未完了。HW-A / HW-B / HW-C が完了したらここに移送される)
+(初版時点では未完了。タスク完了時に PENDING からここに移送される)
 
 ---
 
