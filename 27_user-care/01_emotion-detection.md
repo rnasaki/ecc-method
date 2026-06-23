@@ -105,7 +105,7 @@ function detectEmotion(currentMessage, history):
 - 言い訳・自己弁護 (「〜のつもりでした」)
 - 過剰な謝罪の連発 (「申し訳ございません申し訳ございません」)
 - 機能紹介・別案の同時投入 (「代わりに A もできますし B も…」)
-- 自賛 / 媚び ([02_banned-phrases.md](../25_writing-style/02_banned-phrases.md) sycophancy)
+- 自賛 / 媚び ([02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md) sycophancy)
 - 進行中タスクの継続 (止めずに「ついでに」進めるのは禁止)
 
 ## 7. 計測と改善

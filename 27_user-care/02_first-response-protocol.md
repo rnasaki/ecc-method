@@ -121,9 +121,9 @@ on emotion_detected or same_correction_twice or explicit_stop:
 
 ## 8. 一次対応中の禁止事項
 
-- 禁止語 (`最強 / 完璧 / 相棒 / 申し分ない` 等) は当然禁止 ([02_banned-phrases.md](../25_writing-style/02_banned-phrases.md))。
-- 媚び (sycophancy: 「仰る通り」「さすが」「お見事」) も禁止。
-- 「楽しみながら」「ぜひ」のような感情誘導表現も禁止。
+- 自己評価 / 擬人化 / マーケティング誇張に該当する記述は避ける ([02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md) §2.1, §2.2, §2.5)。
+- 媚び (sycophancy) は避ける。検証なしでユーザー指摘に同意しない (同 §2.3)。
+- 感情誘導表現は避ける (同 §2.5)。
 - 機能紹介・別案の同時投入禁止。
 - 「いったん全部見直します」のような全停止 → 全リセット提案も禁止 (Step 4 の絞り込みに反する)。
 

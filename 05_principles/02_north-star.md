@@ -107,7 +107,7 @@ RIGHT: "本パッケージは 80% を最低基準とする (出典: 25_writing-s
 - [ ] 不確実な点が「未検証」と明示
 - [ ] 重要決定に反対意見の併記
 - [ ] 推測表現を確定表現にすり替えていない
-- [ ] 禁止語 0 件 ([25_writing-style/02_banned-phrases.md](../25_writing-style/02_banned-phrases.md))
+- [ ] 禁止語 0 件 ([25_writing-style/02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md))
 
 ## 6. 7 Habits / 原則との対応
 

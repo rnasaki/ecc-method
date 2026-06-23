@@ -113,7 +113,7 @@ constraint_report:
 - 認証情報: 検出してもファイルに書かない
 - IP: `xxx.xxx.xxx.xxx` 形式でマスク
 
-`25_writing-style/02_banned-phrases.md` の固有名詞禁止と整合させる。
+`25_writing-style/02_avoidance-patterns.md` の固有名詞禁止と整合させる。
 
 ## 失敗時の挙動
 

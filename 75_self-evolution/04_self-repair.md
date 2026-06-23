@@ -14,7 +14,7 @@
 | 重複 Registry エントリ | id が衝突 / description が酷似 | 構造 |
 | 陳腐 Cross-Reference | 被参照ファイルが消滅 | 静的 |
 | 出典 URL 死活 | 404 / DNS 不能 | 動的 |
-| 禁止語混入 | `25_writing-style/02_banned-phrases.md` 違反 | 静的 |
+| 禁止語混入 | `25_writing-style/02_avoidance-patterns.md` 違反 | 静的 |
 | 鮮度逸脱 | `obsolete` ステータスのまま引用 | 静的 |
 
 ## 2. 検知パイプライン
@@ -109,7 +109,7 @@ KPI が悪化した場合は revert + 修復案を再起こし。
 ## 出典
 
 - 本パッケージ METHOD.md §10 自己更新ループ (retrieved 2026-06-23)
-- 本パッケージ 25_writing-style/02_banned-phrases.md (retrieved 2026-06-23)
+- 本パッケージ 25_writing-style/02_avoidance-patterns.md (retrieved 2026-06-23)
 - Anthropic Claude Code Sub-agents docs (https://code.claude.com/docs/en/sub-agents, retrieved 2026-06-23)
 
 ## 不確実性

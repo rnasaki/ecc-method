@@ -77,7 +77,7 @@ LLM は ユーザーへの同意を最小コストの応答として選びやす
 
 ## 6. 同意・称賛の置き換え
 
-迎合的な表現は禁止語リスト ([25_writing-style/02_banned-phrases.md](../25_writing-style/02_banned-phrases.md)) で機械検出する。代わりの語彙:
+迎合的な表現は禁止語リスト ([25_writing-style/02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md)) で機械検出する。代わりの語彙:
 
 | NG | OK |
 |---|---|
@@ -123,7 +123,7 @@ PRD / architecture / security の決定では:
 
 | 反パターン | 害 |
 |---|---|
-| 「素晴らしい」「完璧」を多用 | ユーザー信頼の摩耗 |
+| 自己評価語 (主観形容) を多用 ([../25_writing-style/02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md) §2.1, §2.4) | ユーザー信頼の摩耗 |
 | 「動きました」と書いてテスト未走 | 後続作業者が破壊を発見 |
 | 訂正を末尾に追記 | 見落とされ事故 |
 | 出典の自信表明だけ (URL なし) | 検証不能 |

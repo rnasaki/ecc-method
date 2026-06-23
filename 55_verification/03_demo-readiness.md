@@ -69,7 +69,7 @@
 - 主張ごとに **L1 出典** を脚注で明記 ([60_quality-gates/01_fact-check-protocol.md](../60_quality-gates/01_fact-check-protocol.md))。
 - 数値主張は計測条件 (期間 / 母集団 / 計測方式) を併記。
 - 不確実性開示セクションを 1 枚以上含む ([60_quality-gates/05_uncertainty-disclosure.md](../60_quality-gates/05_uncertainty-disclosure.md))。
-- 禁止語ゼロ ([25_writing-style/02_banned-phrases.md](../25_writing-style/02_banned-phrases.md))。
+- 禁止語ゼロ ([25_writing-style/02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md))。
 - 個人 / 組織 / 製品の固有名は事前承認のもののみ。
 
 ---

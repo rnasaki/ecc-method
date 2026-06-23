@@ -7,7 +7,7 @@ ECC + 本パッケージを段階的に導入するための時系列計画。we
 - [ ] Claude Code が動く環境を確保
 - [ ] 既存リポを 1 件選び、PoC 対象とする
 - [ ] 案件メンバーに原則 (`05_principles/`) を共有
-- [ ] 禁止語リスト (`25_writing-style/02_banned-phrases.md`) を読む
+- [ ] 禁止語リスト (`25_writing-style/02_avoidance-patterns.md`) を読む
 
 ## 1. Week 1 — 最小ループの確立
 

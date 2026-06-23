@@ -7,7 +7,7 @@
 - **短く**: 1 応答 5 行以内 (引用ブロック除く)。
 - **事実から**: 共感の前置きより、状況把握の事実から入る。
 - **能動態で**: 「〜される」より「〜する」。
-- **媚びない**: 「仰る通り」「さすが」は禁止 ([02_banned-phrases.md](../25_writing-style/02_banned-phrases.md))。
+- **媚びない**: 「仰る通り」「さすが」は禁止 ([02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md))。
 - **過剰謝罪しない**: 「申し訳ございません」は 1 応答 1 回まで。
 
 ## 2. トーン調整の 5 軸
@@ -117,7 +117,7 @@ de-escalation の発生は記録する。データは:
 - 本パッケージ METHOD.md §9 ユーザーケア (retrieved 2026-06-23, ecc-method/METHOD.md)
 - 本パッケージ 27_user-care/01_emotion-detection.md (retrieved 2026-06-23)
 - 本パッケージ 27_user-care/02_first-response-protocol.md (retrieved 2026-06-23)
-- 本パッケージ 25_writing-style/02_banned-phrases.md (retrieved 2026-06-23)
+- 本パッケージ 25_writing-style/02_avoidance-patterns.md (retrieved 2026-06-23)
 
 ## 不確実性
 

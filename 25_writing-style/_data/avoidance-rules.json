@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "purpose": "機械検出による概念違反の候補抽出。最終判定は LLM judge で文脈確認すること。grep ヒット = 即違反ではない。",
+  "concept_source": "../02_avoidance-patterns.md §2",
+  "rules": [
+    {
+      "rule_id": "AVD-001",
+      "concept": "self-praise",
+      "procedure_ref": "§2.1",
+      "detection_hint": "agent / BOT / 出力者自身が主語の絶対評価語",
+      "severity": "warn",
+      "note": "主語を読む LLM judge 必須。語そのものは禁止しない。"
+    },
+    {
+      "rule_id": "AVD-002",
+      "concept": "anthropomorphism",
+      "procedure_ref": "§2.2",
+      "detection_hint": "agent / システムを主語にした人間関係用語",
+      "severity": "warn",
+      "note": "ビジネス文脈の一般語(例: business partner)は対象外。LLM judge で文脈確認。"
+    },
+    {
+      "rule_id": "AVD-003",
+      "concept": "sycophancy",
+      "procedure_ref": "§2.3",
+      "detection_hint": "応答冒頭の評価語、検証なき同意表現",
+      "severity": "block",
+      "note": "応答の最初の段落で対象語が出現した場合に高 confidence で block。"
+    },
+    {
+      "rule_id": "AVD-004",
+      "concept": "subjective-adjective",
+      "procedure_ref": "§2.4",
+      "detection_hint": "数値で代替可能な形容語が出典なしで使われている",
+      "severity": "warn",
+      "note": "出典付き引用文中は対象外。"
+    },
+    {
+      "rule_id": "AVD-005",
+      "concept": "hype",
+      "procedure_ref": "§2.5",
+      "detection_hint": "絶対評価語 (初, 唯一, 最) が出典なしで使われている",
+      "severity": "block",
+      "note": "出典 URL が同段落にあれば対象外。"
+    }
+  ],
+  "detection_strategy": {
+    "primary": "LLM judge による文脈判定 (60_quality-gates/02_independent-verify.md)",
+    "fallback": "本ファイルの detection_hint を LLM に渡して候補抽出",
+    "anti_pattern": "個別語の正規表現一括 grep で完了判定にする運用 (false positive 多発、過剰一般化リスク)"
+  },
+  "metadata": {
+    "retrieved_at": "2026-06-24",
+    "rationale": "個別語の永久禁止リストはユーザー個別指摘の過剰一般化につながる。本ファイルは概念と検出ヒントのみを保持し、語の判定は LLM judge に委ねる。",
+    "design_principle": "概念と機械検出を分離。detection_pattern (regex) は本パッケージ初版では持たない (false positive リスク高)。実運用で必要になったら案件側で追加。"
+  }
+}

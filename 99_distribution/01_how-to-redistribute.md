@@ -54,8 +54,8 @@ grep -rEn 'AKIA[0-9A-Z]{16}|sk-[A-Za-z0-9]{20,}|-----BEGIN [A-Z ]+ PRIVATE KEY--
 grep -rEn '\.internal\.|\.local/|10\.[0-9]+\.[0-9]+\.[0-9]+' --include='*.md' . \
   || echo "OK: no internal url"
 
-# 禁止語 (再配布前にも必ず流す。以下は 25_writing-style/02_banned-phrases.md からの引用パターン)
-grep -rEn -f <(grep -E '^[[:space:]]+- ' "ecc-method/25_writing-style/02_banned-phrases.md" \
+# 禁止語 (再配布前にも必ず流す。以下は 25_writing-style/02_avoidance-patterns.md からの引用パターン)
+grep -rEn -f <(grep -E '^[[:space:]]+- ' "ecc-method/25_writing-style/02_avoidance-patterns.md" \
               | sed -E 's/^[[:space:]]+- //') \
   --include='*.md' . \
   || echo "OK: no banned phrase"
@@ -128,14 +128,14 @@ grep -rEn -f <(grep -E '^[[:space:]]+- ' "ecc-method/25_writing-style/02_banned-
 | 連携先 | 用途 |
 |---|---|
 | [02_license-note.md](./02_license-note.md) | ライセンス選択 |
-| [25_writing-style/02_banned-phrases.md](../25_writing-style/02_banned-phrases.md) | 禁止語検査 |
+| [25_writing-style/02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md) | 禁止語検査 |
 | [60_quality-gates/](../60_quality-gates/) | 受入チェック |
 | [75_self-evolution/06_health-metrics.md](../75_self-evolution/06_health-metrics.md) | KPI 計測 |
 
 ## 出典
 
 - 本パッケージ README.md §ライセンスと再配布 (retrieved 2026-06-23)
-- 本パッケージ 25_writing-style/02_banned-phrases.md (retrieved 2026-06-23)
+- 本パッケージ 25_writing-style/02_avoidance-patterns.md (retrieved 2026-06-23)
 - 本パッケージ 75_self-evolution/06_health-metrics.md (retrieved 2026-06-23)
 
 ## 不確実性

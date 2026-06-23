@@ -1,6 +1,6 @@
 # 05 — Examples (before / after 添削例)
 
-文体規範 ([01_voice.md](./01_voice.md)) と禁止語 ([02_banned-phrases.md](./02_banned-phrases.md)) の適用例。before の文章を after で中立化する。
+文体規範 ([01_voice.md](./01_voice.md)) と禁止語 ([02_avoidance-patterns.md](./02_avoidance-patterns.md)) の適用例。before の文章を after で中立化する。
 
 ## 例 1: 自賛・極端表現
 
@@ -14,8 +14,8 @@
 
 ### 何を変えたか
 
-- 「最強」「完璧」「究極」「申し分ない」を削除 (block)
-- 主観的な性能主張を、章への参照と検査軸の列挙に置換
+- 自己評価に該当する表現を削除 ([02_avoidance-patterns.md](./02_avoidance-patterns.md) §2.1)
+- 主観的な性能主張を、章への参照と検査軸の列挙に置換 (§2.4)
 - 一人称的な語り (「実現します」) を断定形に変更
 
 ---
@@ -32,7 +32,7 @@
 
 ### 何を変えたか
 
-- 「相棒」「司令塔」「概念的存在」「寄り添う」を削除 (block)
+- 擬人化に該当する表現を削除 ([02_avoidance-patterns.md](./02_avoidance-patterns.md) §2.2)
 - 関係性語 (「あなたの〜」「サポートします」) を機能記述に置換
 - 役割を Orchestrator という用語に統一
 
@@ -151,7 +151,7 @@
 
 before/after を書く際は以下を確認する。
 
-- [ ] 禁止語ヒット 0 ([02_banned-phrases.md](./02_banned-phrases.md))
+- [ ] 禁止語ヒット 0 ([02_avoidance-patterns.md](./02_avoidance-patterns.md))
 - [ ] 主観形容詞は測定可能な事実に置換した
 - [ ] 主張に L1 出典を付けた、または「未検証」と明示した
 - [ ] 個人名・組織名・固有プロダクト名を含まない
@@ -160,7 +160,7 @@ before/after を書く際は以下を確認する。
 ## 出典
 
 - 本パッケージ 25_writing-style/01_voice.md (retrieved 2026-06-23)
-- 本パッケージ 25_writing-style/02_banned-phrases.md (retrieved 2026-06-23)
+- 本パッケージ 25_writing-style/02_avoidance-patterns.md (retrieved 2026-06-23)
 - 本パッケージ 25_writing-style/04_uncertainty-language.md (retrieved 2026-06-23)
 
 ## 不確実性

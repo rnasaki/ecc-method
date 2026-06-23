@@ -14,7 +14,7 @@
 | 4 | uncertainty | `## 不確実性` セクション存在 + 確度語彙 | [05_uncertainty-disclosure.md](./05_uncertainty-disclosure.md) |
 | 5 | 反対意見 | 重要決定では別案 1 件以上併記 | [03_anti-sycophancy.md](./03_anti-sycophancy.md) §8 |
 | 6 | secret / PII | secret / 個人情報 / 認証情報 0 件 | [04_guardrails-compliance.md](./04_guardrails-compliance.md) |
-| 7 | banned phrases | 禁止語 0 件 | [25_writing-style/02_banned-phrases.md](../25_writing-style/02_banned-phrases.md) |
+| 7 | banned phrases | 禁止語 0 件 | [25_writing-style/02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md) |
 | 8 | context budget | トークン上限内 (節分割 / 委任で抑制) | [05_principles/06_context-economy.md](../05_principles/06_context-economy.md) |
 
 ---

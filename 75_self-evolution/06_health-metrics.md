@@ -50,7 +50,7 @@ rate  = aging / total
 
 ### 2.5 禁止語混入率
 
-`25_writing-style/02_banned-phrases.md` §4 のスクリプトでヒット件数を機械集計。block 級は 0 を維持。
+`25_writing-style/02_avoidance-patterns.md` §4 のスクリプトでヒット件数を機械集計。block 級は 0 を維持。
 
 ## 3. ダッシュボード (案)
 

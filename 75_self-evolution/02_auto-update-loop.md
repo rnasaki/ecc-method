@@ -82,7 +82,7 @@
 通過条件 (`60_quality-gates/07_gate-checklist.md` を流用):
 
 - [ ] L1 出典あり / retrieved_at 更新済み
-- [ ] 禁止語 0 件 (`25_writing-style/02_banned-phrases.md`)
+- [ ] 禁止語 0 件 (`25_writing-style/02_avoidance-patterns.md`)
 - [ ] cross-reference リンク切れ 0 件
 - [ ] `04_self-repair.md` の重複検知に抵触しない
 - [ ] 反対意見が必要な変更 (Pattern P-003 該当) は red-team 通過

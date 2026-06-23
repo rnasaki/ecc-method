@@ -137,7 +137,7 @@ SDD が決めた AC が TDD の Red を駆動し、TDD で得た知見が SDD (d
 - [ ] uncertainty が明示されている
 - [ ] 反対意見が併記されている (重要決定のみ)
 - [ ] secret / PII / 個人情報 / 組織固有名 0 件
-- [ ] 禁止語 0 件 ([25_writing-style/02_banned-phrases.md](./25_writing-style/02_banned-phrases.md))
+- [ ] 禁止語 0 件 ([25_writing-style/02_avoidance-patterns.md](./25_writing-style/02_avoidance-patterns.md))
 - [ ] context budget 上限内
 
 ## 7. Runbook System (ゼロ重複)
