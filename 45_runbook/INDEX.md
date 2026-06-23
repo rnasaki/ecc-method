@@ -28,6 +28,14 @@ runbooks:
     path: ./runbooks/RB-001-agent-registry-hot-reload.md
     last_verified: 2026-06-24
     status: active
+  - id: RB-002-phased-rollout-plan-index-graph
+    title: 段階導入予定 - インデックス frontmatter / Concept Graph / 検索プロトコル更新
+    category: bootstrap
+    tags: [phased-rollout, index, concept-graph, keywords, search-protocol, deferred]
+    trigger: ecc-method の探索コスト削減のため Phase 4-7 を段階導入する計画。Phase 1-3 完了後の次ステップ確認時に参照。
+    path: ./runbooks/RB-002-phased-rollout-plan-index-graph.md
+    last_verified: 2026-06-24
+    status: active
 # 案件導入時に runbooks/ 配下を生成し、本リストに追記する。
 # 自動更新: 新 Runbook 作成時に scripts/index-update.sh または手動で追記。
 ```
@@ -36,7 +44,7 @@ runbooks:
 
 | category | 件数 |
 |---|---|
-| bootstrap | 0 |
+| bootstrap | 1 |
 | deploy | 0 |
 | debug | 0 |
 | infra | 0 |
