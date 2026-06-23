@@ -1,5 +1,9 @@
 # 開発用ハンドオーバーは develop branch のみで追跡 (配布版に混入させない)
-.handover/
+# .handover は develop branch では追跡対象 (main では .gitignore のまま)
+# 注: branch 別 .gitignore は git に存在しないため、ここでは include したまま
+# main にマージするときは sparse-checkout 等で除外する手もあるが、
+# 実際は .handover/ がすでに追跡対象なので main 側の .gitignore は新規作成を防ぐだけで十分
+# .handover/  ← develop ではコメントアウト
 
 # 一時ファイル
 _tmp/

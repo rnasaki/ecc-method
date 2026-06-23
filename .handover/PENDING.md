@@ -14,18 +14,11 @@ branch: develop
 
 ## 宿題: HW-E - Branch / semver / 配布規律 (RB-008) を永続化
 
-- **状態**: not_started
-- **優先度**: P0 (本セッションで方針決定済、規律として永続化が必要)
-- **着手条件**: なし
-- **完了基準**:
-  - RB-008 (Release Discipline) を `45_runbook/runbooks/` に作成
-  - 内容: branch 戦略 (main / develop) / semver / `.gitignore` 規約 / リリース手順 / CHANGELOG
-  - main の `.gitignore` に `.handover/` `_tmp/` 等を追加
-  - develop は `.handover/` を追跡対象として保持
-  - main に v0.1.0 tag を付与 (現状を初期版として固定)
-  - README に branch / version 説明を追加 (利用者は main を clone するだけで配布版が取れる)
-- **担当 expert role**: doc-updater / architect / orchestrator
-- **メモ**: 本セッション (2026-06-24) でユーザーから「配布物に .handover が混入する、Git ベスプラに従って」の指摘を受け方針確定。GitFlow 風の branch 分離 + semver tag 採用。
+- **状態**: ✅ 完了 (本セッション 2026-06-24)
+- **完了 commit**:
+  - main: `31f42e0` (.gitignore) / `a9fae53` (README version note) / tag `v0.1.0`
+  - develop: `96229db` (.handover 追加) / `4cd970e` (RB-008 永続化)
+- **メモ**: COMPLETED.md に移送予定。次セッションで詳細を移送。
 
 ---
 
