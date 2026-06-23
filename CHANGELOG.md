@@ -24,6 +24,9 @@
 - トップレベル `27_user-care/` ディレクトリ (内容は `25_writing-style/06_user-care/` に移設)。
 
 ### Fixed
+- `.gitignore` に `.claude/` (Claude Code セッションキャッシュ) を追加。個人環境固有のためリポジトリ追跡対象外とする。
+
+### Fixed
 ### Security
 
 ## [v0.1.0] - 2026-06-24
