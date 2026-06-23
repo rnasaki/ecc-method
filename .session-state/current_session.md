@@ -1,9 +1,9 @@
 ---
 schema: RB-007
-session_id: 3 (ecc-method 開発、Session 3、未開始)
+session_id: 4 (ecc-method 開発、Session 4、HW-F 着手 / Session 3 = HW-D と並列)
 created_at: 2026-06-24
 last_updated: 2026-06-24
-status: pending_start
+status: completed
 branch: develop
 ---
 
@@ -11,76 +11,69 @@ branch: develop
 
 ## ターゲットタスク (1 つ)
 
-**HW-D または HW-F の選択 + 着手**: HW-G 完了により以下が並列着手可になった:
-- **HW-D**: Method v1.0 リリース整理 (採番再定義 / リンク張替え / CHANGELOG / v1.0.0 tag)
-- **HW-F**: SDD/TDD 章の汎用化精査 (30_sdd-phase / 35_tdd-phase の案件依存洗い出し)
+**HW-F**: SDD/TDD 章の汎用化精査 — Session 4 では `30_sdd-phase/01_prd-flow.md` を 1 章ぶん精査 (Session 3 = HW-D と並列ハンドオーバー運用)。
 
-両者とも P1。Session 3 開始時にユーザーへ 1 行で選択を委ねる (= L0 で導出不能、ユーザー方針判断)。
+選択理由 (RB-003 L1 導出):
+- SDD 章の最上流。後続 (02-06) の汎用化前提となる
+- PRD は「何を作るか」の出発点で、案件依存が混ざるとフロー全体が汚染
+- 1 セッション 1 章規律に収まる粒度
 
-## 完了条件 (本セッションの最小範囲)
+## 完了条件 (本セッション)
 
-選択先により分岐:
+- [x] 1 章選定 (`30_sdd-phase/01_prd-flow.md`)
+- [x] 案件依存 / 実機未検証 / 出典なし箇所を洗い出し
+- [x] 修正反映 (誤参照訂正・断定→推奨)
+- [x] 不確実性セクションを拡充
 
-### HW-D を選んだ場合
+## 本セッションの所見
 
-- [ ] 採番ポリシー方針確定 (整列 or 廃止 or ハイブリッド) → 1 セッションで決め切れない場合はサブタスク分割
-- [ ] CHANGELOG.md 雛形作成
-- [ ] v1.0.0 tag 切り条件の整理
+### A. 案件依存箇所
+- 0 件。本文に固有プロダクト名は含まれず。
 
-### HW-F を選んだ場合
+### B. 実機未検証 / 暗黙前提 (3 件)
+1. §3 Step 6 で `60_quality-gates/` の Gate 1 を参照 → **誤参照**。正しくは `30_sdd-phase/06_review-gates.md` の Gate 1 (Requirements 完成)。
+2. §4 「specs/<feature-set>/PRD.md 配置」を断定 → 実機運用なし。「規約推奨」へ語気を弱めた。
+3. §3 Step 1 「`10_discovery/` の利用者ヒアリング / 既存ログ分析」 → Discovery 章 (01_repo-recon〜05_knowledge-acquisition) との対応関係が初版時点で実機未検証。
 
-- [ ] 30_sdd-phase または 35_tdd-phase のいずれか 1 章を選定
-- [ ] その章の「案件依存」「実機未検証」「出典なし」箇所を洗い出し
-- [ ] 不確実性セクションを更新
+### C. 出典の妥当性
+- 既存 L1 出典 (spec-kit / Claude Code best practices) は適切。
+- §2 「7 セクション固定 / 順序固定」は本パッケージ独自規定 (spec-kit には拘束なし)。不確実性セクションに明示。
 
-## このセッションで触らないもの (スコープ外)
+### D. 修正内容
+1. §3 Step 6 の参照先を `06_review-gates.md` Gate 1 へ訂正、横串 `60_quality-gates/` も別途通過と整理
+2. §4 配置規約を「推奨」「組織で別配置の場合は一括置換前提」に弱化
+3. §不確実性を 2 → 5 項目に拡充 (前提 3 / 未検証 2)
 
-- 選ばなかった方の宿題 (次々セッション以降)
-- HW-B (RB-005 検証): 残 budget があれば併走可
-- HW-C (Phase 4-7): HW-D 完了後
-- HW-H (RB-010 候補): HW-D / HW-F 主要進捗後
+## このセッションで触らなかったもの (スコープ外)
 
-## TODO (作業手順、agent が更新)
+- 30_sdd-phase/02-06、35_tdd-phase/01-05 (次セッション以降、1 セッション 1 章規律)
+- HW-D (v1.0 リリース整理): 並列着手可だが Session 3 では HW-F に集中
+- HW-B / HW-C / HW-H
 
-1. (未開始) GOAL.md / PENDING.md / INDEX.md を Read
-2. (未開始) ユーザーに HW-D / HW-F 選択を 1 行で問う (RB-003: L0 で導出不能のため委譲可)
-3. (未開始) 選択に応じてサブタスクを分解
-4. (未開始) 完了条件チェックボックスを潰す
-5. (未開始) commit + push
-6. (未開始) PENDING / COMPLETED / HISTORY / current_session を更新
+## TODO (進捗)
 
-## 進捗ログ (中断・再開用)
+1. ✅ GOAL.md / PENDING.md / current_session.md を Read
+2. ✅ ユーザーに HW-D / HW-F 選択を 1 行で問う → 「貴方の判断で決めて」
+3. ✅ HW-F を選択、対象章は L1 導出で `30_sdd-phase/01_prd-flow.md`
+4. ✅ 精査 + 修正反映
+5. ✅ commit + push (Session 3 完了 commit で実施)
+6. ✅ PENDING / HISTORY / current_session を更新
 
-(Session 3 未開始)
+## 次セッション (Session 5) の出発点
 
-## 再開ポイント (Session 3 開始時の agent 向け)
-
-Session 1-2 (2026-06-24) で完了:
-- HW-E: Branch / semver / RB-008 (✅ 完了 Session 1)
-- HW-G: 全体プロセス再設計 + RB-006 改訂 + README 書き直し + 関連整合 (✅ 完了 Session 2)
-
-Session 3 の出発点:
 - branch: develop
-- 直前 commit: `fbcd4152` (HW-G 完了)
-- 残 P1 = HW-D / HW-F の 2 つ
-- ユーザー方針判断 (L0 で導出不能) のため、開始時に選択肢提示
-
-最初にやること:
-1. GOAL.md (北極星確認: SDD/TDD 汎用化 + v1.0 配布)
-2. PENDING.md (HW-D / HW-F のどちらが「北極星に最も近い」か再確認)
-3. 本ファイル (status: pending_start なのでそのまま着手)
-4. ユーザーに HW-D / HW-F 選択を 1 行で問う
-5. 選択後にサブタスク分解 → 着手
-
-## このセッションの不確実性
-
-- HW-D の「採番方針」は単一セッションで結論が出ない可能性 → サブタスク分割を視野に
-- HW-F は章数が多い (30_sdd-phase / 35_tdd-phase 配下複数) → 1 セッション = 1 章に絞る規律を堅守
+- 残 P1: HW-F (10 章残) — HW-D は Session 3 で完了済 (parallel)
+- 開始時にユーザーへ「HW-F 続き (どの章)」「他」を 1 行で問う
+- HW-F 続きの場合、推奨は `30_sdd-phase/02_feature-id-rules.md` (採番規則。実装後に変更不可なため早期固定が望ましい) または `35_tdd-phase/01_red-green-refactor.md` (TDD 章中核)
 
 ## 関連
 
 - GOAL.md (北極星 = SDD/TDD 汎用化 + v1.0 配布)
-- PENDING.md (HW-D / HW-F が並列着手可状態)
-- ../45_runbook/runbooks/RB-006-session-handover-protocol.md (Session 3 でも適用)
+- PENDING.md (HW-F: in_progress、HW-D: not_started)
+- ../30_sdd-phase/01_prd-flow.md (本セッションで修正)
+- ../30_sdd-phase/06_review-gates.md (Gate 1 の正規参照先)
+- ../45_runbook/runbooks/RB-006-session-handover-protocol.md
 - ../45_runbook/runbooks/RB-007-1-session-1-task-and-session-state.md
-- ../45_runbook/runbooks/RB-003-autonomous-decision-framework.md (L0 で導出不能な選択は委譲可)
+- ../45_runbook/runbooks/RB-003-autonomous-decision-framework.md (L0 で導出不能な選択は委譲、L1 導出は agent 側)
+
+# ⚠️ このセッションはクローズ

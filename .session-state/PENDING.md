@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-06-24
-session_count: 2
+session_count: 4
 schema: RB-006
 branch: develop
 ---
@@ -14,23 +14,15 @@ branch: develop
 
 ## 宿題: HW-D - Method v1.0 リリース整理
 
-- **状態**: not_started
-- **優先度**: P1
-- **着手条件**: HW-G 完了 (✅ Session 2 で完了)
-- **完了基準**:
-  - 採番の意味再定義 (現状: 試行錯誤で隙間に詰めた `27` `45` `85` 等が混在)
-  - 章の論理順を確定し、ディレクトリ採番を整列 or 採番自体を廃止
-  - 全リンク (md 内・agent prompt 内・テンプレ内) を一括張替え
-  - CHANGELOG.md を整備し v1.0.0 として版を切る
-  - LICENSE / README / 99_distribution/ を v1.0 確定形に更新
-- **担当 expert role**: architect / refactor-cleaner / doc-updater
-- **背景**: 採番が意味を持たない数字になっている、リリース整理プロセスが欠落 (Session 1 終盤の指摘)
+- **状態**: completed (Session 3、2026-06-24)
+- **完了詳細**: COMPLETED.md 参照
+- **後続タスク**: v1.0.0 tag 切りは `99_distribution/03_v1.0.0-release-checklist.md` の checklist が全て満たされたタイミングで実施 (HW-F 完了が前提)。
 
 ---
 
 ## 宿題: HW-F - SDD/TDD 章の汎用化精査
 
-- **状態**: not_started
+- **状態**: in_progress (Session 4 で 1/11 章完了、Session 3 = HW-D と並列)
 - **優先度**: P1 (本来の北極星に最も直結)
 - **着手条件**: なし (HW-D と並列実施可)
 - **完了基準**:
@@ -42,6 +34,9 @@ branch: develop
   - 各章末尾の「不確実性」セクションを更新
 - **担当 expert role**: planner / architect / agent-evaluator / refactor-cleaner
 - **メモ**: 本来のゴール「SDD/TDD 汎用化」の主作業。HW-D (整理) と並走可。
+- **進捗** (1 セッション 1 章規律):
+  - ✅ Session 4: `30_sdd-phase/01_prd-flow.md` (Gate 1 参照先誤り修正、specs/ 配置を推奨化、不確実性 5 項目に拡充)
+  - ⏳ 残: 30_sdd-phase/02-06 (5 章) + 35_tdd-phase/01-05 (5 章) = 10 章
 
 ---
 
@@ -99,8 +94,8 @@ branch: develop
 
 | ID | 状態 | 優先度 | タイトル |
 |---|---|---|---|
-| HW-D | not_started | P1 | Method v1.0 リリース整理 (HW-G 完了済、着手可) |
-| HW-F | not_started | P1 | SDD/TDD 章の汎用化精査 (HW-D と並列可) |
+| HW-D | completed | P1 | Method v1.0 リリース整理 (Session 3 完了、COMPLETED.md 参照) |
+| HW-F | in_progress | P1 | SDD/TDD 章の汎用化精査 (1/11 章完了、Session 4 で 01_prd-flow) |
 | HW-B | not_started | P2 | RB-005 検証 (Hooks リアルタイム subagent 観測) |
 | HW-C | not_started | P3 | Phase 4-7 段階導入 |
 | HW-H | not_started | P3 | セッションクローズ時の視覚マーキング (RB-010 候補) |

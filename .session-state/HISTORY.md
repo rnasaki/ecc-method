@@ -67,6 +67,58 @@ commit_hashes:
 
 ---
 
+## Session 3 (2026-06-24, HW-D)
+
+```yaml
+session_id: 3
+session_start: 2026-06-24
+session_end: 2026-06-24
+着手宿題: [HW-D]
+完了宿題: [HW-D]
+新規追加宿題: []
+parallel_session: 4 (HW-F、別チャットへハンドオーバー)
+commit_hashes:
+  - "(本セッション完了 commit) (develop: HW-D Method v1.0 リリース整理)"
+本セッションでの主要学習: |
+  HW-D = Method v1.0 リリース整理。並列で HW-F (SDD/TDD 汎用化精査) を別チャットへハンドオーバーする運用を採用。
+  採番ポリシーを「5 刻み単一規律」で確定:
+    - トップレベルの 5 刻み破りは 27_user-care/ のみ。これを 25_writing-style/06_user-care/ にサブディレクトリ化。
+    - 18 箇所のリンク張替え + 移動先内部の相対パス再計算 (depth=2 化に伴い ../ → ../../ 等)。
+    - 01_overview/03_how-to-read.md の章一覧、25_writing-style/01_voice.md、METHOD.md §9、orchestrator system prompt 等を更新。
+  CHANGELOG.md を Keep a Changelog 形式で雛形作成 (v0.1.0 既往分 + Unreleased)。
+  v1.0.0 リリース判定 checklist を 99_distribution/03_v1.0.0-release-checklist.md として独立化 (RB-008 §リリース判定基準を進捗追跡可能な形に)。
+  RB-003 自律判断: 採番ポリシーは原則 (KISS/YAGNI/north-star) から導出可能 = L0、本来委譲不要。
+  ユーザーから「判断主体は agent」とフィードバック → 委譲しすぎを是正。
+```
+
+---
+
+## Session 4 (2026-06-24, HW-F、Session 3 = HW-D と並列)
+
+```yaml
+session_id: 4
+session_start: 2026-06-24
+session_end: 2026-06-24
+着手宿題: [HW-F]
+完了宿題: []  # HW-F は in_progress (1/11 章)
+新規追加宿題: []
+parallel_session: 3 (HW-D、別チャットで実施)
+commit_hashes:
+  - "(本セッション完了 commit) (develop: HW-F Session 4 - 01_prd-flow 汎用化精査)"
+本セッションでの主要学習: |
+  HW-F の精査 1 章目として 30_sdd-phase/01_prd-flow.md を選定 (RB-003 L1 導出: 上流章で後続の前提)。
+  案件依存は 0 件。実機未検証/暗黙前提を 3 件特定:
+    - §3 Step 6 が 60_quality-gates/ の Gate 1 を誤参照 → 正しくは 06_review-gates.md
+    - §4 specs/<feature-set>/PRD.md 配置が断定的 → 「推奨」へ弱化
+    - §3 Step 1 Discovery 章との対応関係が実機未検証
+  §2 「7 セクション固定」は spec-kit に拘束無く本パッケージ独自規定であることを不確実性で明示。
+  不確実性セクションを 2 → 5 項目に拡充 (前提 3 / 未検証 2)。
+  1 セッション 1 章規律を堅守。残 10 章は次セッション以降。
+  並列運用: 同時刻に Session 3 = HW-D が進行。commit スコープを HW-F の 4 ファイルに限定 (01_prd-flow.md + .session-state/ 3 件)。
+```
+
+---
+
 ## 索引フォーマット (新規追加時)
 
 ```yaml
