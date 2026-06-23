@@ -9,9 +9,12 @@ project: <案件名>
 このファイルは **案件固有** のため、案件リポの `.session-state/GOAL.md` にコピーして使用する。
 ecc-method パッケージ (汎用 Method) には案件データを置かない。
 
-初期化手順 (案件リポ側で実行):
+通常は **agent が初回起動時に自動生成** するため、利用者が手動でコピーする必要はない (RB-009)。
+本雛形は agent によるコピー元、または手動 fallback 用。
+
+手動初期化手順 (agent ヒアリングをスキップしたい場合):
 ```bash
-mkdir -p .handover
+mkdir -p .session-state
 cp ~/.claude/methods/ecc-method/45_runbook/_session-state-template/*.md .session-state/
 # その後、.session-state/GOAL.md を案件内容で書き換える
 ```

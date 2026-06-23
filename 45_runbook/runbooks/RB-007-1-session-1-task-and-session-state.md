@@ -92,11 +92,14 @@ current_session.md に「**このセッションで触らないもの**」セク
 
 ## 中断時プロトコル (context 限界 / セッション落ち / ユーザー中断)
 
+タスクが未完了のまま session を閉じる場合の手順。完了時の手順は RB-006 §終了時プロトコルを参照。
+
 ```
 [1] current_session.md §進捗ログ に「どこまで完了」「次の一手」を追記
 [2] current_session.md §再開ポイント に次セッションが読むべき情報を 5 行以内で記録
 [3] status を in_progress に保つ (completed にしない)
-[4] <cwd>/.session-state/ を git commit + push (RB-006 終了時必須と同じ)
+[4] PENDING.md の対象宿題状態を in_progress に更新 (RB-006 主管)
+[5] <cwd>/.session-state/ を git commit + push
 ```
 
 ## 終了時プロトコル (タスク完了)
@@ -155,7 +158,7 @@ current_session.md に「**このセッションで触らないもの**」セク
 
 ## 関連
 
-- RB-006 (セッション引き継ぎプロトコル、本 Runbook と対)
+- RB-006 (セッション状態プロトコル、本 Runbook と対 — `.session-state/` の SSOT 管理 / 二モード判定 / 初回 = RB-009 に分岐)
 - RB-003 (自律判断、ゴール参照は L0 出典)
 - 01_overview/05_user-as-hands.md (ユーザー認知負荷ゼロ化、本 Runbook の前提)
 - METHOD.md §3 (8 原則、特に第 3 ゼロ重複・第 5 コンテキスト最小)

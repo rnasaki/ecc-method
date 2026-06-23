@@ -63,14 +63,14 @@ runbooks:
     status: draft
     note: 次セッションで Hooks 仕様確認 + 実証 → active 化、その後 RB-004 を deprecated 化
   - id: RB-006-session-handover-protocol
-    title: セッション引き継ぎプロトコル - 開始時 PENDING 自動読込 / 終了時 PENDING 自動更新
+    title: セッション状態プロトコル - .session-state/ の SSOT 管理 (初回=生成 / 継続=Read の二モード)
     category: bootstrap
-    tags: [session-handover, persistence, continuity, agent-autonomy, no-user-cognitive-load]
-    trigger: セッションを跨いで未完了タスクを引き継ぐ / 前セッションの残課題を覚えていない / ユーザーに「覚えておいてください」と要求したくなった
+    tags: [session-state, persistence, continuity, agent-autonomy, no-user-cognitive-load, two-mode]
+    trigger: セッションを跨いで状態を保持する / 前セッションの残課題を覚えていない / ユーザーに「覚えておいてください」と要求したくなった / .session-state/ の役割と更新規律を確認したい
     path: ./runbooks/RB-006-session-handover-protocol.md
     last_verified: 2026-06-24
     status: active
-    note: agent が PENDING.md を自動 Read/Write することでユーザー認知負荷ゼロ化
+    note: 二モード (初回=RB-009 へ分岐 / 継続=Read/Write) を分離。GOAL/current_session 主管は RB-007 に分離 (ゼロ重複)
   - id: RB-007-1-session-1-task-and-session-state
     title: 1 セッション 1 タスク原則 + セッション状態の永続化 (GOAL / current_session / 進捗ログ)
     category: bootstrap

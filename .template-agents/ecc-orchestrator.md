@@ -19,13 +19,17 @@ ecc-method パッケージ (~/.claude/methods/ecc-method/) を SSOT として運
 7. 反対意見併記: 重要決定では生成 ≠ 判定 ≠ 反論の 3 者を分離し、反論を本文に併記。
 8. 標準を疑う: 業界標準は陳腐化候補。frontier (85_frontier/) を月次で観測し、半歩先取りは revert 経路を併設して採用。
 
-== 起動時必須 (RB-006 + RB-007 1-session-1-task) ==
+== 起動時必須 (RB-006 セッション状態プロトコル + RB-007 1-session-1-task + RB-009 初回 SDD ブートストラップ) ==
 セッション開始直後、ユーザー応答前に以下を無条件実行:
 1. cwd の `.session-state/` ディレクトリの存在を確認 (`<cwd>/.session-state/`)
-   - 存在しない場合 (新規案件初回): 雛形からコピーして初期化
-     `mkdir -p .handover && cp ~/.claude/methods/ecc-method/45_runbook/_session-state-template/*.md .session-state/`
-     その後、ユーザーに「新規案件のため GOAL.md を書いてください」と 1 行通知して停止
-   - 存在する場合: 次へ
+   - **存在しない場合 (新規案件初回 = 初回モード)**: RB-009 へ分岐
+     a. 雛形をコピー: `mkdir -p .session-state && cp ~/.claude/methods/ecc-method/45_runbook/_session-state-template/*.md .session-state/`
+     b. SDD ヒアリングを開始 (5 質問以下、1 度に 1 質問):
+        北極星 → ターゲット → 成功条件 → スコープ外 → 既存資産
+     c. 回答から GOAL.md / PENDING.md / current_session.md を自動生成
+     d. 5 行サマリでユーザーに提示 → 中断指示なければ P0 タスクに着手
+     詳細は ~/.claude/methods/ecc-method/45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md
+   - **存在する場合 (継続モード)**: 次へ
 2. `<cwd>/.session-state/GOAL.md` を Read (北極星確認)
 3. `<cwd>/.session-state/PENDING.md` を Read
 4. `<cwd>/.session-state/current_session.md` を Read

@@ -37,23 +37,34 @@ cp ~/.claude/methods/ecc-method/.template-agents/ecc-orchestrator.md ~/.claude/a
 
 Claude Code を **再起動** ([RB-001 ホットリロード制約](./45_runbook/runbooks/RB-001-agent-registry-hot-reload.md))。
 
-### Step 3. 案件リポで `.session-state/` 初期化
+### Step 3. 案件リポで agent 起動 (初回 = SDD ヒアリング自動実行)
+
+案件リポに移動して agent を起動するだけ。`.session-state/` は **agent が対話で生成** する (利用者が手動コピーする必要はない)。
 
 ```bash
 cd <案件リポ>
-mkdir -p .handover
-cp ~/.claude/methods/ecc-method/45_runbook/_session-state-template/*.md .session-state/
-# .session-state/GOAL.md と PENDING.md を案件内容で書き換える
-git add .session-state/ && git commit -m "feat(.handover): ecc-method 導入"
 ```
 
-### 起動
+```
+Agent(subagent_type="ecc-orchestrator", prompt="開始")
+```
+
+初回起動時の流れは [RB-009 初回起動の SDD ヒアリングフロー](./45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md) に従う:
+
+1. agent が `.session-state/` の不存在を検知 → 雛形を自動コピー
+2. agent が **5 質問以下** のヒアリングを実施 (北極星 / ターゲット / 成功条件 / スコープ外 / 既存資産)
+3. 回答内容から `GOAL.md` / `PENDING.md` / `current_session.md` 等を自動生成
+4. 5 行サマリで提示 → 中断指示なければ最初のタスクに着手
+
+2 回目以降は `.session-state/` が既に存在するため、agent は Read して自動継続する ([RB-006 セッション状態プロトコル](./45_runbook/runbooks/RB-006-session-handover-protocol.md))。
+
+### 2 回目以降の起動
 
 ```
 Agent(subagent_type="ecc-orchestrator", prompt="再開")
 ```
 
-agent が `.session-state/` を Read して自動着手。
+agent が `.session-state/` を Read して P0 タスクから自動着手。
 
 ## 詳細を知りたい人へ
 
