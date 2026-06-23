@@ -19,12 +19,20 @@ runbooks:
 ## 索引
 
 ```yaml
-runbooks: []
+runbooks:
+  - id: RB-001-agent-registry-hot-reload
+    title: 新規 agent file は次セッションから有効 (Claude Code agent registry はホットリロード非対応)
+    category: pitfall
+    tags: [agent, registry, hot-reload, claude-code, session]
+    trigger: 新しい agent file を作成したのに "Agent type '...' not found" が出る。または自作 agent が現セッションで呼べない。
+    path: ./runbooks/RB-001-agent-registry-hot-reload.md
+    last_verified: 2026-06-24
+    status: active
 # 案件導入時に runbooks/ 配下を生成し、本リストに追記する。
 # 自動更新: 新 Runbook 作成時に scripts/index-update.sh または手動で追記。
 ```
 
-## カテゴリ別ビュー (空の状態)
+## カテゴリ別ビュー
 
 | category | 件数 |
 |---|---|
@@ -34,7 +42,7 @@ runbooks: []
 | infra | 0 |
 | review | 0 |
 | domain | 0 |
-| pitfall | 0 |
+| pitfall | 1 |
 | tooling | 0 |
 
 ## 鮮度ステータス
