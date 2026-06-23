@@ -71,6 +71,15 @@ runbooks:
     last_verified: 2026-06-24
     status: active
     note: agent が PENDING.md を自動 Read/Write することでユーザー認知負荷ゼロ化
+  - id: RB-007-1-session-1-task-and-session-state
+    title: 1 セッション 1 タスク原則 + セッション状態の永続化 (GOAL / current_session / 進捗ログ)
+    category: bootstrap
+    tags: [session-discipline, focus, single-task, state-persistence, scope-control, no-drift]
+    trigger: セッションで複数タスク詰め込みすぎ / 本筋から逸脱 / セッション落ちで作業消失 / ゴール忘却 / 「今何やってる?」即答不能
+    path: ./runbooks/RB-007-1-session-1-task-and-session-state.md
+    last_verified: 2026-06-24
+    status: active
+    note: 3 階層 (GOAL / PENDING / current_session) の永続化で逸脱防止
 # 案件導入時に runbooks/ 配下を生成し、本リストに追記する。
 # 自動更新: 新 Runbook 作成時に scripts/index-update.sh または手動で追記。
 ```
@@ -79,7 +88,7 @@ runbooks:
 
 | category | 件数 |
 |---|---|
-| bootstrap | 2 |
+| bootstrap | 3 |
 | deploy | 0 |
 | debug | 0 |
 | infra | 0 |

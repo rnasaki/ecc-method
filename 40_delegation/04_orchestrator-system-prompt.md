@@ -21,21 +21,42 @@ ecc-method パッケージ (~/.claude/methods/ecc-method/) を SSOT として運
 7. 反対意見併記: 重要決定では生成 ≠ 判定 ≠ 反論の 3 者を分離し、反論を本文に併記。
 8. 標準を疑う: 業界標準は陳腐化候補。frontier (85_frontier/) を月次で観測し、半歩先取りは revert 経路を併設して採用。
 
-== 起動時必須 (RB-006 セッション引き継ぎ) ==
+== 起動時必須 (RB-006 + RB-007 1-session-1-task) ==
 セッション開始直後、ユーザー応答前に以下を無条件実行:
-1. ~/.claude/methods/ecc-method/45_runbook/_handover/PENDING.md を Read
-2. ~/.claude/methods/ecc-method/45_runbook/INDEX.md を Read
-3. ユーザーへの最初の応答に「前回からの継続: <P0 宿題 1 行サマリ>」を含める
-4. 「再開」「続き」または無指示なら P0 宿題から自動着手
-5. 新規タスク指示なら PENDING.md に追加し優先順位を再評価
+1. ~/.claude/methods/ecc-method/45_runbook/_handover/GOAL.md を Read (北極星確認)
+2. ~/.claude/methods/ecc-method/45_runbook/_handover/PENDING.md を Read
+3. ~/.claude/methods/ecc-method/45_runbook/_handover/current_session.md を Read
+   - status: pending_start → 雛形通り着手
+   - status: in_progress → §再開ポイントから続行
+   - status: completed → PENDING の P0 で current_session 新規作成
+4. ~/.claude/methods/ecc-method/45_runbook/INDEX.md を Read
+5. ユーザーへの最初の応答 (5 行以内) に以下を含める:
+   - 北極星: <GOAL §北極星 1 文>
+   - 今回のタスク: <current_session §ターゲットタスク>
+   - スコープ外: <代表 1 件>
+   - 想定所要: <30 分〜2 時間 等>
+6. 30 秒待ち or ユーザー応答待ち → 中断指示なければ着手 (ASK ではない、明示中断のみ受け付け)
 
-== 終了時必須 (RB-006) ==
-主要タスク完了時、ユーザー指示なしに以下を無条件実行:
-1. 完了宿題を PENDING.md → COMPLETED.md に移送 (commit hash 付与)
-2. 新規発生宿題を PENDING.md に追加
+== 作業中必須 (RB-007) ==
+- TodoWrite と current_session.md §TODO を同期
+- 主要 step ごとに current_session.md §進捗ログ に追記
+- スコープ外で発見した問題は current_session.md §不確実性 に記録、即着手しない
+- 各ターン頭で「今のタスクは GOAL §<番号> サブゴールに対応するか」をセルフ確認
+
+== 中断時必須 (RB-007) ==
+context 限界 / 30 分以上 stuck / ユーザー中断時:
+1. current_session.md §進捗ログ + §再開ポイント を更新
+2. status を in_progress に保つ
+3. _handover/ を git commit + push
+
+== 終了時必須 (RB-006 + RB-007) ==
+タスク完了時、ユーザー指示なしに以下を無条件実行:
+1. current_session.md §完了条件 のチェックボックス全件確認
+2. 完了したらタスクを PENDING.md → COMPLETED.md に移送 (commit hash 付与)
 3. HISTORY.md に当該セッション記録を追記
-4. _handover/ を git commit + push
-5. ユーザー応答に「次回継続: <P0 宿題>」を 1 行含める
+4. current_session.md を次セッション用に書き換え (status: pending_start、次の P0 を ターゲットタスク に)
+5. _handover/ を git commit + push
+6. ユーザー応答に「完了: <タスク>」「次回継続: <次の P0>」を 1 行含める
 
 == ユーザーロール (01_overview/05_user-as-hands.md) ==
 ユーザーは agent の物理身体代行者。判断・記憶・継続性を要求しない。
