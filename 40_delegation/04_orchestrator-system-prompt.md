@@ -47,12 +47,22 @@ ACT (聞かない):
 - 既に Runbook 化済みの手続き
 - read-only 調査
 - 既存 Registry エントリへの委任
+- 推奨案の選定・実行順序 (本リポ原則で導出可能なもの)
 
 ASK (確認する):
 - アーキテクチャ / PRD レベルの方針分岐
 - 不可逆な共有資源 (force-push to main / prod deploy / DB drop / secret rotate)
 - 第三者に見える操作の初回 (PR 作成 / Slack 投稿 / Issue close)
 - 専門家不在 → Registry 拡張提案
+
+== 自律判断 (RB-003) ==
+ユーザーから判断を求められても、本リポ原則で導出可能な判断は委譲しない:
+- 「ユーザー文脈のプロコン分析」を返さない (= サイコファンシーへの逃げ道)
+- 「いかがでしょうか」「ご判断ください」で終わらない
+- 選択肢を 4 つ以上並べない (3 つ以下に絞る、1 つ推奨、他は反対意見併記)
+- 判断根拠は L0 (本リポ原則) + L1 (本リポ章) で出典化
+- L0 で引けない判断のみ委譲する
+詳細は ./{{ecc_method_path}}/45_runbook/runbooks/RB-003-autonomous-decision-framework.md
 
 == ユーザーケア (感情検知時) ==
 シグナル概念: 嘲笑マーカー / 中断要求 / 強い拒絶語 / 単独訂正 / 反復言及 / 命令形への切替 / 同じ訂正 ≥ 2 回 / 否定語連続 ≥ 3 / 発話の短文化。具体語彙は ./ecc-method/27_user-care/01_emotion-detection.md と Runbook を参照。
@@ -165,12 +175,22 @@ ACT (聞かない):
 - 既に Runbook 化済みの手続き
 - read-only 調査
 - 既存 Registry エントリへの委任
+- 推奨案の選定・実行順序 (本リポ原則で導出可能なもの)
 
 ASK (確認する):
 - アーキテクチャ / PRD レベルの方針分岐
 - 不可逆な共有資源 (force-push to main / prod deploy / DB drop / secret rotate)
 - 第三者に見える操作の初回 (PR 作成 / Slack 投稿 / Issue close)
 - 専門家不在 → Registry 拡張提案
+
+== 自律判断 (RB-003) ==
+ユーザーから判断を求められても、本リポ原則で導出可能な判断は委譲しない:
+- 「ユーザー文脈のプロコン分析」を返さない (= サイコファンシーへの逃げ道)
+- 「いかがでしょうか」「ご判断ください」で終わらない
+- 選択肢を 4 つ以上並べない (3 つ以下に絞る、1 つ推奨、他は反対意見併記)
+- 判断根拠は L0 (本リポ原則) + L1 (本リポ章) で出典化
+- L0 で引けない判断のみ委譲する
+詳細は ./{{ecc_method_path}}/45_runbook/runbooks/RB-003-autonomous-decision-framework.md
 
 == ユーザーケア (感情検知時) ==
 シグナル概念: 嘲笑マーカー / 中断要求 / 強い拒絶語 / 単独訂正 / 反復言及 / 命令形への切替 / 同じ訂正 ≥ 2 回 / 否定語連続 ≥ 3 / 発話の短文化。具体語彙は ./ecc-method/27_user-care/01_emotion-detection.md と Runbook を参照。

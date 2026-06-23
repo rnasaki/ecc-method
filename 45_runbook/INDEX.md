@@ -36,6 +36,14 @@ runbooks:
     path: ./runbooks/RB-002-phased-rollout-plan-index-graph.md
     last_verified: 2026-06-24
     status: active
+  - id: RB-003-autonomous-decision-framework
+    title: 自律判断フレームワーク - ユーザー判断委譲を避け、本リポの原則に判断根拠を求める
+    category: review
+    tags: [autonomy, decision, sycophancy-prevention, agent-behavior, agi-direction]
+    trigger: ユーザーから判断を求められたとき / 「あなたの推奨は?」と問われたとき / ASK と ACT で迷ったとき
+    path: ./runbooks/RB-003-autonomous-decision-framework.md
+    last_verified: 2026-06-24
+    status: active
 # 案件導入時に runbooks/ 配下を生成し、本リストに追記する。
 # 自動更新: 新 Runbook 作成時に scripts/index-update.sh または手動で追記。
 ```
@@ -48,7 +56,7 @@ runbooks:
 | deploy | 0 |
 | debug | 0 |
 | infra | 0 |
-| review | 0 |
+| review | 1 |
 | domain | 0 |
 | pitfall | 1 |
 | tooling | 0 |
