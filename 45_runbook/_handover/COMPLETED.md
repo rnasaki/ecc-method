@@ -1,0 +1,27 @@
+---
+last_updated: 2026-06-24
+schema: RB-006
+---
+
+# COMPLETED - 完了済宿題アーカイブ
+
+完了した宿題の永続記録。検索性のため category / completed_at / commit_hash で索引化。
+
+---
+
+(初版時点では未完了。HW-A / HW-B / HW-C が完了したらここに移送される)
+
+---
+
+## 索引フォーマット
+
+```yaml
+- id: HW-<X>
+  title: <タイトル>
+  category: <カテゴリ>
+  completed_at: YYYY-MM-DD HH:MM
+  session_id: <セッション識別子 or 累計番号>
+  commit_hashes: [<関連 commit hash>]
+  outcome_summary: <1-3 行で結果>
+  related_runbooks: [<RB-NNN>]
+```

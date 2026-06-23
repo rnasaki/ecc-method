@@ -62,6 +62,15 @@ runbooks:
     last_verified: 未検証
     status: draft
     note: 次セッションで Hooks 仕様確認 + 実証 → active 化、その後 RB-004 を deprecated 化
+  - id: RB-006-session-handover-protocol
+    title: セッション引き継ぎプロトコル - 開始時 PENDING 自動読込 / 終了時 PENDING 自動更新
+    category: bootstrap
+    tags: [session-handover, persistence, continuity, agent-autonomy, no-user-cognitive-load]
+    trigger: セッションを跨いで未完了タスクを引き継ぐ / 前セッションの残課題を覚えていない / ユーザーに「覚えておいてください」と要求したくなった
+    path: ./runbooks/RB-006-session-handover-protocol.md
+    last_verified: 2026-06-24
+    status: active
+    note: agent が PENDING.md を自動 Read/Write することでユーザー認知負荷ゼロ化
 # 案件導入時に runbooks/ 配下を生成し、本リストに追記する。
 # 自動更新: 新 Runbook 作成時に scripts/index-update.sh または手動で追記。
 ```
@@ -70,7 +79,7 @@ runbooks:
 
 | category | 件数 |
 |---|---|
-| bootstrap | 1 |
+| bootstrap | 2 |
 | deploy | 0 |
 | debug | 0 |
 | infra | 0 |
