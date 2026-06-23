@@ -44,6 +44,14 @@ runbooks:
     path: ./runbooks/RB-003-autonomous-decision-framework.md
     last_verified: 2026-06-24
     status: active
+  - id: RB-004-subagent-final-report-narration
+    title: subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保
+    category: tooling
+    tags: [subagent, observability, final-report, heartbeat, context-economy, isolation]
+    trigger: subagent 起動時、parent context を汚染せず「何を考え、どこで詰まり、どう抜けたか」を観測したい / Codex 風の中間出力代替
+    path: ./runbooks/RB-004-subagent-final-report-narration.md
+    last_verified: 2026-06-24
+    status: active
 # 案件導入時に runbooks/ 配下を生成し、本リストに追記する。
 # 自動更新: 新 Runbook 作成時に scripts/index-update.sh または手動で追記。
 ```
@@ -59,7 +67,7 @@ runbooks:
 | review | 1 |
 | domain | 0 |
 | pitfall | 1 |
-| tooling | 0 |
+| tooling | 1 |
 
 ## 鮮度ステータス
 
