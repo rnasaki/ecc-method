@@ -1,6 +1,6 @@
 ---
 schema: RB-007
-session_id: 2 (ecc-method 開発、Session 2、未開始)
+session_id: 3 (ecc-method 開発、Session 3、未開始)
 created_at: 2026-06-24
 last_updated: 2026-06-24
 status: pending_start
@@ -11,74 +11,76 @@ branch: develop
 
 ## ターゲットタスク (1 つ)
 
-**HW-G 残実装**: 概念再定義 (.handover → .session-state、初回 = SDD 起点) に合わせて
-既存ドキュメントを整合する。
+**HW-D または HW-F の選択 + 着手**: HW-G 完了により以下が並列着手可になった:
+- **HW-D**: Method v1.0 リリース整理 (採番再定義 / リンク張替え / CHANGELOG / v1.0.0 tag)
+- **HW-F**: SDD/TDD 章の汎用化精査 (30_sdd-phase / 35_tdd-phase の案件依存洗い出し)
+
+両者とも P1。Session 3 開始時にユーザーへ 1 行で選択を委ねる (= L0 で導出不能、ユーザー方針判断)。
 
 ## 完了条件 (本セッションの最小範囲)
 
-- [ ] RB-006 を「セッション引き継ぎプロトコル」→「セッション状態プロトコル」として書き直し
-  - 初回 = 生成 / 継続 = Read の二モード明示
-  - RB-009 への正しい参照
-- [ ] RB-007 内の `.handover` 旧表現があれば整合確認
-- [ ] README の Step 3 を再設計版に書き直し
-  - 旧: 利用者が `.session-state/` を手動 cp + GOAL 記入
-  - 新: agent 起動時にヒアリング → 自動生成
-- [ ] .template-agents/ 配下の README 参照整合
-- [ ] develop branch に commit + push
-- [ ] PENDING.md の HW-G 状態を ✅ 完了 に更新、COMPLETED.md へ移送
+選択先により分岐:
+
+### HW-D を選んだ場合
+
+- [ ] 採番ポリシー方針確定 (整列 or 廃止 or ハイブリッド) → 1 セッションで決め切れない場合はサブタスク分割
+- [ ] CHANGELOG.md 雛形作成
+- [ ] v1.0.0 tag 切り条件の整理
+
+### HW-F を選んだ場合
+
+- [ ] 30_sdd-phase または 35_tdd-phase のいずれか 1 章を選定
+- [ ] その章の「案件依存」「実機未検証」「出典なし」箇所を洗い出し
+- [ ] 不確実性セクションを更新
 
 ## このセッションで触らないもの (スコープ外)
 
-- HW-D (採番再定義): HW-G 完了後の別セッション
-- HW-F (SDD/TDD 章汎用化精査): HW-G 完了後
-- HW-C (Phase 4-7、CodeGraph): 後続
-- HW-B (RB-005 Hooks 検証): 並列 / 後続
+- 選ばなかった方の宿題 (次々セッション以降)
+- HW-B (RB-005 検証): 残 budget があれば併走可
+- HW-C (Phase 4-7): HW-D 完了後
+- HW-H (RB-010 候補): HW-D / HW-F 主要進捗後
 
 ## TODO (作業手順、agent が更新)
 
-1. (未開始) GOAL.md / PENDING.md / INDEX.md / RB-009 を Read
-2. (未開始) RB-006 改訂版を執筆
-3. (未開始) RB-007 整合確認 (.handover 残存チェック)
-4. (未開始) README Step 3 書き直し
-5. (未開始) .template-agents/ 配下整合
-6. (未開始) commit + push
-7. (未開始) HW-G を COMPLETED へ移送
+1. (未開始) GOAL.md / PENDING.md / INDEX.md を Read
+2. (未開始) ユーザーに HW-D / HW-F 選択を 1 行で問う (RB-003: L0 で導出不能のため委譲可)
+3. (未開始) 選択に応じてサブタスクを分解
+4. (未開始) 完了条件チェックボックスを潰す
+5. (未開始) commit + push
+6. (未開始) PENDING / COMPLETED / HISTORY / current_session を更新
 
 ## 進捗ログ (中断・再開用)
 
-(Session 2 未開始)
+(Session 3 未開始)
 
-## 再開ポイント (Session 2 開始時の agent 向け)
+## 再開ポイント (Session 3 開始時の agent 向け)
 
-Session 1 (2026-06-24) で完了:
-- HW-E: Branch / semver / RB-008 (✅ 完了)
-- HW-G の主要実装:
-  - .handover → .session-state リネーム
-  - 全参照置換 (17 ファイル)
-  - Orchestrator prompt 書き直し (新規 = SDD ヒアリング起点)
-  - RB-009 (初回 SDD ブートストラップ) 永続化
+Session 1-2 (2026-06-24) で完了:
+- HW-E: Branch / semver / RB-008 (✅ 完了 Session 1)
+- HW-G: 全体プロセス再設計 + RB-006 改訂 + README 書き直し + 関連整合 (✅ 完了 Session 2)
 
-Session 2 の出発点:
+Session 3 の出発点:
 - branch: develop
-- HW-G の残: 既存ドキュメントの概念整合 (RB-006/007 / README / .template-agents/)
-- 着手前に必ず RB-009 を Read して新概念を把握
+- 直前 commit: `fbcd4152` (HW-G 完了)
+- 残 P1 = HW-D / HW-F の 2 つ
+- ユーザー方針判断 (L0 で導出不能) のため、開始時に選択肢提示
 
-最初にやること (RB-006/RB-007/RB-009 起動時必須):
-1. GOAL.md (北極星確認)
-2. PENDING.md (HW-G が in_progress 部分完了)
+最初にやること:
+1. GOAL.md (北極星確認: SDD/TDD 汎用化 + v1.0 配布)
+2. PENDING.md (HW-D / HW-F のどちらが「北極星に最も近い」か再確認)
 3. 本ファイル (status: pending_start なのでそのまま着手)
-4. ユーザーに 5 行応答
-5. 中断指示なければ HW-G 残実装から着手
+4. ユーザーに HW-D / HW-F 選択を 1 行で問う
+5. 選択後にサブタスク分解 → 着手
 
 ## このセッションの不確実性
 
-- RB-006 改訂は既存 RB-007 / RB-009 との重複/役割分担の再整理が必要
-- README Step 3 を「agent 起動だけ」に簡略化すると、利用者が初回で何が起きるか
-  分かりにくい可能性 → 補助説明をどこに置くか要検討
+- HW-D の「採番方針」は単一セッションで結論が出ない可能性 → サブタスク分割を視野に
+- HW-F は章数が多い (30_sdd-phase / 35_tdd-phase 配下複数) → 1 セッション = 1 章に絞る規律を堅守
 
 ## 関連
 
-- GOAL.md (北極星 = SDD/TDD 汎用化)
-- PENDING.md HW-G (本タスクの完了基準詳細)
-- ../runbooks/RB-009-first-run-sdd-bootstrap.md (新概念の核)
-- ../runbooks/RB-007-1-session-1-task-and-session-state.md
+- GOAL.md (北極星 = SDD/TDD 汎用化 + v1.0 配布)
+- PENDING.md (HW-D / HW-F が並列着手可状態)
+- ../45_runbook/runbooks/RB-006-session-handover-protocol.md (Session 3 でも適用)
+- ../45_runbook/runbooks/RB-007-1-session-1-task-and-session-state.md
+- ../45_runbook/runbooks/RB-003-autonomous-decision-framework.md (L0 で導出不能な選択は委譲可)

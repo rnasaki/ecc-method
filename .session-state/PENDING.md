@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-06-24
-session_count: 0
+session_count: 2
 schema: RB-006
 branch: develop
 ---
@@ -12,45 +12,11 @@ branch: develop
 
 ---
 
-## 宿題: HW-G - 全体プロセス再設計 (`.session-state/` の役割と初回フロー)
-
-- **状態**: ⚠️ 部分完了 (設計確定 + 主要実装、残: RB-006/007 改訂・README 書き直し・30_sdd-phase 整合)
-- **優先度**: P0
-- **本セッション (2026-06-24, ecc-method develop) で完了した内容**:
-  - ✅ `.handover/` → `.session-state/` ディレクトリ rename
-  - ✅ `_handover_template/` → `_session-state-template/` rename
-  - ✅ 全 17 ファイルで `.handover` → `.session-state` 一括置換
-  - ✅ Orchestrator system prompt の起動時必須プロトコル書き直し (新規プロジェクト初回 = SDD ヒアリング起点)
-  - ✅ ~/.claude/agents/ecc-orchestrator.md 同期
-  - ✅ RB-009 (初回起動の SDD ヒアリングフロー) を新規 Runbook として永続化
-  - ✅ INDEX.md に RB-009 追記
-- **次セッション以降の残作業 (HW-G 完了基準のうち未完)**:
-  - RB-006 (旧「セッション引き継ぎプロトコル」) を「セッション状態プロトコル」として書き直し
-  - RB-007 内の `.handover` 旧表現がもしあれば整合確認
-  - 30_sdd-phase / 35_tdd-phase の章を初回ヒアリングフローと整合
-  - README Step 3 を再設計版に書き直し (利用者は `.session-state/` を手動コピーしない、agent が自動生成)
-  - .template-agents/ 内の README 参照も整合
-- **担当 expert role**: doc-updater / architect / orchestrator
-- **影響範囲**: 中 (RB-006/007 + README + 30_sdd-phase/35_tdd-phase 整合)
-- **メモ**: 設計の核心は確定。残りは概念に合わせた既存ドキュメント整合作業。1 セッション 1 タスク原則で次セッション以降に分割実施。
-
----
-
-## 宿題: HW-E - Branch / semver / 配布規律 (RB-008) を永続化
-
-- **状態**: ✅ 完了 (本セッション 2026-06-24)
-- **完了 commit**:
-  - main: `31f42e0` (.gitignore) / `a9fae53` (README version note) / tag `v0.1.0`
-  - develop: `96229db` (.handover 追加) / `4cd970e` (RB-008 永続化)
-- **メモ**: COMPLETED.md に移送予定。次セッションで詳細を移送。
-
----
-
 ## 宿題: HW-D - Method v1.0 リリース整理
 
 - **状態**: not_started
-- **優先度**: P1 (HW-E 完了後)
-- **着手条件**: HW-E (Branch 規律) 完了
+- **優先度**: P1
+- **着手条件**: HW-G 完了 (✅ Session 2 で完了)
 - **完了基準**:
   - 採番の意味再定義 (現状: 試行錯誤で隙間に詰めた `27` `45` `85` 等が混在)
   - 章の論理順を確定し、ディレクトリ採番を整列 or 採番自体を廃止
@@ -66,7 +32,7 @@ branch: develop
 
 - **状態**: not_started
 - **優先度**: P1 (本来の北極星に最も直結)
-- **着手条件**: なし (HW-E / HW-D と並列実施可)
+- **着手条件**: なし (HW-D と並列実施可)
 - **完了基準**:
   - 30_sdd-phase / 35_tdd-phase の各章を読み返し
   - 「案件依存」「実機未検証」「出典なし」の箇所を洗い出し
@@ -75,7 +41,7 @@ branch: develop
   - 出典なし主張は L1 出典付与 or 削除
   - 各章末尾の「不確実性」セクションを更新
 - **担当 expert role**: planner / architect / agent-evaluator / refactor-cleaner
-- **メモ**: 本来のゴール「SDD/TDD 汎用化」の主作業。HW-E (規律) と HW-D (整理) が先行、その後 HW-F が本番。
+- **メモ**: 本来のゴール「SDD/TDD 汎用化」の主作業。HW-D (整理) と並走可。
 
 ---
 
@@ -83,7 +49,7 @@ branch: develop
 
 - **状態**: not_started
 - **優先度**: P2
-- **着手条件**: HW-E / HW-F の進捗で残 budget があるとき
+- **着手条件**: HW-D / HW-F の進捗で残 budget があるとき
 - **完了基準**:
   - RB-005 §「検証手順」の [1]〜[10] を実行
   - RB-005 status を draft → active or deprecated へ確定
@@ -109,11 +75,11 @@ branch: develop
 
 - **状態**: not_started
 - **優先度**: P3 (運用 UX 改善、緊急度低)
-- **着手条件**: HW-G / HW-D / HW-F の主要進捗後
+- **着手条件**: HW-D / HW-F の主要進捗後
 - **背景**:
   - クローズ済みセッションを後から見返すとき、タイトルだけでは閉じたか判別できない
   - Claude Code には agent からタイトル書き換える公式 API が無い (2026-06-24 時点、未検証)
-  - 実機調査結果 (本セッション 2026-06-24):
+  - 実機調査結果 (Session 1 2026-06-24):
     - `~/.claude/projects/<repo>/<sessionId>.jsonl` に summary / title キー無し
     - `~/.claude/sessions/*.json` は実行プロセス追跡用、タイトル管理外
     - VS Code 拡張のタイトルは `~/AppData/Roaming/Code/User/globalStorage/state.vscdb` (SQLite) に保存されている可能性大
@@ -133,10 +99,8 @@ branch: develop
 
 | ID | 状態 | 優先度 | タイトル |
 |---|---|---|---|
-| HW-G | ⚠️ 部分完了 | P0 | 全体プロセス再設計 (残: RB-006 改訂・README・30_sdd-phase 整合) |
-| HW-E | ✅ 完了 | - | Branch / semver / 配布規律 (RB-008) |
-| HW-D | not_started | P1 | Method v1.0 リリース整理 (HW-G 完了後) |
-| HW-F | not_started | P1 | SDD/TDD 章の汎用化精査 (HW-G 完了後) |
+| HW-D | not_started | P1 | Method v1.0 リリース整理 (HW-G 完了済、着手可) |
+| HW-F | not_started | P1 | SDD/TDD 章の汎用化精査 (HW-D と並列可) |
 | HW-B | not_started | P2 | RB-005 検証 (Hooks リアルタイム subagent 観測) |
 | HW-C | not_started | P3 | Phase 4-7 段階導入 |
 | HW-H | not_started | P3 | セッションクローズ時の視覚マーキング (RB-010 候補) |
@@ -145,8 +109,8 @@ branch: develop
 
 1. 本ファイルを Read (RB-006 起動時必須)
 2. INDEX.md を Read
-3. current_session.md を Read (HW-G 残実装が pending_start)
-4. ユーザーには「前回からの継続: HW-G 残実装 (RB-006 改訂・README) から着手」を 1 行で通知
+3. current_session.md を Read (次は HW-D または HW-F の P0 で雛形作成)
+4. ユーザーには「前回からの継続: HW-G 完了。次は HW-D (v1.0 リリース整理) または HW-F (SDD/TDD 汎用化) から選択」を 1 行で通知
 
 ## 注意 (本リポ MVP との関係)
 

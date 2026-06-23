@@ -1,21 +1,57 @@
 ---
-last_updated: <YYYY-MM-DD>
+last_updated: 2026-06-24
 schema: RB-006
+branch: develop
 ---
 
-# COMPLETED - 完了済宿題アーカイブ (雛形)
+# COMPLETED - 完了済宿題アーカイブ (ecc-method 開発)
 
-このファイルは **案件固有** のため、案件リポの `.session-state/COMPLETED.md` にコピーして使用する。
+このファイルは **ecc-method パッケージ自身の開発・整備用**。`develop` branch でのみ追跡される。
 
 完了した宿題の永続記録。検索性のため category / completed_at / commit_hash で索引化。
 
 ---
 
-(初版時点では未完了。タスク完了時に PENDING からここに移送される)
+## 完了宿題
+
+```yaml
+- id: HW-E
+  title: Branch / semver / 配布規律 (RB-008) を永続化
+  category: bootstrap
+  completed_at: 2026-06-24
+  session_id: 1
+  commit_hashes:
+    - "31f42e0 (main: .gitignore)"
+    - "a9fae53 (main: README version note)"
+    - "v0.1.0 (main: tag)"
+    - "96229db (develop: .session-state 追加)"
+    - "4cd970e (develop: RB-008 永続化)"
+  outcome_summary: |
+    main = 配布版 / develop = 開発版 (.session-state/ 等を含む) の役割分離を確立。
+    semver v0.1.0 を main に付与。RB-008 で配布規律を永続化。
+  related_runbooks: [RB-008]
+
+- id: HW-G
+  title: 全体プロセス再設計 (.session-state/ の役割と初回フロー)
+  category: bootstrap
+  completed_at: 2026-06-24
+  session_id: 2
+  commit_hashes:
+    - "5e08921 (Session 1: 主要実装 + RB-009 + .session-state リネーム + HW-H 追加)"
+    - "f53d340 (Session 1: HW-G を P0 で追加)"
+    - "fbcd4152 (Session 2: RB-006 改訂・README・.template-agents・整合)"
+  outcome_summary: |
+    .handover/ → .session-state/ へリネーム + 概念再定義。
+    .session-state/ は引き継ぎ資料ではなく SDD/TDD プロセスの中間成果物として位置付け。
+    初回 = 生成 (RB-009 SDD ヒアリング 5 質問)、継続 = Read/Write (RB-006) の二モード化。
+    RB-006 を「セッション状態プロトコル」へ全面書き直し。GOAL/current_session 主管を RB-007 に分離。
+    README Step 3 を再設計し利用者の手動 cp を廃止。.template-agents/ ecc-orchestrator.md の起動時必須も RB-009 委譲形に書き直し。
+  related_runbooks: [RB-006, RB-007, RB-009]
+```
 
 ---
 
-## 索引フォーマット
+## 索引フォーマット (新規追加時)
 
 ```yaml
 - id: HW-<X>
