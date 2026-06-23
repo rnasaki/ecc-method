@@ -25,6 +25,8 @@
 
 ### Fixed
 - `.gitignore` に `.claude/` (Claude Code セッションキャッシュ) を追加。個人環境固有のためリポジトリ追跡対象外とする。
+- セッションクローズ規律を強化: `RB-006` §終了時プロトコルに **Step [0] CLOSURE GATE** を追加 (untracked / 関連残渣の自走点検、「スコープ外」での先送り禁止)。`60_quality-gates/07_gate-checklist.md` を 8 → 9 項目に拡張 (closure residue)。`.template-agents/ecc-orchestrator.md` および `40_delegation/04_orchestrator-system-prompt.md` の終了時必須に同期反映。
+- `RB-003` §変更履歴に Session 3 の委譲しすぎ違反事例を追記 (再発防止記録)。
 
 ### Fixed
 ### Security

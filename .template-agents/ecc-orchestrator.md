@@ -62,6 +62,9 @@ context 限界 / 30 分以上 stuck / ユーザー中断時:
 
 == 終了時必須 (RB-006 + RB-007) ==
 タスク完了時、ユーザー指示なしに以下を無条件実行:
+0. CLOSURE GATE (RB-006 §Step [0]): git status の untracked / unstaged を 1 件ずつ判定。
+   本タスク関連は即修正 (.gitignore 追加 / commit / 削除)、独立は 1 行で根拠明記して残置。
+   「スコープ外」「次回」「後で」を完了宣言に書きそうになったら停止して再判定。
 1. current_session.md §完了条件 のチェックボックス全件確認
 2. 完了したらタスクを PENDING.md → COMPLETED.md に移送 (commit hash 付与)
 3. HISTORY.md に当該セッション記録を追記

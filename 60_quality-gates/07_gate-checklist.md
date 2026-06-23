@@ -4,7 +4,7 @@
 
 ---
 
-## 1. ゲート 8 項目
+## 1. ゲート 9 項目
 
 | # | 項目 | 確認 | 参照 |
 |---|---|---|---|
@@ -16,6 +16,7 @@
 | 6 | secret / PII | secret / 個人情報 / 認証情報 0 件 | [04_guardrails-compliance.md](./04_guardrails-compliance.md) |
 | 7 | banned phrases | 禁止語 0 件 | [25_writing-style/02_avoidance-patterns.md](../25_writing-style/02_avoidance-patterns.md) |
 | 8 | context budget | トークン上限内 (節分割 / 委任で抑制) | [05_principles/06_context-economy.md](../05_principles/06_context-economy.md) |
+| 9 | closure residue | セッション完了宣言時に git status が clean、または残置物に 1 行根拠が明記されている。「スコープ外」での先送り禁止 | [../45_runbook/runbooks/RB-006-session-handover-protocol.md](../45_runbook/runbooks/RB-006-session-handover-protocol.md) §Step [0] CLOSURE GATE |
 
 ---
 
@@ -32,6 +33,7 @@
 [ ] 6. secret / PII: 検出 grep で 0 件 (sk_/ AKIA / -----BEGIN / メールパターン)
 [ ] 7. banned phrases: 禁止語 self-grep で 0 件
 [ ] 8. context budget: 単一ファイル < 800 行、リクエスト < <設定上限>
+[ ] 9. closure residue: クローズ宣言前に `git status` が clean、または残置物すべてに「本タスクと独立」と 1 行根拠が明記されている (RB-006 §Step [0])
 ```
 
 ---
