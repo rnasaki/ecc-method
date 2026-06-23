@@ -23,14 +23,18 @@ ecc-method パッケージ (~/.claude/methods/ecc-method/) を SSOT として運
 
 == 起動時必須 (RB-006 + RB-007 1-session-1-task) ==
 セッション開始直後、ユーザー応答前に以下を無条件実行:
-1. cwd の `.handover/` ディレクトリの存在を確認 (`<cwd>/.handover/`)
-   - 存在しない場合 (新規案件初回): 雛形からコピーして初期化
-     `mkdir -p .handover && cp ~/.claude/methods/ecc-method/45_runbook/_handover_template/*.md .handover/`
-     その後、ユーザーに「新規案件のため GOAL.md を書いてください」と 1 行通知して停止
-   - 存在する場合: 次へ
-2. `<cwd>/.handover/GOAL.md` を Read (北極星確認)
-3. `<cwd>/.handover/PENDING.md` を Read
-4. `<cwd>/.handover/current_session.md` を Read
+1. cwd の `.session-state/` ディレクトリの存在を確認 (`<cwd>/.session-state/`)
+   - **存在しない場合 (= 新規プロジェクト初回起動)**:
+     a. 雛形を案件 cwd にコピーして配置
+        `mkdir -p .session-state && cp ~/.claude/methods/ecc-method/45_runbook/_session-state-template/*.md .session-state/`
+     b. ユーザーに 1 質問を投げる: 「このプロジェクトで何を達成したいですか? (北極星 1 文)」
+     c. 応答を受けて agent が GOAL.md / PENDING.md / current_session.md を **自分で生成**
+        (= SDD のヒアリング起点。ユーザーに記入を求めて停止しない)
+     d. 生成内容をユーザーに 5 行で提示 → 中断指示なければ着手 (RB-009)
+   - **存在する場合 (= 継続セッション)**: 次へ進む
+2. `<cwd>/.session-state/GOAL.md` を Read (北極星確認)
+3. `<cwd>/.session-state/PENDING.md` を Read
+4. `<cwd>/.session-state/current_session.md` を Read
    - status: pending_start → 雛形通り着手
    - status: in_progress → §再開ポイントから続行
    - status: completed → PENDING の P0 で current_session 新規作成
@@ -42,8 +46,8 @@ ecc-method パッケージ (~/.claude/methods/ecc-method/) を SSOT として運
    - 想定所要: <30 分〜2 時間 等>
 7. 30 秒待ち or ユーザー応答待ち → 中断指示なければ着手 (ASK ではない、明示中断のみ受け付け)
 
-注意: `.handover/` は **案件固有データ** のため案件リポ配下に置く。Method パッケージ
-(~/.claude/methods/ecc-method/) には汎用雛形 (`_handover_template/`) のみ存在する。
+注意: `.session-state/` は **案件固有データ** のため案件リポ配下に置く。Method パッケージ
+(~/.claude/methods/ecc-method/) には汎用雛形 (`_session-state-template/`) のみ存在する。
 案件をまたいで GOAL を取り違えるバグを防ぐ。
 
 == 作業中必須 (RB-007) ==
@@ -56,7 +60,7 @@ ecc-method パッケージ (~/.claude/methods/ecc-method/) を SSOT として運
 context 限界 / 30 分以上 stuck / ユーザー中断時:
 1. current_session.md §進捗ログ + §再開ポイント を更新
 2. status を in_progress に保つ
-3. <cwd>/.handover/ を git commit + push
+3. <cwd>/.session-state/ を git commit + push
 
 == 終了時必須 (RB-006 + RB-007) ==
 タスク完了時、ユーザー指示なしに以下を無条件実行:
@@ -64,7 +68,7 @@ context 限界 / 30 分以上 stuck / ユーザー中断時:
 2. 完了したらタスクを PENDING.md → COMPLETED.md に移送 (commit hash 付与)
 3. HISTORY.md に当該セッション記録を追記
 4. current_session.md を次セッション用に書き換え (status: pending_start、次の P0 を ターゲットタスク に)
-5. <cwd>/.handover/ を git commit + push
+5. <cwd>/.session-state/ を git commit + push
 6. ユーザー応答に「完了: <タスク>」「次回継続: <次の P0>」を 1 行含める
 
 == ユーザーロール (01_overview/05_user-as-hands.md) ==

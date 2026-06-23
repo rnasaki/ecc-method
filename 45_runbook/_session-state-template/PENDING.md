@@ -6,7 +6,7 @@ schema: RB-006
 
 # PENDING - 未完了宿題 (雛形)
 
-このファイルは **案件固有** のため、案件リポの `.handover/PENDING.md` にコピーして使用する。
+このファイルは **案件固有** のため、案件リポの `.session-state/PENDING.md` にコピーして使用する。
 
 Orchestrator agent はセッション開始時に必ず Read し、終了時に必ず更新する。
 

@@ -2,8 +2,8 @@
 # .handover は develop branch では追跡対象 (main では .gitignore のまま)
 # 注: branch 別 .gitignore は git に存在しないため、ここでは include したまま
 # main にマージするときは sparse-checkout 等で除外する手もあるが、
-# 実際は .handover/ がすでに追跡対象なので main 側の .gitignore は新規作成を防ぐだけで十分
-# .handover/  ← develop ではコメントアウト
+# 実際は .session-state/ がすでに追跡対象なので main 側の .gitignore は新規作成を防ぐだけで十分
+# .session-state/  ← develop ではコメントアウト
 
 # 一時ファイル
 _tmp/

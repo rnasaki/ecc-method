@@ -54,7 +54,7 @@ Method の有効性を測る道具であり、Method 整備の主目的ではな
 
 ## 制約
 
-- **配布物 (main branch) に開発進捗を混入させない** (`.handover/` は develop のみ)
+- **配布物 (main branch) に開発進捗を混入させない** (`.session-state/` は develop のみ)
 - **Method の自己整備で本来作業から逸脱しない** (Session 1 で学習済)
 - **1 セッション 1 タスク原則** (RB-007)
 - **個人/組織情報禁止** (PATH POLICY、25_writing-style/)
@@ -69,7 +69,7 @@ Method の有効性を測る道具であり、Method 整備の主目的ではな
 ## 関連
 
 - METHOD.md §1 (Method の目的)
-- .handover/PENDING.md (中粒度タスクリスト)
-- .handover/current_session.md (現セッションのフォーカス)
+- .session-state/PENDING.md (中粒度タスクリスト)
+- .session-state/current_session.md (現セッションのフォーカス)
 - 45_runbook/runbooks/RB-007 (1-session-1-task 規律)
 - 45_runbook/runbooks/RB-008 (Branch / semver 規律、HW-E で作成予定)

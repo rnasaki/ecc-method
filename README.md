@@ -1,14 +1,14 @@
 # ecc-method
 
-Claude Code (ECC) を使った AI 駆動開発の運用 Method。案件リポに `.handover/` を 1 つ置き、`ecc-orchestrator` agent を起動すれば、セッション間引き継ぎ・ゴール逸脱検知・サイコファンシー抑止が自動で効くようになる規律集。
+Claude Code (ECC) を使った AI 駆動開発の運用 Method。案件リポに `.session-state/` を 1 つ置き、`ecc-orchestrator` agent を起動すれば、セッション間引き継ぎ・ゴール逸脱検知・サイコファンシー抑止が自動で効くようになる規律集。
 
 > **Version**: v0.1.0 (試行錯誤期、API 変更の可能性あり) / v1.0 リリース予定
-> **Branch**: `main` = 配布版 / `develop` = 開発版 (`.handover/` 等の開発資産を含む)
+> **Branch**: `main` = 配布版 / `develop` = 開発版 (`.session-state/` 等の開発資産を含む)
 > 利用者は `main` を clone してください (`git clone https://github.com/rnasaki/ecc-method.git`)。
 
 ## 何を解決するか
 
-- セッションをまたぐと前回の続きを忘れる → `.handover/` が状態を永続化
+- セッションをまたぐと前回の続きを忘れる → `.session-state/` が状態を永続化
 - タスク詰め込みすぎ・ゴール逸脱 → 1 セッション 1 タスク + 北極星照合
 - サイコファンシー (媚び) で正しい指摘が消える → 概念ベースの文体規律
 - subagent が何をやってるか見えない → final report で完了時に思考軌跡が読める
@@ -37,14 +37,14 @@ cp ~/.claude/methods/ecc-method/.template-agents/ecc-orchestrator.md ~/.claude/a
 
 Claude Code を **再起動** ([RB-001 ホットリロード制約](./45_runbook/runbooks/RB-001-agent-registry-hot-reload.md))。
 
-### Step 3. 案件リポで `.handover/` 初期化
+### Step 3. 案件リポで `.session-state/` 初期化
 
 ```bash
 cd <案件リポ>
 mkdir -p .handover
-cp ~/.claude/methods/ecc-method/45_runbook/_handover_template/*.md .handover/
-# .handover/GOAL.md と PENDING.md を案件内容で書き換える
-git add .handover/ && git commit -m "feat(.handover): ecc-method 導入"
+cp ~/.claude/methods/ecc-method/45_runbook/_session-state-template/*.md .session-state/
+# .session-state/GOAL.md と PENDING.md を案件内容で書き換える
+git add .session-state/ && git commit -m "feat(.handover): ecc-method 導入"
 ```
 
 ### 起動
@@ -53,7 +53,7 @@ git add .handover/ && git commit -m "feat(.handover): ecc-method 導入"
 Agent(subagent_type="ecc-orchestrator", prompt="再開")
 ```
 
-agent が `.handover/` を Read して自動着手。
+agent が `.session-state/` を Read して自動着手。
 
 ## 詳細を知りたい人へ
 

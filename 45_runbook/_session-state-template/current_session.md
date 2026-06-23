@@ -8,7 +8,7 @@ status: pending_start | in_progress | completed
 
 # Current Session - 現セッションのフォーカス (雛形)
 
-このファイルは **案件固有** のため、案件リポの `.handover/current_session.md` にコピーして使用する。
+このファイルは **案件固有** のため、案件リポの `.session-state/current_session.md` にコピーして使用する。
 
 セッション開始時に agent が新規作成 / 前回未完了なら更新する。
 

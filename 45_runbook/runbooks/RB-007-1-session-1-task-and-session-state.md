@@ -34,9 +34,9 @@ source: 本パッケージ実機運用 (2026-06-24, Session 1 で agent が Meth
 
 | 階層 | ファイル | 単位 | 更新頻度 |
 |---|---|---|---|
-| 1. ゴール (北極星) | `<cwd>/.handover/GOAL.md` | 案件単位 (数か月) | めったに変更しない |
-| 2. タスクリスト | `<cwd>/.handover/PENDING.md` | 中粒度 (1 セッション = 1 タスク) | 週次 / セッションごと |
-| 3. 現タスク+TODO | `<cwd>/.handover/current_session.md` | 1 ターン〜数ターン | セッション中常時 |
+| 1. ゴール (北極星) | `<cwd>/.session-state/GOAL.md` | 案件単位 (数か月) | めったに変更しない |
+| 2. タスクリスト | `<cwd>/.session-state/PENDING.md` | 中粒度 (1 セッション = 1 タスク) | 週次 / セッションごと |
+| 3. 現タスク+TODO | `<cwd>/.session-state/current_session.md` | 1 ターン〜数ターン | セッション中常時 |
 
 各階層の役割:
 - GOAL: 「何のために」を忘れない (逸脱検知の基準)
@@ -65,9 +65,9 @@ current_session.md に「**このセッションで触らないもの**」セク
 セッション開始直後、無条件実行:
 
 ```
-[1] <cwd>/.handover/GOAL.md を Read (北極星確認)
-[2] <cwd>/.handover/PENDING.md を Read (中粒度タスク)
-[3] <cwd>/.handover/current_session.md を Read
+[1] <cwd>/.session-state/GOAL.md を Read (北極星確認)
+[2] <cwd>/.session-state/PENDING.md を Read (中粒度タスク)
+[3] <cwd>/.session-state/current_session.md を Read
     - status が pending_start: 雛形 = 前回終了時に作られた次セッション計画。そのまま着手
     - status が in_progress: 前回中断 = 「再開ポイント」から続行
     - status が completed: 古い = PENDING の P0 から新規タスク選定、current_session を新規作成
@@ -96,7 +96,7 @@ current_session.md に「**このセッションで触らないもの**」セク
 [1] current_session.md §進捗ログ に「どこまで完了」「次の一手」を追記
 [2] current_session.md §再開ポイント に次セッションが読むべき情報を 5 行以内で記録
 [3] status を in_progress に保つ (completed にしない)
-[4] <cwd>/.handover/ を git commit + push (RB-006 終了時必須と同じ)
+[4] <cwd>/.session-state/ を git commit + push (RB-006 終了時必須と同じ)
 ```
 
 ## 終了時プロトコル (タスク完了)
@@ -109,7 +109,7 @@ current_session.md に「**このセッションで触らないもの**」セク
     - 次の P0 タスクを ターゲットタスク に設定
     - status を pending_start に変更
     - 進捗ログ・再開ポイントをクリア
-[5] <cwd>/.handover/ を git commit + push
+[5] <cwd>/.session-state/ を git commit + push
 [6] ユーザー応答に「完了: <タスク>」「次回継続: <次の P0>」を含める
 ```
 

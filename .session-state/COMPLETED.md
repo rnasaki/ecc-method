@@ -5,7 +5,7 @@ schema: RB-006
 
 # COMPLETED - 完了済宿題アーカイブ (雛形)
 
-このファイルは **案件固有** のため、案件リポの `.handover/COMPLETED.md` にコピーして使用する。
+このファイルは **案件固有** のため、案件リポの `.session-state/COMPLETED.md` にコピーして使用する。
 
 完了した宿題の永続記録。検索性のため category / completed_at / commit_hash で索引化。
 

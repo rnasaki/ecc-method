@@ -89,6 +89,15 @@ runbooks:
     last_verified: 2026-06-24
     status: active
     note: GitFlow 風の main / develop 分離 + semver tag、HW-D / HW-E と直結
+  - id: RB-009-first-run-sdd-bootstrap
+    title: 初回起動の SDD ヒアリングフロー - .session-state/ は SDD/TDD の中間成果物として生成される
+    category: bootstrap
+    tags: [first-run, sdd-bootstrap, session-state, no-prior-handover, generation]
+    trigger: 配布利用者が初めて agent を起動 / .session-state/ が存在しない / 新規プロジェクトで GOAL がまだない
+    path: ./runbooks/RB-009-first-run-sdd-bootstrap.md
+    last_verified: 2026-06-24
+    status: active
+    note: HW-G で .handover→.session-state 概念再定義に伴い導入
 # 案件導入時に runbooks/ 配下を生成し、本リストに追記する。
 # 自動更新: 新 Runbook 作成時に scripts/index-update.sh または手動で追記。
 ```
@@ -97,7 +106,7 @@ runbooks:
 
 | category | 件数 |
 |---|---|
-| bootstrap | 4 |
+| bootstrap | 5 |
 | deploy | 0 |
 | debug | 0 |
 | infra | 0 |
