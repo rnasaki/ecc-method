@@ -80,6 +80,15 @@ runbooks:
     last_verified: 2026-06-24
     status: active
     note: 3 階層 (GOAL / PENDING / current_session) の永続化で逸脱防止
+  - id: RB-008-branch-strategy-and-semver
+    title: Branch 戦略と semver - 配布物 (main) と開発資産 (develop) の分離 + 版管理
+    category: bootstrap
+    tags: [git, branch, gitflow, semver, release, distribution, separation]
+    trigger: 配布物に開発資産が混入 / 利用者が「どの版を使えばいいか」分からない / リリース整理プロセスが欠落
+    path: ./runbooks/RB-008-branch-strategy-and-semver.md
+    last_verified: 2026-06-24
+    status: active
+    note: GitFlow 風の main / develop 分離 + semver tag、HW-D / HW-E と直結
 # 案件導入時に runbooks/ 配下を生成し、本リストに追記する。
 # 自動更新: 新 Runbook 作成時に scripts/index-update.sh または手動で追記。
 ```
@@ -88,7 +97,7 @@ runbooks:
 
 | category | 件数 |
 |---|---|
-| bootstrap | 3 |
+| bootstrap | 4 |
 | deploy | 0 |
 | debug | 0 |
 | infra | 0 |
