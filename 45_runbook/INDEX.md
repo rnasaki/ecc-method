@@ -98,6 +98,15 @@ runbooks:
     last_verified: 2026-06-24
     status: active
     note: HW-G で .handover→.session-state 概念再定義に伴い導入
+  - id: RB-010-bash-auto-background-on-windows-pytest
+    title: Windows + Git Bash 経由の長時間 pytest は 2 分 timeout で自動 background 化され出力が空のまま観測不能になる
+    category: pitfall
+    tags: [bash, background, timeout, pytest, windows, git-bash, observability, claude-code]
+    trigger: Bash ツールで pytest 全体実行など 2 分超のコマンドを foreground 起動したが応答が返らない / 自動 background 化された / 出力ファイルがサイズ 0 / TaskOutput でも timeout
+    path: ./runbooks/RB-010-bash-auto-background-on-windows-pytest.md
+    last_verified: 2026-06-24
+    status: active
+    note: 回避策 = 対象スコープ限定 + --no-cov + foreground (timeout 内完了)。Session 2 段階 2 テストで実機検証
 # 案件導入時に runbooks/ 配下を生成し、本リストに追記する。
 # 自動更新: 新 Runbook 作成時に scripts/index-update.sh または手動で追記。
 ```
