@@ -12,6 +12,41 @@ branch: develop
 
 ---
 
+## 宿題: HW-G - 全体プロセス再設計 (`.handover/` の役割と初回フロー)
+
+- **状態**: not_started
+- **優先度**: P0 (本セッション 2026-06-24 で発覚した概念矛盾、最優先で解消)
+- **着手条件**: なし。次セッションの最初の 1 タスクとして集中実施
+- **背景 (本質的問題)**:
+  - 現状の `.handover/` は「引き継ぎ資料 (前回の続き)」として設計されている
+  - しかし配布した利用者の **初回実行** には引き継ぐべき過去が無い
+  - 正しくは `.handover/` は **SDD/TDD プロセスを回した結果の中間成果物**:
+    - 初回: agent が対話で SDD を始める → GOAL.md / PENDING.md / current_session.md が **生成される**
+    - 2 回目以降: 生成済みファイルを Read して継続
+  - 「ハンドオーバー (引き継ぎ)」という命名・概念設計が誤りだった
+- **完了基準 (再設計の範囲)**:
+  - `.handover/` の役割を「引き継ぎ」から「SDD/TDD 中間成果物 / セッション状態」に再定義
+  - ファイル/ディレクトリ名の見直し (`.handover/` → `.session-state/` 等の候補検討、命名は最後に決定)
+  - 初回実行フローの設計:
+    - agent が対話で案件ヒアリング (何を作るか / ユーザー / 成功条件)
+    - ヒアリング結果から GOAL.md を生成
+    - PRD → requirements → design → tasks の SDD 過程で PENDING/current_session が生成される
+  - 2 回目以降の継続フロー: 既存 SDD 成果物を Read して再開 (現状動作と整合)
+  - Orchestrator system prompt の起動時必須プロトコル書き直し:
+    - 「`.handover/` 不在 → 雛形コピー + ユーザー記入要求」(現状) を廃止
+    - 「`.handover/` 不在 → SDD 開始 (ヒアリングから)」に変更
+  - RB-006 / RB-007 を再設計に合わせて書き直し
+  - 30_sdd-phase / 35_tdd-phase の章を再設計に合わせて整合
+  - README の Step 3 (.handover 初期化) を再設計版に書き直し
+  - 既存 HW-D / HW-F との関係整理:
+    - HW-G 完了後に HW-D (採番再定義) / HW-F (SDD/TDD 章汎用化精査)
+    - HW-G が前提
+- **担当 expert role**: planner (Opus) / architect / doc-updater / orchestrator
+- **影響範囲**: 大 (Orchestrator prompt + RB-006/007 + 30_sdd-phase/35_tdd-phase + README + .template-agents/)
+- **メモ**: 本セッション (2026-06-24) でユーザーから「初回実行でハンドオーバ読み込ませるのはおかしい / 初回は SDD/TDD で中間アウトプットとして引継ぎ資料ができる」との指摘を受け概念矛盾が発覚。配布前に必ず解消すべき根本問題。HW-D / HW-F は HW-G 完了が前提。
+
+---
+
 ## 宿題: HW-E - Branch / semver / 配布規律 (RB-008) を永続化
 
 - **状態**: ✅ 完了 (本セッション 2026-06-24)
@@ -85,9 +120,10 @@ branch: develop
 
 | ID | 状態 | 優先度 | タイトル |
 |---|---|---|---|
-| HW-E | not_started | P0 | Branch / semver / 配布規律 (RB-008) |
-| HW-D | not_started | P1 | Method v1.0 リリース整理 |
-| HW-F | not_started | P1 | SDD/TDD 章の汎用化精査 |
+| HW-G | not_started | P0 | **全体プロセス再設計 (`.handover/` の役割と初回フロー)** |
+| HW-E | ✅ 完了 | - | Branch / semver / 配布規律 (RB-008) |
+| HW-D | not_started | P1 | Method v1.0 リリース整理 (HW-G 完了後) |
+| HW-F | not_started | P1 | SDD/TDD 章の汎用化精査 (HW-G 完了後) |
 | HW-B | not_started | P2 | RB-005 検証 (Hooks リアルタイム subagent 観測) |
 | HW-C | not_started | P3 | Phase 4-7 段階導入 |
 

@@ -1,57 +1,78 @@
 ---
 schema: RB-007
-session_id: <連番>
-created_at: <YYYY-MM-DD>
-last_updated: <YYYY-MM-DD>
-status: pending_start | in_progress | completed
+session_id: 1 (ecc-method 開発、Session 1)
+created_at: 2026-06-24
+last_updated: 2026-06-24
+status: pending_start
+branch: develop
 ---
 
-# Current Session - 現セッションのフォーカス (雛形)
-
-このファイルは **案件固有** のため、案件リポの `.handover/current_session.md` にコピーして使用する。
-
-セッション開始時に agent が新規作成 / 前回未完了なら更新する。
-
----
+# Current Session - ecc-method 開発
 
 ## ターゲットタスク (1 つ)
 
-PENDING.md の P0 から **1 つだけ** 選定して書く。
+**HW-G: 全体プロセス再設計** (`.handover/` の役割と初回フロー)
 
-例: `HW-A.1 - <具体的なサブタスク名>`
+詳細は `PENDING.md` の HW-G セクション参照。
 
-## 完了条件
+## 完了条件 (本セッションの最小範囲)
 
-- [ ] <チェックリスト 1>
-- [ ] <チェックリスト 2>
-- [ ] Quality Gate ([60_quality-gates/07_gate-checklist.md](~/.claude/methods/ecc-method/60_quality-gates/07_gate-checklist.md)) 通過
+このタスクは規模が大きいため、初回セッションでは **設計案を確定するところまで** を目標とする:
+
+- [ ] `.handover/` の概念を再定義 (引き継ぎ → SDD/TDD 中間成果物)
+- [ ] 命名候補の選定 (`.handover/` → `.session-state/` 等、3 案出して 1 つ採用)
+- [ ] 初回実行フロー設計 (ヒアリング → GOAL 生成 → SDD/TDD ループ)
+- [ ] 2 回目以降の継続フローと整合確認
+- [ ] 影響範囲リスト作成 (どのファイルを書き換えるか網羅)
+- [ ] 設計案を RB として永続化 (新規 RB-009 候補)
+- [ ] **実装は別セッション** (本セッションは設計確定まで)
 
 ## このセッションで触らないもの (スコープ外宣言)
 
-- <明示的にスコープ外と宣言する事項>
-- <局所最適化への逃げ込みを防ぐため、agent が新たな問題を見つけても今は触らないものを列挙>
+- 実装そのもの (Orchestrator prompt 書き換え / RB-006/007 改訂 / 30_sdd-phase 整合 等は別セッション)
+- HW-D (Method v1.0 リリース整理): HW-G 完了が前提
+- HW-F (SDD/TDD 章汎用化精査): HW-G 完了が前提
+- HW-B / HW-C: 並列・後続セッション
 
 ## TODO (作業手順、agent が更新)
 
-1. (未開始) GOAL.md を Read してゴール確認
-2. (未開始) PENDING.md / INDEX.md を Read
-3. (未開始) <タスク固有の手順>
+1. (未開始) GOAL.md / PENDING.md / HISTORY.md / INDEX.md を Read
+2. (未開始) 既存 .handover/ / RB-006 / RB-007 / 30_sdd-phase / 35_tdd-phase / Orchestrator prompt を Read して現状把握
+3. (未開始) `.handover/` の役割再定義 (概念設計)
+4. (未開始) 命名 3 案検討 → 1 案採用
+5. (未開始) 初回フロー設計 (擬似コード or フローチャート)
+6. (未開始) 影響範囲リスト作成
+7. (未開始) 設計案を RB-009 として永続化
+8. (未開始) develop branch に commit + push
 
 ## 進捗ログ (中断・再開用)
 
-(未開始)
+(Session 1 未開始)
 
-## 再開ポイント (セッション中断時に agent が記録)
+## 再開ポイント (Session 1 開始時の agent 向け)
 
-(セッション開始前のため未記入)
+前セッションの本リポ (企業情報収集) Session 2 で発覚した概念矛盾:
+- 「`.handover/` の初回読み込み」は引き継ぐべき過去がない新規利用者に意味をなさない
+- 正しくは `.handover/` は SDD/TDD プロセスの **中間成果物**
+- 配布利用者の初回実行は SDD ヒアリングから始まり、`.handover/` は **生成される**
+
+本セッションでこの設計矛盾を解消する設計案を確定する (実装は別セッション)。
+
+最初にやること (RB-006/RB-007 起動時必須):
+1. GOAL.md を Read (北極星 = SDD/TDD 汎用化)
+2. PENDING.md を Read (HW-G が P0)
+3. 本ファイルを Read (status: pending_start なのでそのまま着手)
+4. ユーザーに 5 行応答 (北極星 / 今回のタスク / スコープ外 / 想定所要 / 着手宣言)
+5. 中断指示なければ §現状把握 から着手
 
 ## このセッションの不確実性
 
-- <未検証の前提>
-- <推測に依存している箇所>
+- 命名候補 (`.handover/` の代替) に正解はない。実装容易性とユーザー認知の両方で選定
+- 初回フローの「ヒアリング」を agent が対話で行うのか雛形フォームに記入してもらうかは設計判断
+- 既存 RB-006 / RB-007 の役割が再設計後にどう変わるかは現時点で未確定
 
 ## 関連
 
-- GOAL.md (本案件全体のゴール)
-- PENDING.md
-- ~/.claude/methods/ecc-method/45_runbook/runbooks/RB-007-1-session-1-task-and-session-state.md (本セッション運営の規律)
+- GOAL.md (北極星 = SDD/TDD 汎用化)
+- PENDING.md HW-G (本タスクの完了基準詳細)
+- ../runbooks/RB-007-1-session-1-task-and-session-state.md (1 セッション 1 タスク規律)
