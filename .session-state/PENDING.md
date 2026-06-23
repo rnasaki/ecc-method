@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-06-24
-session_count: 4
+session_count: 5
 schema: RB-006
 branch: develop
 ---
@@ -22,9 +22,9 @@ branch: develop
 
 ## 宿題: HW-F - SDD/TDD 章の汎用化精査
 
-- **状態**: in_progress (Session 4 で 1/11 章完了、Session 3 = HW-D と並列)
+- **状態**: in_progress (Session 5 で 2/11 章完了)
 - **優先度**: P1 (本来の北極星に最も直結)
-- **着手条件**: なし (HW-D と並列実施可)
+- **着手条件**: なし
 - **完了基準**:
   - 30_sdd-phase / 35_tdd-phase の各章を読み返し
   - 「案件依存」「実機未検証」「出典なし」の箇所を洗い出し
@@ -33,10 +33,11 @@ branch: develop
   - 出典なし主張は L1 出典付与 or 削除
   - 各章末尾の「不確実性」セクションを更新
 - **担当 expert role**: planner / architect / agent-evaluator / refactor-cleaner
-- **メモ**: 本来のゴール「SDD/TDD 汎用化」の主作業。HW-D (整理) と並走可。
+- **メモ**: 本来のゴール「SDD/TDD 汎用化」の主作業。
 - **進捗** (1 セッション 1 章規律):
   - ✅ Session 4: `30_sdd-phase/01_prd-flow.md` (Gate 1 参照先誤り修正、specs/ 配置を推奨化、不確実性 5 項目に拡充)
-  - ⏳ 残: 30_sdd-phase/02-06 (5 章) + 35_tdd-phase/01-05 (5 章) = 10 章
+  - ✅ Session 5: `30_sdd-phase/02_feature-id-rules.md` (プレフィックス D→B でトレーサビリティ章 D<NN>-A との grep 衝突回避、出典区分明示、不確実性 5 項目に拡充)
+  - ⏳ 残: 30_sdd-phase/03-06 (4 章) + 35_tdd-phase/01-05 (5 章) = 9 章
 
 ---
 
@@ -95,7 +96,7 @@ branch: develop
 | ID | 状態 | 優先度 | タイトル |
 |---|---|---|---|
 | HW-D | completed | P1 | Method v1.0 リリース整理 (Session 3 完了、COMPLETED.md 参照) |
-| HW-F | in_progress | P1 | SDD/TDD 章の汎用化精査 (1/11 章完了、Session 4 で 01_prd-flow) |
+| HW-F | in_progress | P1 | SDD/TDD 章の汎用化精査 (2/11 章完了、Session 4: 01_prd-flow / Session 5: 02_feature-id-rules) |
 | HW-B | not_started | P2 | RB-005 検証 (Hooks リアルタイム subagent 観測) |
 | HW-C | not_started | P3 | Phase 4-7 段階導入 |
 | HW-H | not_started | P3 | セッションクローズ時の視覚マーキング (RB-010 候補) |
@@ -104,8 +105,8 @@ branch: develop
 
 1. 本ファイルを Read (RB-006 起動時必須)
 2. INDEX.md を Read
-3. current_session.md / HISTORY.md を Read (Session 3 = HW-D 完了、Session 4 = HW-F in_progress)
-4. ユーザーには「前回までに HW-D 完了 + HW-F 1/11 章完了。次は HW-F の続き (推奨: 30_sdd-phase/02 または 35_tdd-phase/01) または HW-B/HW-C/HW-H から選択」を 1 行で通知
+3. current_session.md / HISTORY.md を Read (Session 5 終了時点: HW-D 完了、HW-F 2/11 章完了)
+4. ユーザーには「前回までに HW-D 完了 + HW-F 2/11 章完了 (01_prd-flow, 02_feature-id-rules)。次は HW-F の続き (推奨: 30_sdd-phase/03_requirements-template または 35_tdd-phase/01_red-green-refactor) または HW-B/HW-C/HW-H から選択」を 1 行で通知
 
 ## 注意 (本リポ MVP との関係)
 

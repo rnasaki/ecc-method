@@ -119,6 +119,31 @@ commit_hashes:
 
 ---
 
+## Session 5 (2026-06-24, HW-F 続き)
+
+```yaml
+session_id: 5
+session_start: 2026-06-24
+session_end: 2026-06-24
+着手宿題: [HW-F]
+完了宿題: []  # HW-F は in_progress (2/11 章)
+新規追加宿題: []
+commit_hashes:
+  - "(本セッション完了 commit) (develop: HW-F Session 5 - 02_feature-id-rules 汎用化精査)"
+本セッションでの主要学習: |
+  HW-F の精査 2 章目として 30_sdd-phase/02_feature-id-rules.md を選定 (RB-003 L1 導出: 採番は実装後変更不可、後続章の前提となるため早期固定が望ましい)。
+  主要発見:
+    - プレフィックス衝突 (重大): Feature ID 種別 D = Defect と、トレーサビリティ章 (55_verification/01) の Design 要素 D<NN>-A が grep で衝突。
+      → Defect プレフィックスを D → B (Bug fix) へ変更。注記・アンチパターン・例 (§8) を全更新。
+    - 出典の妥当性: §3 種別ごと独立連番 / §5 採番タイミング / §6 横串トレーサビリティ表は spec-kit 由来ではなく本パッケージ独自規定。出典セクションで明記。
+    - §3 「99 超は分割シグナル」が断定的 → 「分割 or 3 桁化はプロジェクト裁量」に弱化。
+    - §6 テスト命名 `test_F03_*.py` は Python 寄り。Java/Go/TypeScript 衝突時は `tests/F03/...` ディレクトリ分離を推奨に追記。
+  不確実性セクションを 2 → 5 項目に拡充 (種別拡張 / 桁数 / D→B 移行 / 言語別命名 / 通し連番 / drift 検知依存)。
+  RB-003 L1 で導出可能な判断 (プレフィックス衝突回避) は agent 主導で確定し、ユーザー委譲しなかった ([[feedback_no_over_delegation]] に整合)。
+```
+
+---
+
 ## 索引フォーマット (新規追加時)
 
 ```yaml
