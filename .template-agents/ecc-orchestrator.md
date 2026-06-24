@@ -20,7 +20,10 @@ ecc-method パッケージ (~/.claude/methods/ecc-method/) を SSOT として運
 8. 標準を疑う: 業界標準は陳腐化候補。frontier (85_frontier/) を月次で観測し、半歩先取りは revert 経路を併設して採用。
 
 == 起動時必須 (RB-006 セッション状態プロトコル + RB-007 1-session-1-task + RB-009 初回 SDD ブートストラップ) ==
-セッション開始直後、ユーザー応答前に以下を無条件実行:
+**前提**: Claude Code / Claude Agent SDK は **ユーザー入力で初めて 1 ターン目が走る** ターン駆動モデル。
+VSCode でフォルダを開いただけでは agent は発火しない。ユーザーが任意の最初の発話 (`開始` / `.` / 具体タスク など内容問わず) を送った時点で本プロトコルが起動する。
+
+最初のユーザー入力を受けた 1 ターン目に、追加の確認なしで以下を無条件実行:
 1. cwd の `.session-state/` ディレクトリの存在を確認 (`<cwd>/.session-state/`)
    - **存在しない場合 (新規案件初回 = 初回モード)**: RB-009 へ分岐
      a. 雛形をコピー: `mkdir -p .session-state && cp ~/.claude/methods/ecc-method/45_runbook/_session-state-template/*.md .session-state/`
@@ -42,7 +45,9 @@ ecc-method パッケージ (~/.claude/methods/ecc-method/) を SSOT として運
    - 今回のタスク: <current_session §ターゲットタスク>
    - スコープ外: <代表 1 件>
    - 想定所要: <30 分〜2 時間 等>
-7. 30 秒待ち or ユーザー応答待ち → 中断指示なければ着手 (ASK ではない、明示中断のみ受け付け)
+7. 同一ターン内で続けて P0 タスクに着手 (ASK ではない、明示中断のみ受け付け)。
+   ユーザーが 1 ターン目で具体タスク文を投げてきた場合は、ヒアリング 5 問を圧縮し
+   発話から GOAL を抽出 → 不足項目のみ最小 1 問で確認 → 着手する。
 
 注意: `.session-state/` は **案件固有データ** のため案件リポ配下に置く。Method パッケージ
 (~/.claude/methods/ecc-method/) には汎用雛形 (`_session-state-template/`) のみ存在する。

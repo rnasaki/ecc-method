@@ -100,6 +100,22 @@ cp ~/.claude/CLAUDE.md "~/.claude/backups/CLAUDE.md.$(date +%Y%m%d-%H%M%S)"
 
 退避した既存ファイル内に **Method と整合する独自規律** があれば、`~/.claude/CLAUDE.md` の §1〜§8 のいずれかに追記し、重複定義は削除する (ゼロ重複原則)。
 
+## 採用後、新規リポで初回起動するとき
+
+`.template-agents/ecc-orchestrator.md` を `~/.claude/agents/ecc-orchestrator.md` に配置し、対象リポを VSCode (または `claude` CLI) で開いた後の流れ:
+
+1. **任意の 1 メッセージを送る** (例: `開始` / `.` / `何か作りたい` 等、内容は問わない)
+   - Claude Code はターン駆動。フォルダを開いただけでは agent は発火しない。
+   - 最初のユーザー入力を受けた **1 ターン目** で orchestrator が `.session-state/` 不在を検出し、ヒアリングを自動開始する。
+2. orchestrator の質問に **1 つずつ自然文で答える** (5 問以下)
+   - 北極星 → ターゲット → 成功条件 → スコープ外 → 既存資産
+   - ユーザーが 1 ターン目で具体タスク文を投げた場合、agent は不足項目のみ最小 1 問で確認して着手する。
+3. ヒアリング後、agent が `.session-state/` 5 ファイル (GOAL.md / PENDING.md / current_session.md / COMPLETED.md / HISTORY.md) を自動生成し、5 行サマリを提示してそのまま P0 タスクに着手する。
+
+詳細は本パッケージ `45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md` を参照。
+
+2 回目以降のセッションは `.session-state/` 既存のため RB-006 ルートで自動再開される。
+
 ## テンプレの構成
 
 `.template-claude/CLAUDE.md` 8 セクション:
