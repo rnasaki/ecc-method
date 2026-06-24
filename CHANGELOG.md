@@ -14,6 +14,7 @@ related: []
 
 ### Added
 - (v1.0.0 で確定予定の機能・整備)
+- `.template-claude/` 配布テンプレを新設。`~/.claude/CLAUDE.md` 用テンプレ + 採用手順 README。Method 採用と一体で採用推奨 (orchestrator 未起動の素セッションでも Method 規律が効くようにする)。`<ECC_METHOD_ROOT>` プレースホルダで絶対パスを排除し PATH POLICY 適合。`99_distribution/03_v1.0.0-release-checklist.md` §1.4 に整合チェック 3 項目を追加。
 
 ### Changed
 - 章採番ポリシー: 5 刻みを単一規律として確定。`27_user-care/` を `25_writing-style/06_user-care/` 配下にサブディレクトリ化し、トップレベル採番を 5 刻み厳守に揃えた (HW-D, Session 3, 2026-06-24)。
