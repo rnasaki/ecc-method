@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-06-24
-session_count: 5
+session_count: 6
 schema: RB-006
 branch: develop
 ---
@@ -96,6 +96,7 @@ branch: develop
 | ID | 状態 | 優先度 | タイトル |
 |---|---|---|---|
 | HW-D | completed | P1 | Method v1.0 リリース整理 (Session 3 完了、COMPLETED.md 参照) |
+| HW-I | completed | P1 | self-dogfooding junction 統合 (Session 6 完了、COMPLETED.md 参照) |
 | HW-F | in_progress | P1 | SDD/TDD 章の汎用化精査 (2/11 章完了、Session 4: 01_prd-flow / Session 5: 02_feature-id-rules) |
 | HW-B | not_started | P2 | RB-005 検証 (Hooks リアルタイム subagent 観測) |
 | HW-C | not_started | P3 | Phase 4-7 段階導入 |
@@ -105,8 +106,8 @@ branch: develop
 
 1. 本ファイルを Read (RB-006 起動時必須)
 2. INDEX.md を Read
-3. current_session.md / HISTORY.md を Read (Session 5 終了時点: HW-D 完了、HW-F 2/11 章完了)
-4. ユーザーには「前回までに HW-D 完了 + HW-F 2/11 章完了 (01_prd-flow, 02_feature-id-rules)。次は HW-F の続き (推奨: 30_sdd-phase/03_requirements-template または 35_tdd-phase/01_red-green-refactor) または HW-B/HW-C/HW-H から選択」を 1 行で通知
+3. current_session.md / HISTORY.md を Read (Session 6 終了時点: HW-D 完了、HW-I 完了 (self-dogfooding junction)、HW-F 2/11 章完了)
+4. ユーザーには「前回までに HW-D / HW-I 完了 + HW-F 2/11 章完了。次は HW-F の続き (推奨: 30_sdd-phase/03_requirements-template または 35_tdd-phase/01_red-green-refactor) または HW-B/HW-C/HW-H から選択」を 1 行で通知
 
 ## 注意 (本リポ MVP との関係)
 

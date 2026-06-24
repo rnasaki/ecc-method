@@ -48,6 +48,26 @@ branch: develop
     README Step 3 を再設計し利用者の手動 cp を廃止。.template-agents/ ecc-orchestrator.md の起動時必須も RB-009 委譲形に書き直し。
   related_runbooks: [RB-006, RB-007, RB-009]
 
+- id: HW-I
+  title: Method 開発者の self-dogfooding 設定 (junction 統合 + 99_distribution/04 章)
+  category: bootstrap
+  completed_at: 2026-06-24
+  session_id: 6
+  commit_hashes:
+    - "(本セッション完了 commit) (develop: HW-I self-dogfooding junction + 99_distribution/04)"
+  outcome_summary: |
+    開発リポ (Documents/GitHub/ecc-method, develop) と利用ディレクトリ
+    (~/.claude/methods/ecc-method, main) の分離が原因で、develop の改修
+    (4 要素クローズ規律 / RB-006 改訂 / RB-009/010) が agent 自身に効いて
+    いなかった問題を解消。Windows junction で利用ディレクトリを開発リポへ
+    シンボリックリンクし、`git commit` した瞬間に agent 起動時の Read 対象
+    に反映されるよう構造化。利用ディレクトリは ecc-method.bak-2026-06-24 へ
+    退避。運用手順は RB-NNN 名前空間を消費せず 99_distribution/04_
+    developer-self-dogfooding.md として配布側ノウハウ章に配置。配布利用者は
+    引き続き main を git clone するため影響なし。
+  related_chapters: [99_distribution/04_developer-self-dogfooding.md]
+  related_runbooks: [RB-006, RB-008]
+
 - id: HW-D
   title: Method v1.0 リリース整理 (採番再定義 + CHANGELOG + v1.0.0 tag 切り条件)
   category: release

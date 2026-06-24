@@ -150,6 +150,43 @@ commit_hashes:
 
 ---
 
+## Session 6 (2026-06-24, HW-I self-dogfooding)
+
+```yaml
+session_id: 6
+session_start: 2026-06-24
+session_end: 2026-06-24
+着手宿題: [HW-I]
+完了宿題: [HW-I]
+新規追加宿題: []
+commit_hashes:
+  - "(本セッション完了 commit) (develop: HW-I self-dogfooding junction + 99_distribution/04)"
+本セッションでの主要学習: |
+  ユーザー指摘「ECC-Method 読まれてない」「クローズが無い」が再発した根因を特定:
+    - 開発リポ (Documents/GitHub/ecc-method, develop) と利用ディレクトリ
+      (~/.claude/methods/ecc-method, main) が分離していた
+    - agent は利用ディレクトリ = 古い main 版を Read していたため、develop で書いた
+      4 要素クローズ規律 / RB-006 改訂 / RB-009/010 が自分自身に効いていなかった
+    - v1.0 切りまで main にマージしないポリシー (RB-008) と組み合わさり、半年以上
+      dogfooding できない期間が生じる構造的問題
+  ユーザー判断: 「私は Method 開発者 = 配布 Method 利用者」として GitHub 開発物と
+    .claude 配下を同一化する必要 → Windows junction で物理同一化を選択。
+  実施:
+    - 利用ディレクトリの状態確認 (untracked/未push 0件)
+    - バックアップへ退避 (ecc-method.bak-2026-06-24)
+    - cmd //c "mklink /J <link> <target>" で junction 作成 (Git Bash 経由のパス
+      クォート escape 問題を解決: 完全 Windows パスを cmd 内で渡す)
+    - 同一性検証 (branch=develop, HEAD 一致)
+  Runbook 化判断 (ユーザー指摘「11番は死に番になる」):
+    - 当初 RB-011 として作成 → 利用者には無関係なため Concept Graph で雑音化のリスク
+    - RB-NNN 名前空間を消費せず 99_distribution/04_developer-self-dogfooding.md として
+      配布側ノウハウ章の延長に再配置。§0 で「対象読者: 開発者のみ」を明示
+  RB-003 と協調判断: junction 採用は L1 導出 (agent 主導)、Runbook vs 章の選択は
+    L2 (ユーザー判断尊重「死に番回避」) で確定。
+```
+
+---
+
 ## 索引フォーマット (新規追加時)
 
 ```yaml
