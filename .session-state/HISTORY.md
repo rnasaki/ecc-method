@@ -140,6 +140,12 @@ commit_hashes:
     - §6 テスト命名 `test_F03_*.py` は Python 寄り。Java/Go/TypeScript 衝突時は `tests/F03/...` ディレクトリ分離を推奨に追記。
   不確実性セクションを 2 → 5 項目に拡充 (種別拡張 / 桁数 / D→B 移行 / 言語別命名 / 通し連番 / drift 検知依存)。
   RB-003 L1 で導出可能な判断 (プレフィックス衝突回避) は agent 主導で確定し、ユーザー委譲しなかった ([[feedback_no_over_delegation]] に整合)。
+  Session 後半の取りこぼし是正 (ユーザー指摘「自動クローズが走らないのは何故？」「配布版でも再現されてる？」):
+    - 終了時 4 要素 (完了/次回継続/自動再開/⚠️クローズ) の出力漏れを起こした
+    - 根本原因: ~/.claude/agents/ecc-orchestrator.md が 3 要素規定 / .template-agents/ecc-orchestrator.md は「1 行含める」のみで RB-006 本文 (4 要素) と乖離
+    - 是正: 両 prompt を RB-006 本文と完全一致させ 4 要素末尾固定 + commit/push 完了で満足しない注記を追記
+    - 配布側: main v0.1.0 の .template-agents/ecc-orchestrator.md は旧 `.handover/` 参照 + 旧クローズ規律のまま固定されている。v1.0.0 切りで develop→main merge により反映される。再発防止として 99_distribution/03 §1.4 に「配布テンプレが develop と整合しているか」の checklist 項目を追加
+    - 学習を memory feedback_closure_4elements.md に永続化
 ```
 
 ---
