@@ -5,6 +5,12 @@
 # 実際は .session-state/ がすでに追跡対象なので main 側の .gitignore は新規作成を防ぐだけで十分
 # .session-state/  ← develop ではコメントアウト
 
+# Knowledge/ は ecc-method を「開発する」案件のナレッジ蓄積用 (本リポ develop branch 限定)。
+# 利用者が clone する main branch には混入させない (空ディレクトリでも誤解を招くため)。
+# main マージ時は git rm -r Knowledge/ または sparse-checkout で除外。
+# develop ではこの行をコメントアウトして追跡する。
+# Knowledge/  ← develop ではコメントアウト
+
 # 一時ファイル
 _tmp/
 *.tmp
@@ -26,3 +32,9 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+
+# Obsidian — 個人環境固有の状態は追跡対象外 (チーム共有設定は追跡)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/plugins/*/data.json

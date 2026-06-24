@@ -1,3 +1,7 @@
+---
+keywords: [readme]
+related: [45_runbook/runbooks/RB-001-agent-registry-hot-reload.md, 45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md, 45_runbook/runbooks/RB-006-session-handover-protocol.md, METHOD.md, 45_runbook/INDEX.md]
+---
 # ecc-method
 
 Claude Code (ECC) を使った AI 駆動開発の運用 Method。案件リポに `.session-state/` を 1 つ置き、`ecc-orchestrator` agent を起動すれば、セッション間引き継ぎ・ゴール逸脱検知・サイコファンシー抑止が自動で効くようになる規律集。
@@ -73,9 +77,27 @@ agent が `.session-state/` を Read して P0 タスクから自動着手。
 - **全体像**: [Method 本体](./METHOD.md)
 - **何のために・誰が読む・用語**: [概要](./01_overview/)
 - **判断軸となる 8 つの原則**: [原則](./05_principles/)
+- **ナレッジ蓄積 (Obsidian 推奨ビューワ)**: [Knowledge Vault](./12_knowledge-vault/)
 - **専門家への委任設計**: [委任](./40_delegation/)
 - **運用中にハマったら引く**: [Runbook 索引](./45_runbook/INDEX.md)
 - **チームに配布したい**: [配布手順](./99_distribution/)
+
+## Obsidian でナレッジを管理する (任意)
+
+ecc-method は Markdown SSOT として動作するため Obsidian なしでも完結する。Obsidian を **推奨ビューワ** として使う場合は **2 層構成** で運用:
+
+- **中央 Vault** (`~/Documents/Knowledge/`): 案件横断ナレッジの正本。Obsidian で常に開く
+- **案件 Knowledge** (`<案件リポ>/Knowledge/`): 案件固有の作業メモ。案件作業時のみ別 vault として開く
+
+中央 Vault の初期化 (1 回だけ):
+
+```bash
+mkdir -p ~/Documents/Knowledge/{notes,references,procedures}
+cp -r ~/.claude/methods/ecc-method/12_knowledge-vault/_obsidian-template/.obsidian ~/Documents/Knowledge/
+cp ~/.claude/methods/ecc-method/70_templates/knowledge-vault-INDEX.template.md ~/Documents/Knowledge/00_INDEX.md
+```
+
+案件 Knowledge は案件リポ毎に作成。詳細手順 / 昇格フローは [12_knowledge-vault/](./12_knowledge-vault/) を参照。
 
 ## メンバーへの配布 (リーダー向け)
 

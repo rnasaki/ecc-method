@@ -1,3 +1,7 @@
+---
+keywords: [runbook]
+related: [45_runbook/04_search-protocol.md, 45_runbook/05_maintenance.md, 45_runbook/02_indexing-rules.md]
+---
 # Runbook INDEX
 
 機械可読 (YAML) で全 Runbook を索引化する。Orchestrator は検索プロトコル ([04_search-protocol.md](./04_search-protocol.md)) で最初にここを引く。
@@ -107,6 +111,15 @@ runbooks:
     last_verified: 2026-06-24
     status: active
     note: 回避策 = 対象スコープ限定 + --no-cov + foreground (timeout 内完了)。Session 2 段階 2 テストで実機検証
+  - id: RB-011-knowledge-promotion-flow
+    title: Knowledge 昇格フロー - 案件 Knowledge → 中央 Vault → 45_runbook の 2 段階昇格
+    category: bootstrap
+    tags: [knowledge, vault, obsidian, promotion, memory-hierarchy, hybrid]
+    trigger: 案件で書いたナレッジを横断再利用したい / `~/Documents/Knowledge/` 中央 Vault に純化された note を昇格したい / `promotion_candidate: true` を検知 / 同じ procedure が 2 案件以上で使われた / 中央 Vault と案件 Knowledge の 2 層運用を整理したい
+    path: ./runbooks/RB-011-knowledge-promotion-flow.md
+    last_verified: 2026-06-24
+    status: active
+    note: 12_knowledge-vault/ の 2 層 Hybrid 設計に基づく手動昇格手順。agent が PII 除去・一般化を補助し、利用者が最終承認
 # 案件導入時に runbooks/ 配下を生成し、本リストに追記する。
 # 自動更新: 新 Runbook 作成時に scripts/index-update.sh または手動で追記。
 ```
@@ -115,7 +128,7 @@ runbooks:
 
 | category | 件数 |
 |---|---|
-| bootstrap | 5 |
+| bootstrap | 6 |
 | deploy | 0 |
 | debug | 0 |
 | infra | 0 |

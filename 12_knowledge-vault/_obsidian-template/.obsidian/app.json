@@ -1,0 +1,16 @@
+{
+  "useMarkdownLinks": false,
+  "newLinkFormat": "shortest",
+  "alwaysUpdateLinks": true,
+  "defaultViewMode": "source",
+  "livePreview": false,
+  "showLineNumber": true,
+  "spellcheck": false,
+  "useTab": false,
+  "tabSize": 2,
+  "attachmentFolderPath": "Knowledge/_attachments",
+  "newFileLocation": "folder",
+  "newFileFolderPath": "Knowledge/notes",
+  "promptDelete": true,
+  "trashOption": "system"
+}
