@@ -6,7 +6,9 @@ tags: [subagent, observability, final-report, heartbeat, context-economy, isolat
 created: 2026-06-24
 updated: 2026-06-24
 last-verified: 2026-06-24
-status: active
+status: deprecated
+deprecated_by: RB-005-subagent-realtime-streaming-via-hooks
+deprecated_at: 2026-06-24
 trigger: subagent (Agent ツール) 起動時、parent context を汚染せずに「何を考え、どこで詰まり、どう抜けたか」を観測可能にしたい / Codex 風の中間出力が無いことへの代替策が必要
 expert-routing: [orchestrator]
 related: [RB-001-agent-registry-hot-reload, RB-003-autonomous-decision-framework]
@@ -16,15 +18,17 @@ keywords: [runbook, runbooks, subagent, final, report, narration]
 
 # subagent の final report 強化と heartbeat ログ
 
+> **⚠️ DEPRECATED (2026-06-24)** — 本 Runbook は [RB-005-subagent-realtime-streaming-via-hooks.md](./RB-005-subagent-realtime-streaming-via-hooks.md) (status: active) に置き換わった。RB-005 で公式 docs (https://code.claude.com/docs/en/hooks, retrieved_at 2026-06-24) の H1/H2/H3 仮説をすべて検証し、Claude Code Hooks (PostToolUse / SubagentStop) 経由で **parent context 汚染ゼロ + リアルタイム観測** の三層構造 ((D) final report + (E) heartbeat + (H) Hooks narration) を実装一式同梱で達成した。新規採用は RB-005 を参照すること。本 Runbook の (D)(E) 層は RB-005 に統合済みで、ここに残しているのは履歴参照用。
+
 ## TL;DR (30 秒で読める結論)
 
 Claude Code subagent の中間出力欠落問題には、**parent 側の監視ループ**ではなく **subagent 側の自己報告強化** で対処する。理由: parent が監視すると subagent isolation が壊れ、第 5 原則「コンテキスト最小」と BP-008 に反する。代わりに (D) final report に「思考過程 / 詰まり / 不採用案」を必須化、(E) heartbeat ファイルへの narration 任意出力 で対応。リアルタイム生中継は諦める。
 
-## ⚠️ 妥協点と本質解決の予告
+## ⚠️ 妥協点と本質解決 (履歴)
 
-本 Runbook は **リアルタイム観測を諦めた妥協案**。ユーザーの当初不満 (Codex 風日本語中間出力 / 長時間放置の不安 / NG ケース早期検知) は **完全には解決していない**。
+本 Runbook は **リアルタイム観測を諦めた妥協案** として 2026-06-24 に公開された。ユーザーの当初不満 (Codex 風日本語中間出力 / 長時間放置の不安 / NG ケース早期検知) は本 Runbook では完全には解決していなかった。
 
-本質解決は [RB-005-subagent-realtime-streaming-via-hooks.md](./RB-005-subagent-realtime-streaming-via-hooks.md) (draft 状態) で Claude Code Hooks 経由のストリーミング観測として検証予定。RB-005 が active 化したら本 Runbook は deprecated 化する。
+本質解決は [RB-005-subagent-realtime-streaming-via-hooks.md](./RB-005-subagent-realtime-streaming-via-hooks.md) で達成済み (同日 active 化、配布物 `.template-claude/hooks/subagent-narrator.{sh,ps1}` + `.template-claude/settings.json` で実装同梱)。本 Runbook は RB-005 にロールアップされ deprecated。
 
 ## 前提
 

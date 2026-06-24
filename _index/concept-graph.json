@@ -3,8 +3,8 @@
   "generated_at": "2026-06-24",
   "generator": "80_commands/generate-concept-graph.mjs",
   "stats": {
-    "total_files": 160,
-    "files_with_frontmatter": 160,
+    "total_files": 161,
+    "files_with_frontmatter": 161,
     "files_with_keywords": 160,
     "node_count": 287,
     "edge_count": 21,
@@ -2680,6 +2680,11 @@
         ".template-claude",
         "claude"
       ],
+      "related": []
+    },
+    {
+      "path": ".template-claude/commands/ecc-orchestrator.md",
+      "keywords": [],
       "related": []
     },
     {

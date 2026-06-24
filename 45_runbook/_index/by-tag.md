@@ -46,15 +46,11 @@ related: [../INDEX.md, ../04_search-protocol.md, ../../_index/concept-graph.json
 
 ## codex-parity (1)
 
-- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (draft、要検証)
+- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (H 層)
 
 ## completed (1)
 
 - [`RB-002-phased-rollout-plan-index-graph`](../runbooks/RB-002-phased-rollout-plan-index-graph.md) — 段階導入完了 - インデックス frontmatter / Concept Graph / 検索プロトコル更新 (Phase 1-7 全完了)
-
-## compromise (1)
-
-- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (妥協案、リアルタイム諦め)
 
 ## concept-graph (1)
 
@@ -62,7 +58,7 @@ related: [../INDEX.md, ../04_search-protocol.md, ../../_index/concept-graph.json
 
 ## context-economy (1)
 
-- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (妥協案、リアルタイム諦め)
+- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (deprecated, RB-005 にロールアップ済み)
 
 ## continuity (1)
 
@@ -72,9 +68,9 @@ related: [../INDEX.md, ../04_search-protocol.md, ../../_index/concept-graph.json
 
 - [`RB-003-autonomous-decision-framework`](../runbooks/RB-003-autonomous-decision-framework.md) — 自律判断フレームワーク - ユーザー判断委譲を避け、本リポの原則に判断根拠を求める
 
-## deferred-verification (1)
+## deprecated (1)
 
-- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (draft、要検証)
+- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (deprecated, RB-005 にロールアップ済み)
 
 ## distribution (1)
 
@@ -82,7 +78,7 @@ related: [../INDEX.md, ../04_search-protocol.md, ../../_index/concept-graph.json
 
 ## final-report (1)
 
-- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (妥協案、リアルタイム諦め)
+- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (deprecated, RB-005 にロールアップ済み)
 
 ## first-run (1)
 
@@ -110,11 +106,11 @@ related: [../INDEX.md, ../04_search-protocol.md, ../../_index/concept-graph.json
 
 ## heartbeat (1)
 
-- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (妥協案、リアルタイム諦め)
+- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (deprecated, RB-005 にロールアップ済み)
 
 ## hooks (1)
 
-- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (draft、要検証)
+- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (H 層)
 
 ## hot-reload (1)
 
@@ -130,7 +126,7 @@ related: [../INDEX.md, ../04_search-protocol.md, ../../_index/concept-graph.json
 
 ## isolation (1)
 
-- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (妥協案、リアルタイム諦め)
+- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (deprecated, RB-005 にロールアップ済み)
 
 ## keywords (1)
 
@@ -158,8 +154,8 @@ related: [../INDEX.md, ../04_search-protocol.md, ../../_index/concept-graph.json
 
 ## observability (3)
 
-- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (妥協案、リアルタイム諦め)
-- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (draft、要検証)
+- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (deprecated, RB-005 にロールアップ済み)
+- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (H 層)
 - [`RB-010-bash-auto-background-on-windows-pytest`](../runbooks/RB-010-bash-auto-background-on-windows-pytest.md) — Windows + Git Bash 経由の長時間 pytest は 2 分 timeout で自動 background 化され出力が空のまま観測不能になる
 
 ## obsidian (1)
@@ -184,7 +180,7 @@ related: [../INDEX.md, ../04_search-protocol.md, ../../_index/concept-graph.json
 
 ## realtime (1)
 
-- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (draft、要検証)
+- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (H 層)
 
 ## registry (1)
 
@@ -237,12 +233,12 @@ related: [../INDEX.md, ../04_search-protocol.md, ../../_index/concept-graph.json
 
 ## streaming (1)
 
-- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (draft、要検証)
+- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (H 層)
 
 ## subagent (2)
 
-- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (妥協案、リアルタイム諦め)
-- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (draft、要検証)
+- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (deprecated, RB-005 にロールアップ済み)
+- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (H 層)
 
 ## sycophancy-prevention (1)
 

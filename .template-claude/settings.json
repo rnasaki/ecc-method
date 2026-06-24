@@ -1,0 +1,40 @@
+{
+  "_comment_": "ECC Method 配布テンプレ - ~/.claude/settings.json または <repo>/.claude/settings.json にマージする雛形。hooks 部分が RB-005 の subagent narration 実装。",
+  "permissions": {
+    "allow": [
+      "Bash(ls *.claude/commands/*)",
+      "Bash(ls *.claude/agents/*)",
+      "Bash(ls *.claude/methods/*)",
+      "Bash(find *.claude/ -name *.md*)",
+      "Bash(find *.claude/ -type f*)",
+      "Bash(cat *.session-state/*)",
+      "Bash(ls .session-state/*)",
+      "Bash(mkdir -p .session-state*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PROJECT_DIR}/.claude/hooks/subagent-narrator.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PROJECT_DIR}/.claude/hooks/subagent-narrator.sh\"",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

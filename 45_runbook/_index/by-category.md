@@ -27,5 +27,5 @@ related: [../INDEX.md, ../04_search-protocol.md, ../../_index/concept-graph.json
 
 ## tooling (2)
 
-- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (妥協案、リアルタイム諦め)
-- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (draft、要検証)
+- [`RB-004-subagent-final-report-narration`](../runbooks/RB-004-subagent-final-report-narration.md) — subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (deprecated, RB-005 にロールアップ済み)
+- [`RB-005-subagent-realtime-streaming-via-hooks`](../runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) — subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (H 層)

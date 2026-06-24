@@ -49,23 +49,25 @@ runbooks:
     last_verified: 2026-06-24
     status: active
   - id: RB-004-subagent-final-report-narration
-    title: subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (妥協案、リアルタイム諦め)
+    title: subagent の final report 強化と heartbeat ログ - 親 context を汚さず観測性を確保 (deprecated, RB-005 にロールアップ済み)
     category: tooling
-    tags: [subagent, observability, final-report, heartbeat, context-economy, isolation, compromise]
-    trigger: subagent 起動時、parent context を汚染せず「何を考え、どこで詰まり、どう抜けたか」を観測したい (リアルタイム性は諦める)
+    tags: [subagent, observability, final-report, heartbeat, context-economy, isolation, deprecated]
+    trigger: subagent 起動時、parent context を汚染せず「何を考え、どこで詰まり、どう抜けたか」を観測したい (履歴参照用)
     path: ./runbooks/RB-004-subagent-final-report-narration.md
     last_verified: 2026-06-24
-    status: active
-    note: RB-005 が active 化したら deprecated 化予定
+    status: deprecated
+    deprecated_by: RB-005-subagent-realtime-streaming-via-hooks
+    deprecated_at: 2026-06-24
+    note: D 層 (final report 必須セクション) は RB-005 §採用案で (D) として継承。新規採用は RB-005 を参照
   - id: RB-005-subagent-realtime-streaming-via-hooks
-    title: subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (draft、要検証)
+    title: subagent のリアルタイム中間出力 - Claude Code Hooks 経由のストリーミング観測 (H 層)
     category: tooling
-    tags: [subagent, observability, hooks, streaming, realtime, codex-parity, deferred-verification]
+    tags: [subagent, observability, hooks, streaming, realtime, codex-parity]
     trigger: subagent のリアルタイム中間出力をユーザー負荷ゼロで実現したい / RB-004 の妥協を本質解決したい / Codex 風の日本語ストリーミング観測を Claude Code で再現したい
     path: ./runbooks/RB-005-subagent-realtime-streaming-via-hooks.md
-    last_verified: 未検証
-    status: draft
-    note: 次セッションで Hooks 仕様確認 + 実証 → active 化、その後 RB-004 を deprecated 化
+    last_verified: 2026-06-24
+    status: active
+    note: 公式 docs (https://code.claude.com/docs/en/hooks, retrieved_at 2026-06-24) で H1/H2/H3 確認済み。実装は .template-claude/hooks/subagent-narrator.{sh,ps1} に同梱
   - id: RB-006-session-handover-protocol
     title: セッション状態プロトコル - .session-state/ の SSOT 管理 (初回=生成 / 継続=Read の二モード)
     category: bootstrap
