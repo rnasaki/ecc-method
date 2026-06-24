@@ -12,11 +12,16 @@ Method を採用するなら本テンプレも採用することを推奨する 
 
 **なぜ「一体推奨」か**:
 
-- `~/.claude/CLAUDE.md` は orchestrator が起動しない素のセッション (新規プロジェクト初回 / 一時的な対話) でも読まれる。
-- `.template-agents/ecc-orchestrator.md` は orchestrator 起動後の規律。これだけでは素セッションに規律が効かない。
-- 両者を揃えて配布することで、Method の 4 要素クローズ規律 / 委任ファースト / 内部ステータス非露出が **全セッションで一貫** する。
+- Claude Code の subagent はユーザー入力を直接受け取れない。最初の発話を受けるのは **主 Claude (メインループ)** であり、subagent は主 Claude が `Agent` ツールで呼び出したときのみ起動する単発・isolated context のプランナー。
+- したがってセッション開始 / 継続 / 終了の自動プロトコルは **主 Claude 側 (`~/.claude/CLAUDE.md`)** に置かないと発火しない。`.template-agents/ecc-orchestrator.md` のみでは「最初の入力で `.session-state/` を確認する」「クローズ 4 要素を末尾に出す」などの規律が効かない。
+- `.template-claude/CLAUDE.md` (主 Claude 向け) と `.template-agents/ecc-orchestrator.md` (委任プランナー向け) を揃えて配布することで、起動 / クローズ / 委任の 3 規律が全セッションで一貫する。
 
-`.template-agents/ecc-orchestrator.md` のみ採用しても動くが、orchestrator 未起動時は Method 規律が効かない (素 Claude の挙動に戻る)。
+**役割分担 (重要)**:
+
+| ファイル | 配置先 | 担当 |
+|---|---|---|
+| `.template-claude/CLAUDE.md` | `~/.claude/CLAUDE.md` | 主 Claude の規律: 起動プロトコル / `.session-state/` 管理 / クローズ 4 要素 / SDD ヒアリング実行 / TodoWrite 同期 |
+| `.template-agents/ecc-orchestrator.md` | `~/.claude/agents/ecc-orchestrator.md` | 主 Claude から呼ばれる委任プランナー: Runbook / Expert Registry 引きと Delegation Contract ドラフト生成のみ。`.session-state/` Write・ユーザー対話・最終応答は行わない |
 
 ## 採用手順 (3 ステップ)
 
@@ -100,36 +105,69 @@ cp ~/.claude/CLAUDE.md "~/.claude/backups/CLAUDE.md.$(date +%Y%m%d-%H%M%S)"
 
 退避した既存ファイル内に **Method と整合する独自規律** があれば、`~/.claude/CLAUDE.md` の §1〜§8 のいずれかに追記し、重複定義は削除する (ゼロ重複原則)。
 
+### 4. (任意) subagent narration hook を有効化
+
+RB-005 の subagent リアルタイム観測を採用する場合のみ。`.template-claude/hooks/` と `.template-claude/settings.json` を配布先に取り込む。
+
+```bash
+# 配置先プロジェクトの .claude/ に hooks スクリプトを配置
+mkdir -p <project>/.claude/hooks
+cp "$ECC_METHOD_ROOT/.template-claude/hooks/subagent-narrator.sh"  <project>/.claude/hooks/
+cp "$ECC_METHOD_ROOT/.template-claude/hooks/subagent-narrator.ps1" <project>/.claude/hooks/
+chmod +x <project>/.claude/hooks/subagent-narrator.sh
+
+# settings.json の hooks ブロックを <project>/.claude/settings.json にマージ (jq が使える環境)
+jq -s '.[0] * .[1]' \
+  <project>/.claude/settings.json \
+  "$ECC_METHOD_ROOT/.template-claude/settings.json" \
+  > <project>/.claude/settings.json.tmp \
+  && mv <project>/.claude/settings.json.tmp <project>/.claude/settings.json
+```
+
+動作:
+
+- subagent (Agent ツール) 内の **PostToolUse** と **SubagentStop** で発火する (公式 docs: subagent 内でも hook は発火、`agent_id` / `agent_type` が入力 JSON に付帯される。出典: https://code.claude.com/docs/en/hooks, retrieved_at 2026-06-24)。
+- narration は `<project>/.session-state/agent-narration.log` に追記される (1 行 / tool call)。
+- **既定では parent agent の context を汚染しない** (hook の stdout は空に保つ)。`tail -f .session-state/agent-narration.log` で別ペインから観測する想定。
+- `ECC_NARRATION_INLINE=1` を export すると `systemMessage` 経由で Claude Code UI にも流れる (ただしこの場合 parent context にも流入する点に注意、長時間タスクでは推奨しない)。
+- Windows ネイティブで bash を持たない環境では `subagent-narrator.ps1` を使い、settings.json の `command` を `powershell -NoProfile -ExecutionPolicy Bypass -File "${CLAUDE_PROJECT_DIR}\\.claude\\hooks\\subagent-narrator.ps1"` に差し替える。
+
+詳細仕様 / 検証手順 / トレードオフは本パッケージ `45_runbook/runbooks/RB-005-subagent-realtime-streaming-via-hooks.md` を参照。
+
 ## 採用後、新規リポで初回起動するとき
 
-`.template-agents/ecc-orchestrator.md` を `~/.claude/agents/ecc-orchestrator.md` に配置し、対象リポを VSCode (または `claude` CLI) で開いた後の流れ:
+`.template-agents/ecc-orchestrator.md` を `~/.claude/agents/ecc-orchestrator.md` に、`.template-claude/CLAUDE.md` を `~/.claude/CLAUDE.md` に配置した上で、対象リポを VSCode (または `claude` CLI) で開いた後の流れ:
 
 1. **任意の 1 メッセージを送る** (例: `開始` / `.` / `何か作りたい` 等、内容は問わない)
-   - Claude Code はターン駆動。フォルダを開いただけでは agent は発火しない。
-   - 最初のユーザー入力を受けた **1 ターン目** で orchestrator が `.session-state/` 不在を検出し、ヒアリングを自動開始する。
-2. orchestrator の質問に **1 つずつ自然文で答える** (5 問以下)
+   - Claude Code はターン駆動。フォルダを開いただけでは何も発火しない。
+   - 最初のユーザー入力を受けた **1 ターン目で主 Claude が `~/.claude/CLAUDE.md` §0 起動プロトコルを実行** し、`.session-state/` 不在を検出してヒアリングを自動開始する。
+2. 主 Claude の質問に **1 つずつ自然文で答える** (5 問以下)
    - 北極星 → ターゲット → 成功条件 → スコープ外 → 既存資産
-   - ユーザーが 1 ターン目で具体タスク文を投げた場合、agent は不足項目のみ最小 1 問で確認して着手する。
-3. ヒアリング後、agent が `.session-state/` 5 ファイル (GOAL.md / PENDING.md / current_session.md / COMPLETED.md / HISTORY.md) を自動生成し、5 行サマリを提示してそのまま P0 タスクに着手する。
+   - ユーザーが 1 ターン目で具体タスク文を投げた場合、主 Claude は発話から GOAL を抽出し、不足項目のみ最小 1 問で確認して着手する。
+3. ヒアリング後、主 Claude が `.session-state/` 5 ファイル (GOAL.md / PENDING.md / current_session.md / COMPLETED.md / HISTORY.md) を自動生成し、5 行サマリを提示してそのまま P0 タスクに着手する。
+4. 多段委任プランニングが必要な局面で、主 Claude は `Agent(subagent_type=ecc-orchestrator)` を呼び、Delegation Contract ドラフトを取得してから専門家 subagent を並列起動する。
 
 詳細は本パッケージ `45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md` を参照。
 
-2 回目以降のセッションは `.session-state/` 既存のため RB-006 ルートで自動再開される。
+2 回目以降のセッションは `.session-state/` 既存のため `~/.claude/CLAUDE.md` §0.3 継続モード ルートで自動再開される。
 
 ## テンプレの構成
 
-`.template-claude/CLAUDE.md` 8 セクション:
+`.template-claude/CLAUDE.md` 11 セクション (§0 を含む):
 
+0. 起動プロトコル (`.session-state/` 二モード判定 / SDD ヒアリング / 継続モード自動再開)
 1. 言語 (派生先で上書き可)
 2. SSOT (Method 各章への索引テーブル)
 3. 検索プロトコル (Runbook → Registry → Pattern → 委任 → Capture)
-4. 並列起動
-5. クローズ規律 4 要素 (RB-006 §[6] 書式)
-6. 行動規律 (No Scope Dodging / No Over Delegation / No Push Handoff / No Internal Status Leak)
-7. 出典・不確実性
-8. ユーザー判断に上げる範囲
+4. 並列起動と subagent 利用方針 (`ecc-orchestrator` の使いどころ)
+5. 作業中規律 (RB-007 + Knowledge 即時記録)
+6. 中断時規律 (RB-007)
+7. クローズ規律 4 要素 (RB-006 §[6] 書式) + Step [0.5] KNOWLEDGE CAPTURE GATE (RB-011 連動)
+8. 行動規律 (No Scope Dodging / No Over Delegation / No Push Handoff / No Internal Status Leak / No Turn-Model Hallucination / Knowledge Capture First)
+9. 出典・不確実性
+10. ユーザー判断に上げる範囲
 
-各セクション本文は Method 該当章を SSOT とし、CLAUDE.md には索引と書式テンプレのみを置く (コンテキスト経済 Rule 4)。
+各セクション本文は Method 該当章を SSOT とし、CLAUDE.md には索引と書式テンプレ・主 Claude が直接実行する手続きのみを置く (コンテキスト経済 Rule 4)。Runbook 詳細・Registry 一覧・委任契約フォーマット・Knowledge Vault 規約は ecc-method 本体を参照する (`12_knowledge-vault/`, `45_runbook/runbooks/RB-011-knowledge-promotion-flow.md`)。
 
 ## 採用後に頻出するポップアップ
 
