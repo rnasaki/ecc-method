@@ -15,6 +15,7 @@ related: []
 ### Added
 - (v1.0.0 で確定予定の機能・整備)
 - `.template-claude/` 配布テンプレを新設。`~/.claude/CLAUDE.md` 用テンプレ + 採用手順 README。Method 採用と一体で採用推奨 (orchestrator 未起動の素セッションでも Method 規律が効くようにする)。`<ECC_METHOD_ROOT>` プレースホルダで絶対パスを排除し PATH POLICY 適合。`99_distribution/03_v1.0.0-release-checklist.md` §1.4 に整合チェック 3 項目を追加。
+- `.template-claude/README.md` §2 の採用手順を 2 ステップ化 (CLAUDE.md 配置 + 初回 allowlist 追記)。Method 採用直後に頻発する Permission ポップアップ (skill 棚卸し / orchestrator 起動準備の read-only 調査) を、CLAUDE.md 配置と同じタイミングで `~/.claude/settings.json` の `permissions.allow` に登録するスクリプトと、jq 不在環境用フォールバック JSON を併記。配布先ユーザーの初回セットアップ体験が承認エコノミー §6 反パターン (毎回承認) に陥らないようにする。
 
 ### Changed
 - 章採番ポリシー: 5 刻みを単一規律として確定。`27_user-care/` を `25_writing-style/06_user-care/` 配下にサブディレクトリ化し、トップレベル採番を 5 刻み厳守に揃えた (HW-D, Session 3, 2026-06-24)。
