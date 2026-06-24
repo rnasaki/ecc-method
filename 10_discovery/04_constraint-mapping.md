@@ -1,3 +1,7 @@
+---
+keywords: [discovery, constraint, mapping]
+related: [15_environment/06_corporate-network.md, 10_discovery/03_stack-inference.md]
+---
 # 10-04 — Constraint Mapping (組織制約の自動検出)
 
 組織ネットワーク・証明書・クラウドポリシーといった **「環境固有の見えない制約」** を、ユーザーに尋ねる前に検出する手順。

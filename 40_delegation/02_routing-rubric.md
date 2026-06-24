@@ -1,3 +1,7 @@
+---
+keywords: [delegation, routing, rubric]
+related: []
+---
 # 02 — Routing Rubric
 
 タスク → 専門家のマッピング判定アルゴリズム。Orchestrator が Registry を引く際の決定木。

@@ -1,3 +1,7 @@
+---
+keywords: [environment, credentials, vault]
+related: [10_discovery/01_repo-recon.md, 20_repo-bootstrap/03_gitignore-baseline.md]
+---
 # 15-05 — Credentials Vault (secret 配置方針)
 
 API key / token / 鍵を **どこに置くか** を厳密に定める。Quality Gate ([60_quality-gates/](../60_quality-gates/)) の secret 検査で 0 件を維持するため。

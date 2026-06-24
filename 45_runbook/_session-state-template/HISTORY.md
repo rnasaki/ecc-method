@@ -1,6 +1,8 @@
 ---
 last_updated: <YYYY-MM-DD>
 schema: RB-006
+keywords: [runbook, _session-state-template, history]
+related: []
 ---
 
 # HISTORY - セッション引き継ぎログ (雛形)

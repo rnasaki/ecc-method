@@ -1,3 +1,7 @@
+---
+keywords: [writing-style, user-care, emotion, detection]
+related: [25_writing-style/06_user-care/02_first-response-protocol.md, 25_writing-style/02_avoidance-patterns.md]
+---
 # 01 — Emotion Detection (感情シグナル検知)
 
 ユーザーが感情的状態 (怒り / 焦り / 疲労 / 失望 / 混乱) にあるかを検知し、一次対応プロトコル ([02_first-response-protocol.md](./02_first-response-protocol.md)) を起動する判定基準を定める。

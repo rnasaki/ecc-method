@@ -1,3 +1,7 @@
+---
+keywords: [principles, eighth, principle, question, standards]
+related: [05_principles/01_seven-habits-mapping.md, 25_writing-style/03_citation-style.md, 75_self-evolution/01_freshness-policy.md, 75_self-evolution/02_auto-update-loop.md, 75_self-evolution/08_self-modification-loop.md]
+---
 # 00 — 標準懐疑原則 (Question the Standards)
 
 retrieved_at: 2026-06-23

@@ -1,3 +1,7 @@
+---
+keywords: [quality-gates, gate, checklist]
+related: [60_quality-gates/01_fact-check-protocol.md, 60_quality-gates/02_independent-verify.md, 60_quality-gates/06_red-team-loop.md, 60_quality-gates/05_uncertainty-disclosure.md, 60_quality-gates/03_anti-sycophancy.md]
+---
 # 07 — Gate Checklist (全成果物に通すゲート)
 
 全成果物 (.md / spec / コード / レポート) は、本チェックリストを通って初めて「完了」を宣言できる。`## 出典` `## 不確実性` まで満たすこと。

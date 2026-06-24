@@ -1,3 +1,7 @@
+---
+keywords: [ecc-usage, routing, recipes]
+related: [40_delegation/02_routing-rubric.md, 15_environment/10_agent-memory-hierarchy.md, 40_delegation/09_a2a-and-handoff-standards.md]
+---
 # 04 — Routing Recipes (Need → ECC 機能の選定)
 
 「やりたいこと」から ECC 機能・Pattern を選ぶレシピ集。10 件以上を収録する。本パッケージの routing rubric ([40_delegation/02_routing-rubric.md](../40_delegation/02_routing-rubric.md)) を Need 起点で逆引きしたもの。

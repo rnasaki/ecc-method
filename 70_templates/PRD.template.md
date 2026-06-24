@@ -1,4 +1,15 @@
+---
+keywords: [templates, prd.template]
+related: []
+---
 # PRD: {{product_name}}
+
+<!-- 展開時はファイル冒頭に CodeGraph 用 frontmatter を追加すること:
+---
+keywords: [prd, {{product-slug}}, ...]
+related: [docs/architecture.md, spec/<feature-id>/requirements.md, ...]
+---
+詳細: 70_templates/README.md -->
 
 > Product Requirements Document. アプリ全体の方向性を 1 ファイルに集約する。
 > 機能ごとの詳細は `spec/<feature-id>/requirements.md` に分割する。

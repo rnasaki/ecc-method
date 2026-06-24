@@ -1,3 +1,7 @@
+---
+keywords: [commands, slash]
+related: []
+---
 # 01 — Slash Commands → Pattern マッピング
 
 ECC で使う代表的なスラッシュコマンドを、本パッケージの Pattern P-001..P-006 へ紐付ける。コマンド呼び出し時にどの委任編成が起動するかを明示する。

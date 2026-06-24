@@ -1,3 +1,7 @@
+---
+keywords: [ecc-usage, adoption, roadmap]
+related: []
+---
 # 07 — Adoption Roadmap (0→1 導入ロードマップ)
 
 ECC + 本パッケージを段階的に導入するための時系列計画。week 1 / week 2-4 / month 2+ の 3 段階で「機能の解放」と「規律の追加」を進める。

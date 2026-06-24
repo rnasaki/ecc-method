@@ -1,3 +1,7 @@
+---
+keywords: [quality-gates, fact, check, protocol]
+related: [60_quality-gates/05_uncertainty-disclosure.md, 60_quality-gates/02_independent-verify.md, 60_quality-gates/07_gate-checklist.md]
+---
 # 01 — Fact-Check Protocol (三層検証)
 
 事実主張は **三層** で検証し、各主張に **{claim, source_url, retrieved_at, confidence}** の四つ組を必ず付ける。これにより事後監査が可能になる。

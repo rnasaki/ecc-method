@@ -1,3 +1,7 @@
+---
+keywords: [repo-bootstrap, profiles]
+related: [10_discovery/03_stack-inference.md, 15_environment/03_browser-automation.md, 40_delegation/01_expert-registry.md, 20_repo-bootstrap/02_directory-skeleton.md]
+---
 # 20-04 — Bootstrap Profiles
 
 新規リポを 5 種類のプロファイルに分類し、各々の標準スタック / ディレクトリ / 初期コマンド / 初期 Runbook を定める。

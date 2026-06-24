@@ -1,3 +1,7 @@
+---
+keywords: [verification, traceability]
+related: [55_verification/02_drift-detection.md, 55_verification/03_demo-readiness.md, 40_delegation/03_delegation-contract.md, 60_quality-gates/07_gate-checklist.md]
+---
 # 01 — Traceability (AC ↔ design ↔ tasks ↔ test ↔ code)
 
 SDD 成果物と TDD 成果物を **同じ ID** で串刺しに追跡する。これにより drift 検知 ([02_drift-detection.md](./02_drift-detection.md)) と受入確認 ([03_demo-readiness.md](./03_demo-readiness.md)) が機械化できる。

@@ -1,3 +1,7 @@
+---
+keywords: [ecc-usage, cost, context]
+related: [40_delegation/03_delegation-contract.md]
+---
 # 06 — Cost & Context (コスト・コンテキスト最適化)
 
 ECC は並列・対抗・委任を前提とするため、token 消費が増えやすい。本章は BP-009 (multi-agent ≒ 15× token) と BP-010 (prompt cache breakpoint) を実用化する手順を示す。

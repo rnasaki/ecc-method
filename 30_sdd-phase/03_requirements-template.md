@@ -1,3 +1,7 @@
+---
+keywords: [sdd-phase, requirements, template]
+related: []
+---
 # 30_sdd-phase / 03 Requirements テンプレート
 
 > requirements.md は PRD で定義した各 Feature ID に対し、検証可能な受け入れ条件 (Acceptance Criteria, AC) を Given/When/Then で記述する文書。

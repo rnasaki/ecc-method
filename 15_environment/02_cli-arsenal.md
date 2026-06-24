@@ -1,3 +1,7 @@
+---
+keywords: [environment, cli, arsenal]
+related: [15_environment/01_capabilities-matrix.md]
+---
 # 15-02 — CLI Arsenal (必須 CLI 一覧)
 
 ECC で頻出する CLI を分類して並べ、検出 / 導入 / 用途を一覧化する。20 件以上を網羅する。

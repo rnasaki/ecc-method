@@ -1,3 +1,7 @@
+---
+keywords: [pitfalls, session, context, overflow]
+related: []
+---
 # 05 — コンテキスト窓溢れ・/compact / subagent 隔離
 
 長時間セッションや大規模リポ操作では、LLM のコンテキスト窓 (context window) を使い切り、応答品質が急落する。本ファイルは「気付き → 圧縮 → 隔離」の運用を定義する。

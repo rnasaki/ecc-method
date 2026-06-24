@@ -1,4 +1,15 @@
+---
+keywords: [templates, design.template]
+related: []
+---
 # Design: {{F-NN}}-{{feature-slug}}
+
+<!-- 展開時はファイル冒頭に CodeGraph 用 frontmatter を追加すること:
+---
+keywords: [design, {{F-NN}}, {{feature-slug}}]
+related: [spec/{{F-NN}}-{{feature-slug}}/requirements.md, spec/{{F-NN}}-{{feature-slug}}/tasks.md]
+---
+詳細: 70_templates/README.md -->
 
 > 機能単位の設計書。requirements.md の AC を満たす設計を記述する。
 > 実装は tasks.md に分割する。

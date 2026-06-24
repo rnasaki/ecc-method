@@ -1,4 +1,15 @@
+---
+keywords: [templates, requirements.template]
+related: []
+---
 # Requirements: {{F-NN}}-{{feature-slug}}
+
+<!-- 展開時はファイル冒頭に CodeGraph 用 frontmatter を追加すること:
+---
+keywords: [requirements, {{F-NN}}, {{feature-slug}}]
+related: [spec/{{F-NN}}-{{feature-slug}}/design.md, spec/{{F-NN}}-{{feature-slug}}/tasks.md]
+---
+詳細: 70_templates/README.md -->
 
 > 機能単位の要件定義。ユーザーストーリーと AC (受入基準) を Given/When/Then 形式で記述。
 > design.md / tasks.md と 1:1 で対応させる。

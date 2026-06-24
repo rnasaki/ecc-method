@@ -2,6 +2,8 @@
 title: "Reasoning Effort Control（推論深度の明示制御）"
 status: stable
 retrieved_at: 2026-06-23
+keywords: [principles, reasoning, effort, control]
+related: [40_delegation/02_routing-rubric.md, 40_delegation/03_delegation-contract.md, 50_permissions/06_cost-budget-enforcement.md]
 ---
 
 # 08. Reasoning Effort Control

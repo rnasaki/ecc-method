@@ -1,3 +1,7 @@
+---
+keywords: [tdd-phase, red, green, refactor]
+related: []
+---
 # 35_tdd-phase / 01 Red-Green-Refactor
 
 > Red-Green-Refactor (RGR) は TDD の中核ループ。
@@ -86,6 +90,17 @@
 ### 4.4 記録
 
 - 最終 green を `_tmp/rgr-evidence/T<NN>-final.txt` に残す。
+
+### 4.5 CodeGraph の再生成 (該当時のみ)
+
+Refactor で **md ファイルの追加・改名・移動** を行った場合に限り、`_index/concept-graph.json` を再生成する (ソースコードのみの変更では不要):
+
+```bash
+node ecc-method/80_commands/generate-keywords-frontmatter.mjs
+node ecc-method/80_commands/generate-concept-graph.mjs
+```
+
+詳細は `70_templates/README.md` / `_index/README.md` を参照。
 
 ## 5. ループの粒度
 

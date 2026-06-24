@@ -1,3 +1,7 @@
+---
+keywords: [discovery, knowledge, acquisition]
+related: [40_delegation/02_routing-rubric.md, 60_quality-gates/01_fact-check-protocol.md, 10_discovery/04_constraint-mapping.md, 75_self-evolution/01_freshness-policy.md]
+---
 # 10-05 — Knowledge Acquisition (公式優先取得手順)
 
 未知のライブラリ・API・仕様を **L1 公式情報** から取りに行くための手順。L3 (モデル知識単独) は禁止 (METHOD §6 / Quality Gate)。

@@ -1,3 +1,7 @@
+---
+keywords: [pitfalls, git, divergence]
+related: []
+---
 # 04 — main 競合の安全プロセス (バックアップ → reset --hard → 意味マージ)
 
 リモート main がローカル main と「分岐」した状態で、安易に `git pull --rebase` や `git push --force` を打つとコミットが消える事故になる。本ファイルは破壊操作なしで安全に統合するための定型を定義する。

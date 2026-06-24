@@ -1,3 +1,7 @@
+---
+keywords: [writing-style, user-care, first, response, protocol]
+related: [25_writing-style/06_user-care/01_emotion-detection.md, 25_writing-style/06_user-care/03_blocker-removal.md, 25_writing-style/06_user-care/05_post-incident-runbook.md, 25_writing-style/02_avoidance-patterns.md, 50_permissions/02_pre-authorized-actions.md]
+---
 # 02 — First Response Protocol (一次対応 6 ステップ)
 
 [01_emotion-detection.md](./01_emotion-detection.md) で感情シグナルが検知されたとき、または同じ訂正を 2 回以上受けたときに起動する一次対応手順。METHOD.md §9 と整合。

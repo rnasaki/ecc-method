@@ -1,3 +1,7 @@
+---
+keywords: [sdd-phase, prd, flow]
+related: []
+---
 # 30_sdd-phase / 01 PRD 作成フロー
 
 > Spec-Driven Development (SDD) の起点となる Product Requirements Document (PRD) の作成手順を定義する。

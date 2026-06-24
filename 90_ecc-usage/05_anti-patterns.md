@@ -1,3 +1,7 @@
+---
+keywords: [ecc-usage, anti, patterns]
+related: []
+---
 # 05 — Anti-Patterns (よくある誤用)
 
 ECC 採用時にしばしば発生する誤用と、その回避策を列挙する。

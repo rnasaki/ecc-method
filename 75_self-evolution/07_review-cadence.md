@@ -1,3 +1,7 @@
+---
+keywords: [self-evolution, review, cadence]
+related: [75_self-evolution/08_self-modification-loop.md, 75_self-evolution/01_freshness-policy.md, 75_self-evolution/02_auto-update-loop.md, 75_self-evolution/03_knowledge-acquisition.md, 75_self-evolution/04_self-repair.md]
+---
 # 07 — Review Cadence (週次/月次/四半期チェックリスト)
 
 > **Stage 10 (cadence 側)** (本章は self-evolution の Stage 10、`05_industry-radar.md` と並列で Stage 10 を担う。Stage 体系の全体像は [08_self-modification-loop.md §9](./08_self-modification-loop.md))

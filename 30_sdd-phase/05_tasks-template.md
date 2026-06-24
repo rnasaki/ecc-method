@@ -1,3 +1,7 @@
+---
+keywords: [sdd-phase, tasks, template]
+related: []
+---
 # 30_sdd-phase / 05 Tasks テンプレート
 
 > tasks.md は design.md を実装可能な順序付きタスクに分解した文書。

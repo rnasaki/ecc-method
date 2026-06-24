@@ -1,3 +1,7 @@
+---
+keywords: [method]
+related: [05_principles/05_delegation-first.md, 40_delegation/01_expert-registry.md, 05_principles/06_context-economy.md, 60_quality-gates/01_fact-check-protocol.md, 60_quality-gates/06_red-team-loop.md]
+---
 # METHOD — SDD-orchestrated, TDD-disciplined Hybrid with ECC
 
 このパッケージの Single Source of Truth (SSOT)。SDD-orchestrated, TDD-disciplined (SDD が骨格を組み、TDD が実装を規律する) の 1 ループに統合し、ECC のマルチエージェント基盤で運用するための方法論を定義する。

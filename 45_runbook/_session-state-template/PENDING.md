@@ -2,6 +2,8 @@
 last_updated: <YYYY-MM-DD>
 session_count: 0
 schema: RB-006
+keywords: [runbook, _session-state-template, pending]
+related: [45_runbook/runbooks/RB-006-session-handover-protocol.md]
 ---
 
 # PENDING - 未完了宿題 (雛形)

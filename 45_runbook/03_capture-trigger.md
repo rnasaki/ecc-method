@@ -1,3 +1,7 @@
+---
+keywords: [runbook, capture, trigger]
+related: []
+---
 # 03 — Capture Trigger
 
 「いつ Runbook 化すべきか」の検知ルール。Orchestrator はタスク完了時に必ずこの判定を回す。Runbook 化を逃すと、同じ手順を毎回ユーザーに尋ねる「ゼロ重複違反」が発生する。

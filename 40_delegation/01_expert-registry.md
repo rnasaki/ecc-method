@@ -1,3 +1,7 @@
+---
+keywords: [delegation, expert, registry]
+related: [75_self-evolution/01_freshness-policy.md]
+---
 # 01 — Expert Registry
 
 専門家エージェント・スキル・MCP を Role 別にカタログ化した中核レジストリ。Orchestrator はタスクを受けたらまずここを引く。

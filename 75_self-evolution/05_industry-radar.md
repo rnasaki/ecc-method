@@ -1,3 +1,7 @@
+---
+keywords: [self-evolution, industry, radar]
+related: [75_self-evolution/08_self-modification-loop.md]
+---
 # 05 — Industry Radar (四半期ベンチ)
 
 > **Stage 10 (radar 側)** (本章は self-evolution の Stage 10、`07_review-cadence.md` と並列で Stage 10 を担う。Stage 体系の全体像は [08_self-modification-loop.md §9](./08_self-modification-loop.md))

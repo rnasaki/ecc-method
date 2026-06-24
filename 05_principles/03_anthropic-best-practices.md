@@ -1,3 +1,7 @@
+---
+keywords: [principles, anthropic, best, practices]
+related: [40_delegation/01_expert-registry.md, 05_principles/07_multi-llm-routing.md, 40_delegation/02_routing-rubric.md, 40_delegation/06_handoff-patterns.md, 40_delegation/03_delegation-contract.md]
+---
 # 03 — Anthropic 公式ベストプラクティス参照集
 
 Anthropic 公式 docs および Engineering blog から導出されたベストプラクティスを、本パッケージで採用している項目に絞って参照集としてまとめる。

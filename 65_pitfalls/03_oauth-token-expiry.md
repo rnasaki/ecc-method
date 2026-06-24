@@ -1,3 +1,7 @@
+---
+keywords: [pitfalls, oauth, token, expiry]
+related: []
+---
 # 03 — OAuth トークン期限切れの兆候と対処
 
 GitHub CLI (`gh`) など OAuth トークンを保持する CLI は、無通知でトークンが失効しユーザに再認証を要求してくる。本ファイルは「気付き → 切り分け → 再認証」までの定型手順をまとめる。

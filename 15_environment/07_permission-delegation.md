@@ -1,3 +1,7 @@
+---
+keywords: [environment, permission, delegation]
+related: []
+---
 # 15-07 — Permission Delegation (settings.local.json プリセット)
 
 承認最小化 (METHOD §8) の実装として、`settings.local.json` で agent に **事前許可** を与える 3 段階プリセットを定義する。

@@ -1,3 +1,7 @@
+---
+keywords: [self-evolution, auto, update, loop]
+related: [40_delegation/03_delegation-contract.md]
+---
 # 02 — Auto-Update Loop (自動更新ループ)
 
 本パッケージを陳腐化させないための 7 段階パイプライン。`75_self-evolution/01_freshness-policy.md` のステータスをトリガに、検知から反映・観測までを定式化する。

@@ -1,3 +1,7 @@
+---
+keywords: [quality-gates, guardrails, compliance]
+related: [50_permissions/04_settings-presets.md, 50_permissions/05_escalation-policy.md, 60_quality-gates/07_gate-checklist.md]
+---
 # 04 — Guardrails Compliance (安全 / 著作 / PII / 社外秘)
 
 オーケストレータが守る「絶対線」。これらは ASK でも ACT でもなく、**deny by default** で固める。Hook と settings の二重防御。

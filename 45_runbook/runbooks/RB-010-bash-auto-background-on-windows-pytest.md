@@ -11,6 +11,7 @@ trigger: Bash ツールで pytest 全体実行など 2 分超のコマンドを 
 expert-routing: [general-purpose, Explore]
 related: [[RB-005-subagent-realtime-streaming-via-hooks]]
 source: ecc-method 段階 2 テスト Session 2 (2026-06-24) で実機検証、本リポ backend tests/ pytest 実行時に再現
+keywords: [runbook, runbooks, bash, auto, background, windows, pytest]
 ---
 
 # Windows + Git Bash + pytest 全体実行の auto-background 罠

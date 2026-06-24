@@ -1,3 +1,7 @@
+---
+keywords: [delegation, cross, verification]
+related: []
+---
 # 07 — Cross Verification
 
 「生成した本人が判定しない」を運用ルールにする。生成・判定・反論を別個体に分けて、自己採点バイアスとサイコファンシーを抑える。

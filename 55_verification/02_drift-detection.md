@@ -1,3 +1,7 @@
+---
+keywords: [verification, drift, detection]
+related: [55_verification/01_traceability.md, 60_quality-gates/06_red-team-loop.md, 50_permissions/05_escalation-policy.md, 55_verification/03_demo-readiness.md]
+---
 # 02 — Drift Detection (スペックとコードの乖離検知)
 
 実装が進むにつれ、spec と code は必ず乖離する。乖離を **早期検知** し、コードより先に spec を更新する規律を保つ。

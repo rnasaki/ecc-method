@@ -1,6 +1,8 @@
 ---
 last_updated: <YYYY-MM-DD>
 schema: RB-006
+keywords: [runbook, _session-state-template, completed]
+related: []
 ---
 
 # COMPLETED - 完了済宿題アーカイブ (雛形)

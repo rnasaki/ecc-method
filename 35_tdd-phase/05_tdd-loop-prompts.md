@@ -1,3 +1,7 @@
+---
+keywords: [tdd-phase, tdd, loop, prompts]
+related: []
+---
 # 35_tdd-phase / 05 TDD Loop Prompts
 
 > TDD ループを駆動する 2 つのエージェント / コマンド `tdd-guide` と `tdd-workflow` の使い分けを規定する。

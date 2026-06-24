@@ -4,6 +4,8 @@ session_id: <連番>
 created_at: <YYYY-MM-DD>
 last_updated: <YYYY-MM-DD>
 status: pending_start | in_progress | completed
+keywords: [runbook, _session-state-template, current, session]
+related: []
 ---
 
 # Current Session - 現セッションのフォーカス (雛形)

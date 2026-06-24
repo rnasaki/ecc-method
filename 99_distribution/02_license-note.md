@@ -1,3 +1,7 @@
+---
+keywords: [distribution, note]
+related: [99_distribution/01_how-to-redistribute.md, 25_writing-style/03_citation-style.md, 75_self-evolution/01_freshness-policy.md]
+---
 # 02 — License Note (内製ナレッジ取扱い注意)
 
 本パッケージおよび派生物のライセンス選定指針と、出典の引き継ぎ義務を整理する。

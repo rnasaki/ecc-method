@@ -1,3 +1,7 @@
+---
+keywords: [repo-bootstrap, directory, skeleton]
+related: [20_repo-bootstrap/04_profiles.md]
+---
 # 20-02 — Directory Skeleton (spec / docs / knowhow / tests 雛形)
 
 新規リポに最初に作るディレクトリ骨格を定義する。プロファイル ([04_profiles.md](./04_profiles.md)) で差分を持つ。
@@ -30,6 +34,8 @@
 │   └── INDEX.md
 ├── tests/                     # 共通テスト置き場
 │   └── _smoke/
+├── _index/                    # 探索コスト削減用の派生インデックス (生成物)
+│   └── concept-graph.json     # 全 md の keywords/related から自動生成 (CodeGraph)
 ├── _tmp/                      # 一時アウトプット (gitignore)
 └── (言語/FW 別ソース)
 ```
@@ -43,6 +49,7 @@
 | `knowhow/` | 「やってみて分かったこと」の Runbook (45_runbook/ の prj 版) |
 | `tests/` | 言語 / FW の単体テスト以外 (E2E / integration / smoke) |
 | `_tmp/` | discovery_report.json など一時生成物 |
+| `_index/` | `concept-graph.json` (CodeGraph) 等の派生インデックス。手で編集しない。`80_commands/generate-concept-graph.mjs` で再生成 |
 
 ## spec/ の運用
 
@@ -128,6 +135,7 @@ tests/
 - `spec/` が空 = SDD 未起動
 - `knowhow/INDEX.md` が空 = bootstrap 直後 (許容)
 - `_tmp/discovery_report.json` 不在 = Discovery 未完 (Phase 0 へ戻る)
+- `_index/concept-graph.json` 不在 = CodeGraph 未生成 (`node 80_commands/generate-concept-graph.mjs` を実行)
 
 ## プロファイル別の追加
 

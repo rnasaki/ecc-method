@@ -135,6 +135,7 @@ COMMON_DIRS=(
   "docs/tasks"
   "tests"
   ".tmp"
+  "_index"
 )
 
 for d in "${COMMON_DIRS[@]}"; do
@@ -251,6 +252,45 @@ DOCSREADME
 
 ensure_file "docs/README.md" "${DOCS_README}"
 
+# ----- 7.5) _index/ プレースホルダ + CodeGraph 自動生成 (任意) ---------------
+
+INDEX_README=$(cat <<'INDEXREADME'
+# _index/
+
+探索コスト削減用の派生インデックス置き場。手で編集しない。
+
+- `concept-graph.json` — 全 md の `keywords:` / `related:` frontmatter から自動生成
+- 再生成: `node ecc-method/80_commands/generate-keywords-frontmatter.mjs && node ecc-method/80_commands/generate-concept-graph.mjs`
+
+詳細は `ecc-method/_index/README.md` を参照。
+INDEXREADME
+)
+
+ensure_file "_index/README.md" "${INDEX_README}"
+
+# CodeGraph を初期生成 (node があれば実行、無ければ警告のみ)
+ECC_METHOD_DIR=""
+for cand in "ecc-method" "../ecc-method" ".ecc-method"; do
+  if [ -f "${cand}/80_commands/generate-concept-graph.mjs" ]; then
+    ECC_METHOD_DIR="${cand}"
+    break
+  fi
+done
+
+if [ -n "${ECC_METHOD_DIR}" ] && command -v node >/dev/null 2>&1; then
+  if [ "${DRY_RUN}" = "1" ]; then
+    log_action "would run: node ${ECC_METHOD_DIR}/80_commands/generate-keywords-frontmatter.mjs"
+    log_action "would run: node ${ECC_METHOD_DIR}/80_commands/generate-concept-graph.mjs"
+  else
+    log_action "run: generate-keywords-frontmatter.mjs"
+    node "${ECC_METHOD_DIR}/80_commands/generate-keywords-frontmatter.mjs" || log_action "warn: generate-keywords-frontmatter failed (non-fatal)"
+    log_action "run: generate-concept-graph.mjs"
+    node "${ECC_METHOD_DIR}/80_commands/generate-concept-graph.mjs" || log_action "warn: generate-concept-graph failed (non-fatal)"
+  fi
+else
+  log_action "skip CodeGraph: node or ecc-method/ not found (run generators manually later)"
+fi
+
 # ----- 8) サマリ ------------------------------------------------------------
 
 echo ""
@@ -262,5 +302,6 @@ echo "  1. ecc-method/10_discovery/ を実行"
 echo "  2. ecc-method/30_sdd-phase/ で PRD → requirements → design → tasks"
 echo "  3. ecc-method/35_tdd-phase/ で TDD ループ"
 echo "  4. ecc-method/45_runbook/INDEX.md を案件用に更新"
+echo "  5. ドキュメント追加・改名後は CodeGraph 再生成: node ecc-method/80_commands/generate-keywords-frontmatter.mjs && node ecc-method/80_commands/generate-concept-graph.mjs"
 
 exit 0

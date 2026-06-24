@@ -1,3 +1,7 @@
+---
+keywords: [overview, purpose]
+related: [05_principles/05_delegation-first.md, METHOD.md, 60_quality-gates/01_fact-check-protocol.md, 40_delegation/01_expert-registry.md, 40_delegation/02_routing-rubric.md]
+---
 # 01 — Purpose (このパッケージの目的)
 
 ecc-method は、ECC (Everything Claude Code) を採用した個人・チームが、**新規プロジェクト着手から運用・自己更新まで** を一貫したマルチエージェント方式で進めるためのリファレンスである。

@@ -1,3 +1,7 @@
+---
+keywords: [writing-style, citation, style]
+related: [METHOD.md, 25_writing-style/04_uncertainty-language.md]
+---
 # 03 — Citation Style (出典分類と引用形式)
 
 主張は出典で支える。本ファイルは出典の分類 (L1 / L2 / L3) と引用形式を定義する。

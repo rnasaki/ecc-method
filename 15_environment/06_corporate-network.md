@@ -1,3 +1,7 @@
+---
+keywords: [environment, corporate, network]
+related: [10_discovery/04_constraint-mapping.md]
+---
 # 15-06 — Corporate Network (proxy / CA bundle)
 
 企業ネットワーク配下で ECC を稼働させるために必要な、proxy と CA bundle の取り扱いを抽象化して定義する。固有の社内 URL / 組織名は記載しない。

@@ -1,3 +1,7 @@
+---
+keywords: [distribution, developer, self, dogfooding]
+related: [45_runbook/runbooks/RB-008-branch-strategy-and-semver.md, 45_runbook/runbooks/RB-006-session-handover-protocol.md, 99_distribution/03_v1.0.0-release-checklist.md]
+---
 # 04 — Method 開発者の self-dogfooding 設定
 
 > **対象読者**: ecc-method 自体を改修する開発者 (= Method の利用者でもある人)。一般利用者 (`git clone main` で導入する人) は読み飛ばして良い。

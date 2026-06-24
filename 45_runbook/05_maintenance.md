@@ -1,3 +1,7 @@
+---
+keywords: [runbook, maintenance]
+related: []
+---
 # 05 — Maintenance
 
 Runbook の鮮度管理・統合・廃止判定。書きっぱなしの Runbook は時間と共に「むしろ間違う」資産になる。定期メンテで active を保ち、古いものは明示的に死に方を選ばせる。

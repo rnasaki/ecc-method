@@ -11,6 +11,7 @@ trigger: {{この Runbook が呼ばれる状況の自然文記述。検索ヒッ
 expert-routing: [{{expert-id}}]
 related: [RB-{{NNN}}]
 source: {{出典 URL or 検証コマンド}}
+keywords: [runbook, {{topic1}}, {{topic2}}]
 ---
 
 # {{タイトル}}

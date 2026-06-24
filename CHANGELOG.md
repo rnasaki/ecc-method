@@ -1,3 +1,7 @@
+---
+keywords: [changelog]
+related: []
+---
 # Changelog
 
 すべての注目すべき変更を記録する。

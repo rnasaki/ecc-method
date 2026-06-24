@@ -1,3 +1,7 @@
+---
+keywords: [self-evolution, freshness, policy]
+related: [75_self-evolution/02_auto-update-loop.md, 75_self-evolution/04_self-repair.md, 75_self-evolution/06_health-metrics.md, 40_delegation/01_expert-registry.md, 45_runbook/01_runbook-spec.md]
+---
 # 01 — Freshness Policy (鮮度判定)
 
 本パッケージのナレッジ・Registry エントリ・Runbook を陳腐化させないための鮮度ポリシー。`last_verified` 日付を起点に 4 段階のステータスを付与し、自動更新ループ ([02_auto-update-loop.md](./02_auto-update-loop.md)) のトリガにする。

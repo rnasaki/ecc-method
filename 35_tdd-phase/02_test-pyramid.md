@@ -1,3 +1,7 @@
+---
+keywords: [tdd-phase, test, pyramid]
+related: []
+---
 # 35_tdd-phase / 02 Test Pyramid
 
 > テストを unit / integration / e2e の 3 層に分け、層ごとに責務と比率を定める。

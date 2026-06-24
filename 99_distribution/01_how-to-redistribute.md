@@ -1,3 +1,7 @@
+---
+keywords: [distribution, redistribute]
+related: [99_distribution/02_license-note.md, 25_writing-style/02_avoidance-patterns.md, 75_self-evolution/06_health-metrics.md]
+---
 # 01 — How to Redistribute (再配布手順)
 
 本パッケージを別リポ・別組織へ持ち出すための手順。本パッケージは中立 (個人・組織・固有プロダクト名を含めない) で構成しているが、案件で派生したファイルを混在させたまま持ち出すと再配布性が崩れる。本章は「持ち出し前に削除すべき情報」を明示する。

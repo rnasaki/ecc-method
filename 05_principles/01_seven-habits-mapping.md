@@ -1,3 +1,7 @@
+---
+keywords: [principles, seven, habits, mapping]
+related: [25_writing-style/06_user-care/03_blocker-removal.md, 40_delegation/02_routing-rubric.md, 05_principles/06_context-economy.md, 60_quality-gates/05_uncertainty-disclosure.md, 40_delegation/06_handoff-patterns.md]
+---
 # 01 — 7 Habits → エージェント原則マッピング
 
 Stephen Covey の "The 7 Habits of Highly Effective People" の各原則を、エージェント運用に翻訳する。

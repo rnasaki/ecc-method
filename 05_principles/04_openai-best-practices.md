@@ -1,3 +1,7 @@
+---
+keywords: [principles, openai, best, practices]
+related: [40_delegation/01_expert-registry.md, 40_delegation/06_handoff-patterns.md, 05_principles/07_multi-llm-routing.md, 60_quality-gates/06_red-team-loop.md]
+---
 # 04 — OpenAI Agents SDK / Codex CLI ベストプラクティス参照集
 
 OpenAI Agents SDK と Codex CLI のドキュメントから、本パッケージで採用しているベストプラクティスを参照集としてまとめる。

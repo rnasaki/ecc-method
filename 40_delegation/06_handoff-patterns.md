@@ -1,3 +1,7 @@
+---
+keywords: [delegation, handoff, patterns]
+related: []
+---
 # 06 — Handoff Patterns
 
 専門家への委任の仕方を 6 パターンに整理する。Pattern P-001〜P-006 (Registry 側) はタスク種別単位の編成、本ファイルの Handoff Pattern は構造単位の編成。Routing 結果に合わせて選択する。

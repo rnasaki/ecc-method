@@ -1,3 +1,7 @@
+---
+keywords: [quality-gates, uncertainty, disclosure]
+related: [55_verification/02_drift-detection.md, 60_quality-gates/01_fact-check-protocol.md, 60_quality-gates/03_anti-sycophancy.md, 60_quality-gates/07_gate-checklist.md]
+---
 # 05 — Uncertainty Disclosure (不確実性の開示)
 
 不確実性を **語彙で表現** し、各成果物末尾に専用セクションを設ける義務を定める。確信と推測を読み手が区別できる状態を保つ。

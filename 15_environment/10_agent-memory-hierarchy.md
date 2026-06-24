@@ -1,3 +1,7 @@
+---
+keywords: [environment, agent, memory, hierarchy]
+related: [15_environment/08_session-persistence.md, 75_self-evolution/01_freshness-policy.md, 75_self-evolution/07_review-cadence.md, 45_runbook/05_maintenance.md]
+---
 # 15-10 — Agent Memory Hierarchy (Episodic / Semantic / Procedural)
 
 長時間自律 agent が「過去から学ぶ」「ドメイン知識を保持する」「手順を自律学習する」ために、agent memory を **3 層** で扱う。本ファイルは [08_session-persistence.md](./08_session-persistence.md) の **session 継続** とは役割が異なり、**agent learning** の側を扱う。

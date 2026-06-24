@@ -1,3 +1,7 @@
+---
+keywords: [sdd-phase, feature, rules]
+related: [55_verification/01_traceability.md, 55_verification/02_drift-detection.md]
+---
 # 30_sdd-phase / 02 Feature ID 採番規則
 
 > 機能 ID は仕様 (PRD/requirements/design/tasks) とコード/テストを横串で紐付けるキー。

@@ -1,3 +1,7 @@
+---
+keywords: [discovery, stack, inference]
+related: [10_discovery/02_domain-elicitation.md, 75_self-evolution/05_industry-radar.md]
+---
 # 10-03 — Stack Inference (ユースケース → 技術スタック推論)
 
 ユースケースとユーザー回答 ([02_domain-elicitation.md](./02_domain-elicitation.md)) から、初期技術スタック候補を機械的に絞り込むためのルール集。

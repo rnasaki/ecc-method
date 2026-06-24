@@ -1,3 +1,7 @@
+---
+keywords: [quality-gates, independent, verify]
+related: [60_quality-gates/06_red-team-loop.md, 60_quality-gates/03_anti-sycophancy.md, 40_delegation/03_delegation-contract.md]
+---
 # 02 — Independent Verification (生成 ≠ 判定)
 
 成果物の検証は **生成した本人以外** が行う。self-verify は禁止。これは LLM 単独の自己評価バイアス (sycophancy / 自己合理化) を切るための原則。

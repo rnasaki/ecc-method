@@ -1,3 +1,7 @@
+---
+keywords: [sdd-phase, review, gates]
+related: []
+---
 # 30_sdd-phase / 06 レビュー Gate
 
 > SDD では「PRD → requirements → design → tasks」の各遷移点に Human-in-the-Loop (HITL) のレビュー Gate を置き、
@@ -103,6 +107,17 @@
 - 通過した Gate は `specs/<feature-set>/REVIEW.md` に記録する。
   - フォーマット: `- Gate 1: <PASS|FAIL> by <reviewer> at <YYYY-MM-DD>`
 - FAIL の場合は差し戻し理由と再提出予定を併記。
+
+### 5.3 CodeGraph の再生成 (必須)
+
+requirements.md / design.md / tasks.md / 関連 doc の **追加・改名・削除** が発生した Gate 通過の直後に、CodeGraph を再生成する。怠ると `_index/concept-graph.json` が drift し、orchestrator の探索精度が落ちる。
+
+```bash
+node ecc-method/80_commands/generate-keywords-frontmatter.mjs
+node ecc-method/80_commands/generate-concept-graph.mjs
+```
+
+新規 md は手書きで `keywords:` / `related:` を持たせること (詳細: `70_templates/README.md`)。
 
 ## 6. アンチパターン
 

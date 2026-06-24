@@ -1,3 +1,7 @@
+---
+keywords: [discovery, domain, elicitation]
+related: [10_discovery/01_repo-recon.md, 25_writing-style/06_user-care/02_first-response-protocol.md]
+---
 # 10-02 — Domain Elicitation (ヒアリング設計)
 
 ユーザーの頭の中にある **未文書の意図** を、最小質問で最大情報量で取り出すための設計。

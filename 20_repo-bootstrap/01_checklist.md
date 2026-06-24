@@ -1,3 +1,7 @@
+---
+keywords: [repo-bootstrap, checklist]
+related: [20_repo-bootstrap/04_profiles.md]
+---
 # 20-01 — Bootstrap Checklist (順序付き)
 
 新規リポ立ち上げ時に **同じ順番で** 実行する初期化チェックリスト。プロファイルは [04_profiles.md](./04_profiles.md) で選定する。
@@ -27,7 +31,7 @@
 ### Phase 2: ディレクトリ雛形
 
 - [ ] `02_directory-skeleton.md` の雛形を展開
-- [ ] `spec/`, `docs/`, `knowhow/`, `tests/` を作成
+- [ ] `spec/`, `docs/`, `knowhow/`, `tests/`, `_index/` を作成
 - [ ] `README.md` 雛形を生成 (1 段落のゴール記述のみ)
 - [ ] `LICENSE` を選定 (案件方針に従う、不明なら未定義のまま)
 
@@ -74,6 +78,8 @@
 ### Phase 8: 初期コミット
 
 - [ ] `gitleaks detect --no-git` で secret 0 件を確認
+- [ ] **CodeGraph 生成**: `node ecc-method/80_commands/generate-keywords-frontmatter.mjs` → `node ecc-method/80_commands/generate-concept-graph.mjs` (パス例。実体は ecc-method 配置場所に依存)
+- [ ] `_index/concept-graph.json` が生成されていることを確認
 - [ ] `git add -A`
 - [ ] `git commit -m "chore: bootstrap repo via ecc-method"`
 - [ ] (リモート作成済みなら) `git push -u origin main`

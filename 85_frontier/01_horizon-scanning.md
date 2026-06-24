@@ -1,3 +1,7 @@
+---
+keywords: [frontier, horizon, scanning]
+related: []
+---
 # 01. Horizon Scanning — frontier 追跡法
 
 > 「業界標準は陳腐化、進化スパンは月次〜半年より短い」前提

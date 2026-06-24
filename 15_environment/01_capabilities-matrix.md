@@ -1,3 +1,7 @@
+---
+keywords: [environment, capabilities, matrix]
+related: [10_discovery/04_constraint-mapping.md]
+---
 # 15-01 — Capabilities Matrix (何ができるか / 何が要るか)
 
 ECC を活用するうえで、環境にあるべき機能と、それぞれが満たす条件を一覧化する。Discovery ([10_discovery/04_constraint-mapping.md](../10_discovery/04_constraint-mapping.md)) と組み合わせて環境ギャップを抽出する。

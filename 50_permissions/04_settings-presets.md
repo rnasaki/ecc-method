@@ -1,3 +1,7 @@
+---
+keywords: [permissions, settings, presets]
+related: [50_permissions/03_blast-radius-rubric.md]
+---
 # 04 — Settings Presets (3 段階プリセット)
 
 `.claude/settings.local.json` の 3 段階プリセット。プロジェクト性質と運用フェーズに応じて切り替える。

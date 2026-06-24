@@ -11,8 +11,8 @@ trigger: セッションを跨いで状態を保持する必要があるとき /
 expert-routing: [orchestrator]
 related: [RB-007-1-session-1-task-and-session-state, RB-009-first-run-sdd-bootstrap, RB-003-autonomous-decision-framework, ../01_overview/05_user-as-hands.md]
 source: 本パッケージ実機運用 (2026-06-24, ユーザー指摘「私が正しい対処をしなければ宿題は永遠に失われる」/ HW-G 概念再定義「.session-state/ は SDD/TDD プロセスの中間成果物」)
+keywords: [runbook, runbooks, session, handover, protocol]
 ---
-
 # セッション状態プロトコル
 
 ## TL;DR (30 秒で読める結論)

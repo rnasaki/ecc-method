@@ -1,3 +1,7 @@
+---
+keywords: [overview, glossary]
+related: [40_delegation/04_orchestrator-system-prompt.md, 40_delegation/01_expert-registry.md, 40_delegation/02_routing-rubric.md, 40_delegation/03_delegation-contract.md, 45_runbook/01_runbook-spec.md]
+---
 # 04 — Glossary (用語集)
 
 ecc-method を読むうえで前提となる用語を定義する。各用語は本パッケージ内での意味を優先し、外部一般定義と差がある場合は併記する。

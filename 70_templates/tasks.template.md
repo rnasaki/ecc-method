@@ -1,4 +1,15 @@
+---
+keywords: [templates, tasks.template]
+related: []
+---
 # Tasks: {{F-NN}}-{{feature-slug}}
+
+<!-- 展開時はファイル冒頭に CodeGraph 用 frontmatter を追加すること:
+---
+keywords: [tasks, {{F-NN}}, {{feature-slug}}]
+related: [spec/{{F-NN}}-{{feature-slug}}/requirements.md, spec/{{F-NN}}-{{feature-slug}}/design.md]
+---
+詳細: 70_templates/README.md -->
 
 > 機能単位の実装タスク。requirements.md の AC を満たすための作業に分解する。
 > チェックボックスは進捗、AC カバレッジ表は受入対応の網羅確認に使う。

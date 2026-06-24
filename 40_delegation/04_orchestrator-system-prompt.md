@@ -1,3 +1,7 @@
+---
+keywords: [delegation, orchestrator, system, prompt]
+related: [75_self-evolution/02_auto-update-loop.md]
+---
 # 04 — Orchestrator System Prompt
 
 ECC を活用するオーケストレータエージェントの system prompt。

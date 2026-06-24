@@ -1,3 +1,7 @@
+---
+keywords: [runbook, indexing, rules]
+related: []
+---
 # 02 — Indexing Rules
 
 INDEX.md の自動更新規約・タグ規約・カテゴリ命名規約。Runbook を作っても索引に乗らなければ再利用されないため、索引の整合性が運用の生命線になる。

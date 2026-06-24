@@ -1,3 +1,7 @@
+---
+keywords: [environment, session, persistence]
+related: [05_principles/06_context-economy.md]
+---
 # 15-08 — Session Persistence (`/resume` / `/compact`)
 
 長時間タスクをまたいで context を維持し、再開コストを最小化する手順。

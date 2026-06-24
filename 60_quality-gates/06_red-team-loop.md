@@ -1,3 +1,7 @@
+---
+keywords: [quality-gates, red, team, loop]
+related: [60_quality-gates/02_independent-verify.md, 60_quality-gates/03_anti-sycophancy.md, 40_delegation/06_handoff-patterns.md, 55_verification/02_drift-detection.md, 40_delegation/03_delegation-contract.md]
+---
 # 06 — Red Team Loop (adversarial-verify パターン)
 
 「生成 ≠ 判定 ≠ 反論」を 3 役に分け、それぞれ別 context で動かす。判定で通った成果物にも反論役が反例を探し、見落としを掘り起こす。

@@ -1,4 +1,15 @@
+---
+keywords: [templates, delegation, contract.template]
+related: []
+---
 # Delegation Contract Template
+
+<!-- 展開時はファイル冒頭に CodeGraph 用 frontmatter を追加すること:
+---
+keywords: [delegation, contract, {{contract-id}}]
+related: [<同じ feature の design.md など>]
+---
+詳細: 70_templates/README.md -->
 
 > `40_delegation/03_delegation-contract.md` と同形式。
 > Orchestrator が専門エージェントに委任する際、必ずこの形式で記述する。

@@ -1,4 +1,15 @@
+---
+keywords: [templates, presentation.template]
+related: []
+---
 # Presentation Outline: {{title}}
+
+<!-- 展開時はファイル冒頭に CodeGraph 用 frontmatter を追加すること:
+---
+keywords: [presentation, {{title-slug}}]
+related: [docs/PRD.md, <参照する design.md など>]
+---
+詳細: 70_templates/README.md -->
 
 > プレゼン資料の骨子テンプレート。スライド単位で要点・見せたい根拠・話す内容を記述する。
 > 実際のスライド (pptx / keynote / md slides) は別ファイルで作成する。

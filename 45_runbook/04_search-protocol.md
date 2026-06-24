@@ -1,3 +1,7 @@
+---
+keywords: [runbook, search, protocol]
+related: []
+---
 # 04 — Search Protocol
 
 「Runbook を書いても引かれなければ意味がない」を防ぐ検索手順。Orchestrator はタスク受信直後に必ずこのプロトコルを通過する。

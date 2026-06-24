@@ -1,3 +1,7 @@
+---
+keywords: [writing-style, examples]
+related: [25_writing-style/01_voice.md, 25_writing-style/02_avoidance-patterns.md, 25_writing-style/04_uncertainty-language.md]
+---
 # 05 — Examples (before / after 添削例)
 
 文体規範 ([01_voice.md](./01_voice.md)) と禁止語 ([02_avoidance-patterns.md](./02_avoidance-patterns.md)) の適用例。before の文章を after で中立化する。

@@ -1,3 +1,7 @@
+---
+keywords: [frontier, continual, learning]
+related: []
+---
 # 05 Continual Learning — 案件横断で knowhow が転移する agent
 
 > 5 段構成: **現状 → 先端 (2025-2026 H1) → 基礎研究 → 未来 → 今すぐ準備**

@@ -1,3 +1,7 @@
+---
+keywords: [writing-style, user-care, escalation]
+related: [25_writing-style/06_user-care/02_first-response-protocol.md, 25_writing-style/02_avoidance-patterns.md, 25_writing-style/06_user-care/01_emotion-detection.md, 25_writing-style/06_user-care/03_blocker-removal.md, 25_writing-style/01_voice.md]
+---
 # 04 — De-escalation (トーン調整・引き取り方)
 
 ユーザーが感情的状態にあるとき、応答のトーンと長さをどう調整するかを定める。[02_first-response-protocol.md](./02_first-response-protocol.md) Step 1〜3 と並走する。

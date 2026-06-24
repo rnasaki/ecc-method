@@ -1,3 +1,7 @@
+---
+keywords: [runbook, spec]
+related: []
+---
 # 01 — Runbook Spec
 
 Runbook の構造定義。1 手続き 1 ファイル。INDEX に登録して再利用可能にする。

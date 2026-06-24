@@ -1,3 +1,7 @@
+---
+keywords: [environment, browser, automation]
+related: [10_discovery/04_constraint-mapping.md]
+---
 # 15-03 — Browser Automation (Playwright MCP / Remote Debugging)
 
 ECC で GUI 検証・E2E・スクリーンショット取得を行うための環境設定。

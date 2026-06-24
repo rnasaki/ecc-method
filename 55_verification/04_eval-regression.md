@@ -1,3 +1,7 @@
+---
+keywords: [verification, eval, regression]
+related: []
+---
 # 04 Eval / Regression Detection — agent 出力の時系列劣化を検知する
 
 retrieved_at: 2026-06-23

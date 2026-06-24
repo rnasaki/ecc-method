@@ -1,3 +1,7 @@
+---
+keywords: [environment, mcp, server, bootstrap]
+related: [40_delegation/01_expert-registry.md, 10_discovery/05_knowledge-acquisition.md, 15_environment/03_browser-automation.md, 10_discovery/04_constraint-mapping.md]
+---
 # 15-04 — MCP Server Bootstrap (起動手順)
 
 ECC で頻出する MCP サーバの導入手順を一覧化する。Layer 0 のレジストリ ([40_delegation/01_expert-registry.md](../40_delegation/01_expert-registry.md)) で参照されるサーバはここで導入確認を行う。

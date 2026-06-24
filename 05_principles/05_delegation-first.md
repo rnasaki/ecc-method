@@ -1,3 +1,7 @@
+---
+keywords: [principles, delegation, first]
+related: [40_delegation/02_routing-rubric.md, 40_delegation/03_delegation-contract.md, 40_delegation/01_expert-registry.md]
+---
 # 05 — Delegation First (委任ファースト)
 
 委任ファースト原則。「単独 LLM に詰め込まず、専門家エージェントに投げる」を実装レベルで定義する。

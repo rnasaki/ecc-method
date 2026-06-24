@@ -1,3 +1,7 @@
+---
+keywords: [delegation, synthesis, protocol]
+related: []
+---
 # 08 — Synthesis Protocol
 
 複数専門家の出力を 1 つの成果物に統合する手順。Fan-out / Fan-in の Fan-in 段、コンセンサスの集約段、トーナメントの決勝段で共通利用する。

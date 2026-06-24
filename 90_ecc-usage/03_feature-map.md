@@ -1,3 +1,7 @@
+---
+keywords: [ecc-usage, feature, map]
+related: []
+---
 # 03 — Feature Map (Hub / Skills / Agents / MCP / Memory)
 
 ECC 6 要素を機能カテゴリで整理し、本パッケージの章 / Pattern と紐付ける。

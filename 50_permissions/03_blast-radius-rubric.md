@@ -1,3 +1,7 @@
+---
+keywords: [permissions, blast, radius, rubric]
+related: [60_quality-gates/04_guardrails-compliance.md, 50_permissions/04_settings-presets.md]
+---
 # 03 — Blast Radius Rubric (影響半径 × 可逆性 決定木)
 
 アクションごとに **影響半径** と **可逆性** をスコアリングし、ACT / ASK-ONCE / ASK-EACH の振り分けを機械化する。

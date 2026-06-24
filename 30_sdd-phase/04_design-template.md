@@ -1,3 +1,7 @@
+---
+keywords: [sdd-phase, design, template]
+related: []
+---
 # 30_sdd-phase / 04 Design テンプレート
 
 > design.md は requirements.md の AC を満たす実装設計を記述する文書。

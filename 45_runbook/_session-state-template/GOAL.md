@@ -2,6 +2,8 @@
 schema: RB-007
 last_updated: <YYYY-MM-DD>
 project: <案件名>
+keywords: [runbook, _session-state-template, goal]
+related: []
 ---
 
 # GOAL - 北極星 (雛形)

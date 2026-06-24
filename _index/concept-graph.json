@@ -1,0 +1,4486 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-06-24",
+  "generator": "80_commands/generate-concept-graph.mjs",
+  "stats": {
+    "total_files": 158,
+    "files_with_frontmatter": 158,
+    "files_with_keywords": 158,
+    "node_count": 284,
+    "edge_count": 21,
+    "edge_min_weight": 2
+  },
+  "nodes": [
+    {
+      "id": "runbook",
+      "type": "concept",
+      "file_count": 24,
+      "files": [
+        "25_writing-style/06_user-care/05_post-incident-runbook.md",
+        "45_runbook/01_runbook-spec.md",
+        "45_runbook/02_indexing-rules.md",
+        "45_runbook/03_capture-trigger.md",
+        "45_runbook/04_search-protocol.md",
+        "45_runbook/05_maintenance.md",
+        "45_runbook/INDEX.md",
+        "45_runbook/_session-state-template/COMPLETED.md",
+        "45_runbook/_session-state-template/GOAL.md",
+        "45_runbook/_session-state-template/HISTORY.md",
+        "45_runbook/_session-state-template/PENDING.md",
+        "45_runbook/_session-state-template/current_session.md",
+        "45_runbook/runbooks/RB-001-agent-registry-hot-reload.md",
+        "45_runbook/runbooks/RB-002-phased-rollout-plan-index-graph.md",
+        "45_runbook/runbooks/RB-003-autonomous-decision-framework.md",
+        "45_runbook/runbooks/RB-004-subagent-final-report-narration.md",
+        "45_runbook/runbooks/RB-005-subagent-realtime-streaming-via-hooks.md",
+        "45_runbook/runbooks/RB-006-session-handover-protocol.md",
+        "45_runbook/runbooks/RB-007-1-session-1-task-and-session-state.md",
+        "45_runbook/runbooks/RB-008-branch-strategy-and-semver.md",
+        "45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md",
+        "45_runbook/runbooks/RB-010-bash-auto-background-on-windows-pytest.md",
+        "45_runbook/runbooks/RB-011-knowledge-promotion-flow.md",
+        "70_templates/runbook.template.md"
+      ]
+    },
+    {
+      "id": "delegation",
+      "type": "concept",
+      "file_count": 12,
+      "files": [
+        "05_principles/05_delegation-first.md",
+        "15_environment/07_permission-delegation.md",
+        "40_delegation/01_expert-registry.md",
+        "40_delegation/02_routing-rubric.md",
+        "40_delegation/03_delegation-contract.md",
+        "40_delegation/04_orchestrator-system-prompt.md",
+        "40_delegation/05_self-bootstrap-loop.md",
+        "40_delegation/06_handoff-patterns.md",
+        "40_delegation/07_cross-verification.md",
+        "40_delegation/08_synthesis-protocol.md",
+        "40_delegation/09_a2a-and-handoff-standards.md",
+        "70_templates/delegation-contract.template.md"
+      ]
+    },
+    {
+      "id": "runbooks",
+      "type": "concept",
+      "file_count": 10,
+      "files": [
+        "45_runbook/runbooks/RB-001-agent-registry-hot-reload.md",
+        "45_runbook/runbooks/RB-002-phased-rollout-plan-index-graph.md",
+        "45_runbook/runbooks/RB-003-autonomous-decision-framework.md",
+        "45_runbook/runbooks/RB-004-subagent-final-report-narration.md",
+        "45_runbook/runbooks/RB-005-subagent-realtime-streaming-via-hooks.md",
+        "45_runbook/runbooks/RB-006-session-handover-protocol.md",
+        "45_runbook/runbooks/RB-007-1-session-1-task-and-session-state.md",
+        "45_runbook/runbooks/RB-008-branch-strategy-and-semver.md",
+        "45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md",
+        "45_runbook/runbooks/RB-010-bash-auto-background-on-windows-pytest.md"
+      ]
+    },
+    {
+      "id": "writing-style",
+      "type": "concept",
+      "file_count": 10,
+      "files": [
+        "25_writing-style/01_voice.md",
+        "25_writing-style/02_avoidance-patterns.md",
+        "25_writing-style/03_citation-style.md",
+        "25_writing-style/04_uncertainty-language.md",
+        "25_writing-style/05_examples.md",
+        "25_writing-style/06_user-care/01_emotion-detection.md",
+        "25_writing-style/06_user-care/02_first-response-protocol.md",
+        "25_writing-style/06_user-care/03_blocker-removal.md",
+        "25_writing-style/06_user-care/04_de-escalation.md",
+        "25_writing-style/06_user-care/05_post-incident-runbook.md"
+      ]
+    },
+    {
+      "id": "environment",
+      "type": "concept",
+      "file_count": 9,
+      "files": [
+        "15_environment/01_capabilities-matrix.md",
+        "15_environment/02_cli-arsenal.md",
+        "15_environment/03_browser-automation.md",
+        "15_environment/04_mcp-server-bootstrap.md",
+        "15_environment/05_credentials-vault.md",
+        "15_environment/06_corporate-network.md",
+        "15_environment/07_permission-delegation.md",
+        "15_environment/08_session-persistence.md",
+        "15_environment/10_agent-memory-hierarchy.md"
+      ]
+    },
+    {
+      "id": "principles",
+      "type": "concept",
+      "file_count": 9,
+      "files": [
+        "05_principles/00_eighth-principle-question-standards.md",
+        "05_principles/01_seven-habits-mapping.md",
+        "05_principles/02_north-star.md",
+        "05_principles/03_anthropic-best-practices.md",
+        "05_principles/04_openai-best-practices.md",
+        "05_principles/05_delegation-first.md",
+        "05_principles/06_context-economy.md",
+        "05_principles/07_multi-llm-routing.md",
+        "05_principles/08_reasoning-effort-control.md"
+      ]
+    },
+    {
+      "id": "templates",
+      "type": "concept",
+      "file_count": 9,
+      "files": [
+        "70_templates/PRD.template.md",
+        "70_templates/README.md",
+        "70_templates/delegation-contract.template.md",
+        "70_templates/demo-scenario.template.md",
+        "70_templates/design.template.md",
+        "70_templates/knowledge-vault-INDEX.template.md",
+        "70_templates/presentation.template.md",
+        "70_templates/requirements.template.md",
+        "70_templates/tasks.template.md"
+      ]
+    },
+    {
+      "id": "frontier",
+      "type": "concept",
+      "file_count": 8,
+      "files": [
+        "85_frontier/01_horizon-scanning.md",
+        "85_frontier/02_self-modifying-agents.md",
+        "85_frontier/03_dynamic-skill-synthesis.md",
+        "85_frontier/04_emergent-multi-agent.md",
+        "85_frontier/05_continual-learning.md",
+        "85_frontier/06_world-models-for-agents.md",
+        "85_frontier/07_post-llm-architectures.md",
+        "85_frontier/README.md"
+      ]
+    },
+    {
+      "id": "knowledge-vault",
+      "type": "concept",
+      "file_count": 8,
+      "files": [
+        "12_knowledge-vault/01_obsidian-as-viewer.md",
+        "12_knowledge-vault/02_vault-setup.md",
+        "12_knowledge-vault/03_directory-structure.md",
+        "12_knowledge-vault/04_wikilink-conventions.md",
+        "12_knowledge-vault/05_moc-pattern.md",
+        "12_knowledge-vault/06_knowledge-types.md",
+        "12_knowledge-vault/07_promotion-flow.md",
+        "12_knowledge-vault/_obsidian-template/README.md"
+      ]
+    },
+    {
+      "id": "quality-gates",
+      "type": "concept",
+      "file_count": 8,
+      "files": [
+        "60_quality-gates/01_fact-check-protocol.md",
+        "60_quality-gates/02_independent-verify.md",
+        "60_quality-gates/03_anti-sycophancy.md",
+        "60_quality-gates/04_guardrails-compliance.md",
+        "60_quality-gates/05_uncertainty-disclosure.md",
+        "60_quality-gates/06_red-team-loop.md",
+        "60_quality-gates/07_gate-checklist.md",
+        "60_quality-gates/08_prompt-injection-defense.md"
+      ]
+    },
+    {
+      "id": "self-evolution",
+      "type": "concept",
+      "file_count": 8,
+      "files": [
+        "75_self-evolution/01_freshness-policy.md",
+        "75_self-evolution/02_auto-update-loop.md",
+        "75_self-evolution/03_knowledge-acquisition.md",
+        "75_self-evolution/04_self-repair.md",
+        "75_self-evolution/05_industry-radar.md",
+        "75_self-evolution/06_health-metrics.md",
+        "75_self-evolution/07_review-cadence.md",
+        "75_self-evolution/08_self-modification-loop.md"
+      ]
+    },
+    {
+      "id": "ecc-usage",
+      "type": "concept",
+      "file_count": 7,
+      "files": [
+        "90_ecc-usage/01_ecc-overview.md",
+        "90_ecc-usage/02_when-to-use-ecc.md",
+        "90_ecc-usage/03_feature-map.md",
+        "90_ecc-usage/04_routing-recipes.md",
+        "90_ecc-usage/05_anti-patterns.md",
+        "90_ecc-usage/06_cost-and-context.md",
+        "90_ecc-usage/07_adoption-roadmap.md"
+      ]
+    },
+    {
+      "id": "knowledge",
+      "type": "concept",
+      "file_count": 6,
+      "files": [
+        "10_discovery/05_knowledge-acquisition.md",
+        "12_knowledge-vault/06_knowledge-types.md",
+        "45_runbook/runbooks/RB-011-knowledge-promotion-flow.md",
+        "70_templates/knowledge-vault-INDEX.template.md",
+        "75_self-evolution/03_knowledge-acquisition.md",
+        "Knowledge/00_INDEX.md"
+      ]
+    },
+    {
+      "id": "permissions",
+      "type": "concept",
+      "file_count": 6,
+      "files": [
+        "50_permissions/01_consent-economy.md",
+        "50_permissions/02_pre-authorized-actions.md",
+        "50_permissions/03_blast-radius-rubric.md",
+        "50_permissions/04_settings-presets.md",
+        "50_permissions/05_escalation-policy.md",
+        "50_permissions/06_cost-budget-enforcement.md"
+      ]
+    },
+    {
+      "id": "sdd-phase",
+      "type": "concept",
+      "file_count": 6,
+      "files": [
+        "30_sdd-phase/01_prd-flow.md",
+        "30_sdd-phase/02_feature-id-rules.md",
+        "30_sdd-phase/03_requirements-template.md",
+        "30_sdd-phase/04_design-template.md",
+        "30_sdd-phase/05_tasks-template.md",
+        "30_sdd-phase/06_review-gates.md"
+      ]
+    },
+    {
+      "id": "_session-state-template",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        "45_runbook/_session-state-template/COMPLETED.md",
+        "45_runbook/_session-state-template/GOAL.md",
+        "45_runbook/_session-state-template/HISTORY.md",
+        "45_runbook/_session-state-template/PENDING.md",
+        "45_runbook/_session-state-template/current_session.md"
+      ]
+    },
+    {
+      "id": "discovery",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        "10_discovery/01_repo-recon.md",
+        "10_discovery/02_domain-elicitation.md",
+        "10_discovery/03_stack-inference.md",
+        "10_discovery/04_constraint-mapping.md",
+        "10_discovery/05_knowledge-acquisition.md"
+      ]
+    },
+    {
+      "id": "loop",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        "35_tdd-phase/05_tdd-loop-prompts.md",
+        "40_delegation/05_self-bootstrap-loop.md",
+        "60_quality-gates/06_red-team-loop.md",
+        "75_self-evolution/02_auto-update-loop.md",
+        "75_self-evolution/08_self-modification-loop.md"
+      ]
+    },
+    {
+      "id": "overview",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        "01_overview/01_purpose.md",
+        "01_overview/02_audience.md",
+        "01_overview/03_how-to-read.md",
+        "01_overview/04_glossary.md",
+        "90_ecc-usage/01_ecc-overview.md"
+      ]
+    },
+    {
+      "id": "pitfalls",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        "65_pitfalls/01_corporate-network.md",
+        "65_pitfalls/02_windows-utf8-line-endings.md",
+        "65_pitfalls/03_oauth-token-expiry.md",
+        "65_pitfalls/04_git-divergence.md",
+        "65_pitfalls/05_session-context-overflow.md"
+      ]
+    },
+    {
+      "id": "protocol",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        "25_writing-style/06_user-care/02_first-response-protocol.md",
+        "40_delegation/08_synthesis-protocol.md",
+        "45_runbook/04_search-protocol.md",
+        "45_runbook/runbooks/RB-006-session-handover-protocol.md",
+        "60_quality-gates/01_fact-check-protocol.md"
+      ]
+    },
+    {
+      "id": "self",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        "40_delegation/05_self-bootstrap-loop.md",
+        "75_self-evolution/04_self-repair.md",
+        "75_self-evolution/08_self-modification-loop.md",
+        "85_frontier/02_self-modifying-agents.md",
+        "99_distribution/04_developer-self-dogfooding.md"
+      ]
+    },
+    {
+      "id": "session",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        "15_environment/08_session-persistence.md",
+        "45_runbook/_session-state-template/current_session.md",
+        "45_runbook/runbooks/RB-006-session-handover-protocol.md",
+        "45_runbook/runbooks/RB-007-1-session-1-task-and-session-state.md",
+        "65_pitfalls/05_session-context-overflow.md"
+      ]
+    },
+    {
+      "id": "tdd-phase",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        "35_tdd-phase/01_red-green-refactor.md",
+        "35_tdd-phase/02_test-pyramid.md",
+        "35_tdd-phase/03_coverage-policy.md",
+        "35_tdd-phase/04_fake-injection.md",
+        "35_tdd-phase/05_tdd-loop-prompts.md"
+      ]
+    },
+    {
+      "id": "user-care",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        "25_writing-style/06_user-care/01_emotion-detection.md",
+        "25_writing-style/06_user-care/02_first-response-protocol.md",
+        "25_writing-style/06_user-care/03_blocker-removal.md",
+        "25_writing-style/06_user-care/04_de-escalation.md",
+        "25_writing-style/06_user-care/05_post-incident-runbook.md"
+      ]
+    },
+    {
+      "id": "verification",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        "40_delegation/07_cross-verification.md",
+        "55_verification/01_traceability.md",
+        "55_verification/02_drift-detection.md",
+        "55_verification/03_demo-readiness.md",
+        "55_verification/04_eval-regression.md"
+      ]
+    },
+    {
+      "id": "bootstrap",
+      "type": "concept",
+      "file_count": 4,
+      "files": [
+        "15_environment/04_mcp-server-bootstrap.md",
+        "40_delegation/05_self-bootstrap-loop.md",
+        "45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md",
+        "80_commands/02_bootstrap.md"
+      ]
+    },
+    {
+      "id": "distribution",
+      "type": "concept",
+      "file_count": 4,
+      "files": [
+        "99_distribution/01_how-to-redistribute.md",
+        "99_distribution/02_license-note.md",
+        "99_distribution/03_v1.0.0-release-checklist.md",
+        "99_distribution/04_developer-self-dogfooding.md"
+      ]
+    },
+    {
+      "id": "repo-bootstrap",
+      "type": "concept",
+      "file_count": 4,
+      "files": [
+        "20_repo-bootstrap/01_checklist.md",
+        "20_repo-bootstrap/02_directory-skeleton.md",
+        "20_repo-bootstrap/03_gitignore-baseline.md",
+        "20_repo-bootstrap/04_profiles.md"
+      ]
+    },
+    {
+      "id": "vault",
+      "type": "concept",
+      "file_count": 4,
+      "files": [
+        "12_knowledge-vault/02_vault-setup.md",
+        "15_environment/05_credentials-vault.md",
+        "45_runbook/runbooks/RB-011-knowledge-promotion-flow.md",
+        "70_templates/knowledge-vault-INDEX.template.md"
+      ]
+    },
+    {
+      "id": "agent",
+      "type": "concept",
+      "file_count": 3,
+      "files": [
+        "15_environment/10_agent-memory-hierarchy.md",
+        "45_runbook/runbooks/RB-001-agent-registry-hot-reload.md",
+        "85_frontier/04_emergent-multi-agent.md"
+      ]
+    },
+    {
+      "id": "checklist",
+      "type": "concept",
+      "file_count": 3,
+      "files": [
+        "20_repo-bootstrap/01_checklist.md",
+        "60_quality-gates/07_gate-checklist.md",
+        "99_distribution/03_v1.0.0-release-checklist.md"
+      ]
+    },
+    {
+      "id": "context",
+      "type": "concept",
+      "file_count": 3,
+      "files": [
+        "05_principles/06_context-economy.md",
+        "65_pitfalls/05_session-context-overflow.md",
+        "90_ecc-usage/06_cost-and-context.md"
+      ]
+    },
+    {
+      "id": "first",
+      "type": "concept",
+      "file_count": 3,
+      "files": [
+        "05_principles/05_delegation-first.md",
+        "25_writing-style/06_user-care/02_first-response-protocol.md",
+        "45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md"
+      ]
+    },
+    {
+      "id": "policy",
+      "type": "concept",
+      "file_count": 3,
+      "files": [
+        "35_tdd-phase/03_coverage-policy.md",
+        "50_permissions/05_escalation-policy.md",
+        "75_self-evolution/01_freshness-policy.md"
+      ]
+    },
+    {
+      "id": "routing",
+      "type": "concept",
+      "file_count": 3,
+      "files": [
+        "05_principles/07_multi-llm-routing.md",
+        "40_delegation/02_routing-rubric.md",
+        "90_ecc-usage/04_routing-recipes.md"
+      ]
+    },
+    {
+      "id": "template",
+      "type": "concept",
+      "file_count": 3,
+      "files": [
+        "30_sdd-phase/03_requirements-template.md",
+        "30_sdd-phase/04_design-template.md",
+        "30_sdd-phase/05_tasks-template.md"
+      ]
+    },
+    {
+      "id": "acquisition",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "10_discovery/05_knowledge-acquisition.md",
+        "75_self-evolution/03_knowledge-acquisition.md"
+      ]
+    },
+    {
+      "id": "agents",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "85_frontier/02_self-modifying-agents.md",
+        "85_frontier/06_world-models-for-agents.md"
+      ]
+    },
+    {
+      "id": "anti",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "60_quality-gates/03_anti-sycophancy.md",
+        "90_ecc-usage/05_anti-patterns.md"
+      ]
+    },
+    {
+      "id": "auto",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "45_runbook/runbooks/RB-010-bash-auto-background-on-windows-pytest.md",
+        "75_self-evolution/02_auto-update-loop.md"
+      ]
+    },
+    {
+      "id": "best",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "05_principles/03_anthropic-best-practices.md",
+        "05_principles/04_openai-best-practices.md"
+      ]
+    },
+    {
+      "id": "commands",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "80_commands/01_slash-commands.md",
+        "80_commands/02_bootstrap.md"
+      ]
+    },
+    {
+      "id": "corporate",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "15_environment/06_corporate-network.md",
+        "65_pitfalls/01_corporate-network.md"
+      ]
+    },
+    {
+      "id": "cost",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "50_permissions/06_cost-budget-enforcement.md",
+        "90_ecc-usage/06_cost-and-context.md"
+      ]
+    },
+    {
+      "id": "demo",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "55_verification/03_demo-readiness.md",
+        "70_templates/demo-scenario.template.md"
+      ]
+    },
+    {
+      "id": "detection",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "25_writing-style/06_user-care/01_emotion-detection.md",
+        "55_verification/02_drift-detection.md"
+      ]
+    },
+    {
+      "id": "directory",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "12_knowledge-vault/03_directory-structure.md",
+        "20_repo-bootstrap/02_directory-skeleton.md"
+      ]
+    },
+    {
+      "id": "ecc",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "90_ecc-usage/01_ecc-overview.md",
+        "90_ecc-usage/02_when-to-use-ecc.md"
+      ]
+    },
+    {
+      "id": "economy",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "05_principles/06_context-economy.md",
+        "50_permissions/01_consent-economy.md"
+      ]
+    },
+    {
+      "id": "escalation",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "25_writing-style/06_user-care/04_de-escalation.md",
+        "50_permissions/05_escalation-policy.md"
+      ]
+    },
+    {
+      "id": "feature",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "30_sdd-phase/02_feature-id-rules.md",
+        "90_ecc-usage/03_feature-map.md"
+      ]
+    },
+    {
+      "id": "flow",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "12_knowledge-vault/07_promotion-flow.md",
+        "30_sdd-phase/01_prd-flow.md"
+      ]
+    },
+    {
+      "id": "handoff",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "40_delegation/06_handoff-patterns.md",
+        "40_delegation/09_a2a-and-handoff-standards.md"
+      ]
+    },
+    {
+      "id": "injection",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "35_tdd-phase/04_fake-injection.md",
+        "60_quality-gates/08_prompt-injection-defense.md"
+      ]
+    },
+    {
+      "id": "llm",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "05_principles/07_multi-llm-routing.md",
+        "85_frontier/07_post-llm-architectures.md"
+      ]
+    },
+    {
+      "id": "mapping",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "05_principles/01_seven-habits-mapping.md",
+        "10_discovery/04_constraint-mapping.md"
+      ]
+    },
+    {
+      "id": "multi",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "05_principles/07_multi-llm-routing.md",
+        "85_frontier/04_emergent-multi-agent.md"
+      ]
+    },
+    {
+      "id": "network",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "15_environment/06_corporate-network.md",
+        "65_pitfalls/01_corporate-network.md"
+      ]
+    },
+    {
+      "id": "obsidian",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "12_knowledge-vault/01_obsidian-as-viewer.md",
+        "45_runbook/runbooks/RB-011-knowledge-promotion-flow.md"
+      ]
+    },
+    {
+      "id": "patterns",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "40_delegation/06_handoff-patterns.md",
+        "90_ecc-usage/05_anti-patterns.md"
+      ]
+    },
+    {
+      "id": "post",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "25_writing-style/06_user-care/05_post-incident-runbook.md",
+        "85_frontier/07_post-llm-architectures.md"
+      ]
+    },
+    {
+      "id": "practices",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "05_principles/03_anthropic-best-practices.md",
+        "05_principles/04_openai-best-practices.md"
+      ]
+    },
+    {
+      "id": "promotion",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "12_knowledge-vault/07_promotion-flow.md",
+        "45_runbook/runbooks/RB-011-knowledge-promotion-flow.md"
+      ]
+    },
+    {
+      "id": "prompt",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "40_delegation/04_orchestrator-system-prompt.md",
+        "60_quality-gates/08_prompt-injection-defense.md"
+      ]
+    },
+    {
+      "id": "red",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "35_tdd-phase/01_red-green-refactor.md",
+        "60_quality-gates/06_red-team-loop.md"
+      ]
+    },
+    {
+      "id": "registry",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "40_delegation/01_expert-registry.md",
+        "45_runbook/runbooks/RB-001-agent-registry-hot-reload.md"
+      ]
+    },
+    {
+      "id": "review",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "30_sdd-phase/06_review-gates.md",
+        "75_self-evolution/07_review-cadence.md"
+      ]
+    },
+    {
+      "id": "rubric",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "40_delegation/02_routing-rubric.md",
+        "50_permissions/03_blast-radius-rubric.md"
+      ]
+    },
+    {
+      "id": "rules",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "30_sdd-phase/02_feature-id-rules.md",
+        "45_runbook/02_indexing-rules.md"
+      ]
+    },
+    {
+      "id": "standards",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "05_principles/00_eighth-principle-question-standards.md",
+        "40_delegation/09_a2a-and-handoff-standards.md"
+      ]
+    },
+    {
+      "id": "subagent",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "45_runbook/runbooks/RB-004-subagent-final-report-narration.md",
+        "45_runbook/runbooks/RB-005-subagent-realtime-streaming-via-hooks.md"
+      ]
+    },
+    {
+      "id": "sycophancy",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "25_writing-style/02_avoidance-patterns.md",
+        "60_quality-gates/03_anti-sycophancy.md"
+      ]
+    },
+    {
+      "id": "synthesis",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "40_delegation/08_synthesis-protocol.md",
+        "85_frontier/03_dynamic-skill-synthesis.md"
+      ]
+    },
+    {
+      "id": "uncertainty",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "25_writing-style/04_uncertainty-language.md",
+        "60_quality-gates/05_uncertainty-disclosure.md"
+      ]
+    },
+    {
+      "id": "windows",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        "45_runbook/runbooks/RB-010-bash-auto-background-on-windows-pytest.md",
+        "65_pitfalls/02_windows-utf8-line-endings.md"
+      ]
+    },
+    {
+      "id": "_obsidian-template",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "12_knowledge-vault/_obsidian-template/README.md"
+      ]
+    },
+    {
+      "id": "{{topic1}}",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/runbook.template.md"
+      ]
+    },
+    {
+      "id": "{{topic2}}",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/runbook.template.md"
+      ]
+    },
+    {
+      "id": "a2a",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "40_delegation/09_a2a-and-handoff-standards.md"
+      ]
+    },
+    {
+      "id": "actions",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "50_permissions/02_pre-authorized-actions.md"
+      ]
+    },
+    {
+      "id": "adoption",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "90_ecc-usage/07_adoption-roadmap.md"
+      ]
+    },
+    {
+      "id": "agent-autonomy",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "01_overview/05_user-as-hands.md"
+      ]
+    },
+    {
+      "id": "anthropic",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/03_anthropic-best-practices.md"
+      ]
+    },
+    {
+      "id": "anti-praise",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/02_avoidance-patterns.md"
+      ]
+    },
+    {
+      "id": "architectures",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "85_frontier/07_post-llm-architectures.md"
+      ]
+    },
+    {
+      "id": "arsenal",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/02_cli-arsenal.md"
+      ]
+    },
+    {
+      "id": "audience",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "01_overview/02_audience.md"
+      ]
+    },
+    {
+      "id": "authorized",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "50_permissions/02_pre-authorized-actions.md"
+      ]
+    },
+    {
+      "id": "automation",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/03_browser-automation.md"
+      ]
+    },
+    {
+      "id": "autonomous",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-003-autonomous-decision-framework.md"
+      ]
+    },
+    {
+      "id": "avoidance",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/02_avoidance-patterns.md"
+      ]
+    },
+    {
+      "id": "background",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-010-bash-auto-background-on-windows-pytest.md"
+      ]
+    },
+    {
+      "id": "baseline",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "20_repo-bootstrap/03_gitignore-baseline.md"
+      ]
+    },
+    {
+      "id": "bash",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-010-bash-auto-background-on-windows-pytest.md"
+      ]
+    },
+    {
+      "id": "blast",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "50_permissions/03_blast-radius-rubric.md"
+      ]
+    },
+    {
+      "id": "blocker",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/06_user-care/03_blocker-removal.md"
+      ]
+    },
+    {
+      "id": "branch",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-008-branch-strategy-and-semver.md"
+      ]
+    },
+    {
+      "id": "browser",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/03_browser-automation.md"
+      ]
+    },
+    {
+      "id": "budget",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "50_permissions/06_cost-budget-enforcement.md"
+      ]
+    },
+    {
+      "id": "cadence",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "75_self-evolution/07_review-cadence.md"
+      ]
+    },
+    {
+      "id": "capabilities",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/01_capabilities-matrix.md"
+      ]
+    },
+    {
+      "id": "capture",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/03_capture-trigger.md"
+      ]
+    },
+    {
+      "id": "changelog",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "id": "check",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "60_quality-gates/01_fact-check-protocol.md"
+      ]
+    },
+    {
+      "id": "citation",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/03_citation-style.md"
+      ]
+    },
+    {
+      "id": "cli",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/02_cli-arsenal.md"
+      ]
+    },
+    {
+      "id": "codegraph",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/README.md"
+      ]
+    },
+    {
+      "id": "completed",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/_session-state-template/COMPLETED.md"
+      ]
+    },
+    {
+      "id": "compliance",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "60_quality-gates/04_guardrails-compliance.md"
+      ]
+    },
+    {
+      "id": "consent",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "50_permissions/01_consent-economy.md"
+      ]
+    },
+    {
+      "id": "constraint",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "10_discovery/04_constraint-mapping.md"
+      ]
+    },
+    {
+      "id": "continual",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "85_frontier/05_continual-learning.md"
+      ]
+    },
+    {
+      "id": "contract",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "40_delegation/03_delegation-contract.md"
+      ]
+    },
+    {
+      "id": "contract.template",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/delegation-contract.template.md"
+      ]
+    },
+    {
+      "id": "control",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/08_reasoning-effort-control.md"
+      ]
+    },
+    {
+      "id": "conventions",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "12_knowledge-vault/04_wikilink-conventions.md"
+      ]
+    },
+    {
+      "id": "coverage",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "35_tdd-phase/03_coverage-policy.md"
+      ]
+    },
+    {
+      "id": "credentials",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/05_credentials-vault.md"
+      ]
+    },
+    {
+      "id": "cross",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "40_delegation/07_cross-verification.md"
+      ]
+    },
+    {
+      "id": "current",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/_session-state-template/current_session.md"
+      ]
+    },
+    {
+      "id": "decision",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-003-autonomous-decision-framework.md"
+      ]
+    },
+    {
+      "id": "defense",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "60_quality-gates/08_prompt-injection-defense.md"
+      ]
+    },
+    {
+      "id": "design",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "30_sdd-phase/04_design-template.md"
+      ]
+    },
+    {
+      "id": "design.template",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/design.template.md"
+      ]
+    },
+    {
+      "id": "developer",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "99_distribution/04_developer-self-dogfooding.md"
+      ]
+    },
+    {
+      "id": "disclosure",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "60_quality-gates/05_uncertainty-disclosure.md"
+      ]
+    },
+    {
+      "id": "divergence",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "65_pitfalls/04_git-divergence.md"
+      ]
+    },
+    {
+      "id": "dogfooding",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "99_distribution/04_developer-self-dogfooding.md"
+      ]
+    },
+    {
+      "id": "domain",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "10_discovery/02_domain-elicitation.md"
+      ]
+    },
+    {
+      "id": "drift",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "55_verification/02_drift-detection.md"
+      ]
+    },
+    {
+      "id": "dynamic",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "85_frontier/03_dynamic-skill-synthesis.md"
+      ]
+    },
+    {
+      "id": "ecc-method-project",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "Knowledge/00_INDEX.md"
+      ]
+    },
+    {
+      "id": "effort",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/08_reasoning-effort-control.md"
+      ]
+    },
+    {
+      "id": "eighth",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/00_eighth-principle-question-standards.md"
+      ]
+    },
+    {
+      "id": "elicitation",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "10_discovery/02_domain-elicitation.md"
+      ]
+    },
+    {
+      "id": "embodiment",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "01_overview/05_user-as-hands.md"
+      ]
+    },
+    {
+      "id": "emergent",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "85_frontier/04_emergent-multi-agent.md"
+      ]
+    },
+    {
+      "id": "emotion",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/06_user-care/01_emotion-detection.md"
+      ]
+    },
+    {
+      "id": "endings",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "65_pitfalls/02_windows-utf8-line-endings.md"
+      ]
+    },
+    {
+      "id": "enforcement",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "50_permissions/06_cost-budget-enforcement.md"
+      ]
+    },
+    {
+      "id": "eval",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "55_verification/04_eval-regression.md"
+      ]
+    },
+    {
+      "id": "examples",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/05_examples.md"
+      ]
+    },
+    {
+      "id": "expert",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "40_delegation/01_expert-registry.md"
+      ]
+    },
+    {
+      "id": "expiry",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "65_pitfalls/03_oauth-token-expiry.md"
+      ]
+    },
+    {
+      "id": "fact",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "60_quality-gates/01_fact-check-protocol.md"
+      ]
+    },
+    {
+      "id": "fake",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "35_tdd-phase/04_fake-injection.md"
+      ]
+    },
+    {
+      "id": "final",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-004-subagent-final-report-narration.md"
+      ]
+    },
+    {
+      "id": "framework",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-003-autonomous-decision-framework.md"
+      ]
+    },
+    {
+      "id": "freshness",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "75_self-evolution/01_freshness-policy.md"
+      ]
+    },
+    {
+      "id": "frontmatter",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/README.md"
+      ]
+    },
+    {
+      "id": "gate",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "60_quality-gates/07_gate-checklist.md"
+      ]
+    },
+    {
+      "id": "gates",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "30_sdd-phase/06_review-gates.md"
+      ]
+    },
+    {
+      "id": "git",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "65_pitfalls/04_git-divergence.md"
+      ]
+    },
+    {
+      "id": "gitignore",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "20_repo-bootstrap/03_gitignore-baseline.md"
+      ]
+    },
+    {
+      "id": "glossary",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "01_overview/04_glossary.md"
+      ]
+    },
+    {
+      "id": "goal",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/_session-state-template/GOAL.md"
+      ]
+    },
+    {
+      "id": "graph",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-002-phased-rollout-plan-index-graph.md"
+      ]
+    },
+    {
+      "id": "green",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "35_tdd-phase/01_red-green-refactor.md"
+      ]
+    },
+    {
+      "id": "guardrails",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "60_quality-gates/04_guardrails-compliance.md"
+      ]
+    },
+    {
+      "id": "habits",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/01_seven-habits-mapping.md"
+      ]
+    },
+    {
+      "id": "handover",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-006-session-handover-protocol.md"
+      ]
+    },
+    {
+      "id": "hands-and-eyes",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "01_overview/05_user-as-hands.md"
+      ]
+    },
+    {
+      "id": "health",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "75_self-evolution/06_health-metrics.md"
+      ]
+    },
+    {
+      "id": "hierarchy",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/10_agent-memory-hierarchy.md"
+      ]
+    },
+    {
+      "id": "history",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/_session-state-template/HISTORY.md"
+      ]
+    },
+    {
+      "id": "hooks",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-005-subagent-realtime-streaming-via-hooks.md"
+      ]
+    },
+    {
+      "id": "horizon",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "85_frontier/01_horizon-scanning.md"
+      ]
+    },
+    {
+      "id": "hot",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-001-agent-registry-hot-reload.md"
+      ]
+    },
+    {
+      "id": "incident",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/06_user-care/05_post-incident-runbook.md"
+      ]
+    },
+    {
+      "id": "independent",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "60_quality-gates/02_independent-verify.md"
+      ]
+    },
+    {
+      "id": "index",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "Knowledge/00_INDEX.md"
+      ]
+    },
+    {
+      "id": "index.template",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/knowledge-vault-INDEX.template.md"
+      ]
+    },
+    {
+      "id": "indexing",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/02_indexing-rules.md"
+      ]
+    },
+    {
+      "id": "industry",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "75_self-evolution/05_industry-radar.md"
+      ]
+    },
+    {
+      "id": "inference",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "10_discovery/03_stack-inference.md"
+      ]
+    },
+    {
+      "id": "language",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/04_uncertainty-language.md"
+      ]
+    },
+    {
+      "id": "learning",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "85_frontier/05_continual-learning.md"
+      ]
+    },
+    {
+      "id": "line",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "65_pitfalls/02_windows-utf8-line-endings.md"
+      ]
+    },
+    {
+      "id": "maintenance",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/05_maintenance.md"
+      ]
+    },
+    {
+      "id": "map",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "90_ecc-usage/03_feature-map.md"
+      ]
+    },
+    {
+      "id": "matrix",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/01_capabilities-matrix.md"
+      ]
+    },
+    {
+      "id": "mcp",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/04_mcp-server-bootstrap.md"
+      ]
+    },
+    {
+      "id": "memory",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/10_agent-memory-hierarchy.md"
+      ]
+    },
+    {
+      "id": "method",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "METHOD.md"
+      ]
+    },
+    {
+      "id": "metrics",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "75_self-evolution/06_health-metrics.md"
+      ]
+    },
+    {
+      "id": "moc",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "12_knowledge-vault/05_moc-pattern.md"
+      ]
+    },
+    {
+      "id": "models",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "85_frontier/06_world-models-for-agents.md"
+      ]
+    },
+    {
+      "id": "modification",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "75_self-evolution/08_self-modification-loop.md"
+      ]
+    },
+    {
+      "id": "modifying",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "85_frontier/02_self-modifying-agents.md"
+      ]
+    },
+    {
+      "id": "narration",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-004-subagent-final-report-narration.md"
+      ]
+    },
+    {
+      "id": "neutrality",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/02_avoidance-patterns.md"
+      ]
+    },
+    {
+      "id": "no-cognitive-load",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "01_overview/05_user-as-hands.md"
+      ]
+    },
+    {
+      "id": "north",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/02_north-star.md"
+      ]
+    },
+    {
+      "id": "note",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "99_distribution/02_license-note.md"
+      ]
+    },
+    {
+      "id": "oauth",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "65_pitfalls/03_oauth-token-expiry.md"
+      ]
+    },
+    {
+      "id": "openai",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/04_openai-best-practices.md"
+      ]
+    },
+    {
+      "id": "orchestrator",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "40_delegation/04_orchestrator-system-prompt.md"
+      ]
+    },
+    {
+      "id": "overflow",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "65_pitfalls/05_session-context-overflow.md"
+      ]
+    },
+    {
+      "id": "pattern",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "12_knowledge-vault/05_moc-pattern.md"
+      ]
+    },
+    {
+      "id": "pending",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/_session-state-template/PENDING.md"
+      ]
+    },
+    {
+      "id": "permission",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/07_permission-delegation.md"
+      ]
+    },
+    {
+      "id": "persistence",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/08_session-persistence.md"
+      ]
+    },
+    {
+      "id": "phased",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-002-phased-rollout-plan-index-graph.md"
+      ]
+    },
+    {
+      "id": "plan",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-002-phased-rollout-plan-index-graph.md"
+      ]
+    },
+    {
+      "id": "prd",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "30_sdd-phase/01_prd-flow.md"
+      ]
+    },
+    {
+      "id": "prd.template",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/PRD.template.md"
+      ]
+    },
+    {
+      "id": "pre",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "50_permissions/02_pre-authorized-actions.md"
+      ]
+    },
+    {
+      "id": "presentation.template",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/presentation.template.md"
+      ]
+    },
+    {
+      "id": "presets",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "50_permissions/04_settings-presets.md"
+      ]
+    },
+    {
+      "id": "principle",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/00_eighth-principle-question-standards.md"
+      ]
+    },
+    {
+      "id": "profiles",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "20_repo-bootstrap/04_profiles.md"
+      ]
+    },
+    {
+      "id": "prompts",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "35_tdd-phase/05_tdd-loop-prompts.md"
+      ]
+    },
+    {
+      "id": "purpose",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "01_overview/01_purpose.md"
+      ]
+    },
+    {
+      "id": "pyramid",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "35_tdd-phase/02_test-pyramid.md"
+      ]
+    },
+    {
+      "id": "pytest",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-010-bash-auto-background-on-windows-pytest.md"
+      ]
+    },
+    {
+      "id": "quality-gate",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/02_avoidance-patterns.md"
+      ]
+    },
+    {
+      "id": "question",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/00_eighth-principle-question-standards.md"
+      ]
+    },
+    {
+      "id": "radar",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "75_self-evolution/05_industry-radar.md"
+      ]
+    },
+    {
+      "id": "radius",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "50_permissions/03_blast-radius-rubric.md"
+      ]
+    },
+    {
+      "id": "read",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "01_overview/03_how-to-read.md"
+      ]
+    },
+    {
+      "id": "readiness",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "55_verification/03_demo-readiness.md"
+      ]
+    },
+    {
+      "id": "readme",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "id": "realtime",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-005-subagent-realtime-streaming-via-hooks.md"
+      ]
+    },
+    {
+      "id": "reasoning",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/08_reasoning-effort-control.md"
+      ]
+    },
+    {
+      "id": "recipes",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "90_ecc-usage/04_routing-recipes.md"
+      ]
+    },
+    {
+      "id": "recon",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "10_discovery/01_repo-recon.md"
+      ]
+    },
+    {
+      "id": "redistribute",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "99_distribution/01_how-to-redistribute.md"
+      ]
+    },
+    {
+      "id": "refactor",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "35_tdd-phase/01_red-green-refactor.md"
+      ]
+    },
+    {
+      "id": "regression",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "55_verification/04_eval-regression.md"
+      ]
+    },
+    {
+      "id": "release",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "99_distribution/03_v1.0.0-release-checklist.md"
+      ]
+    },
+    {
+      "id": "reload",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-001-agent-registry-hot-reload.md"
+      ]
+    },
+    {
+      "id": "removal",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/06_user-care/03_blocker-removal.md"
+      ]
+    },
+    {
+      "id": "repair",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "75_self-evolution/04_self-repair.md"
+      ]
+    },
+    {
+      "id": "repo",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "10_discovery/01_repo-recon.md"
+      ]
+    },
+    {
+      "id": "report",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-004-subagent-final-report-narration.md"
+      ]
+    },
+    {
+      "id": "requirements",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "30_sdd-phase/03_requirements-template.md"
+      ]
+    },
+    {
+      "id": "requirements.template",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/requirements.template.md"
+      ]
+    },
+    {
+      "id": "response",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/06_user-care/02_first-response-protocol.md"
+      ]
+    },
+    {
+      "id": "roadmap",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "90_ecc-usage/07_adoption-roadmap.md"
+      ]
+    },
+    {
+      "id": "rollout",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-002-phased-rollout-plan-index-graph.md"
+      ]
+    },
+    {
+      "id": "run",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md"
+      ]
+    },
+    {
+      "id": "scanning",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "85_frontier/01_horizon-scanning.md"
+      ]
+    },
+    {
+      "id": "scenario.template",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/demo-scenario.template.md"
+      ]
+    },
+    {
+      "id": "sdd",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md"
+      ]
+    },
+    {
+      "id": "search",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/04_search-protocol.md"
+      ]
+    },
+    {
+      "id": "semver",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-008-branch-strategy-and-semver.md"
+      ]
+    },
+    {
+      "id": "server",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "15_environment/04_mcp-server-bootstrap.md"
+      ]
+    },
+    {
+      "id": "settings",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "50_permissions/04_settings-presets.md"
+      ]
+    },
+    {
+      "id": "setup",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "12_knowledge-vault/02_vault-setup.md"
+      ]
+    },
+    {
+      "id": "seven",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/01_seven-habits-mapping.md"
+      ]
+    },
+    {
+      "id": "skeleton",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "20_repo-bootstrap/02_directory-skeleton.md"
+      ]
+    },
+    {
+      "id": "skill",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "85_frontier/03_dynamic-skill-synthesis.md"
+      ]
+    },
+    {
+      "id": "slash",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "80_commands/01_slash-commands.md"
+      ]
+    },
+    {
+      "id": "spec",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/01_runbook-spec.md"
+      ]
+    },
+    {
+      "id": "stack",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "10_discovery/03_stack-inference.md"
+      ]
+    },
+    {
+      "id": "star",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "05_principles/02_north-star.md"
+      ]
+    },
+    {
+      "id": "state",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-007-1-session-1-task-and-session-state.md"
+      ]
+    },
+    {
+      "id": "strategy",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-008-branch-strategy-and-semver.md"
+      ]
+    },
+    {
+      "id": "streaming",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-005-subagent-realtime-streaming-via-hooks.md"
+      ]
+    },
+    {
+      "id": "structure",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "12_knowledge-vault/03_directory-structure.md"
+      ]
+    },
+    {
+      "id": "style",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/03_citation-style.md"
+      ]
+    },
+    {
+      "id": "system",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "40_delegation/04_orchestrator-system-prompt.md"
+      ]
+    },
+    {
+      "id": "task",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-007-1-session-1-task-and-session-state.md"
+      ]
+    },
+    {
+      "id": "tasks",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "30_sdd-phase/05_tasks-template.md"
+      ]
+    },
+    {
+      "id": "tasks.template",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "70_templates/tasks.template.md"
+      ]
+    },
+    {
+      "id": "tdd",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "35_tdd-phase/05_tdd-loop-prompts.md"
+      ]
+    },
+    {
+      "id": "team",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "60_quality-gates/06_red-team-loop.md"
+      ]
+    },
+    {
+      "id": "test",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "35_tdd-phase/02_test-pyramid.md"
+      ]
+    },
+    {
+      "id": "token",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "65_pitfalls/03_oauth-token-expiry.md"
+      ]
+    },
+    {
+      "id": "traceability",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "55_verification/01_traceability.md"
+      ]
+    },
+    {
+      "id": "trigger",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/03_capture-trigger.md"
+      ]
+    },
+    {
+      "id": "types",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "12_knowledge-vault/06_knowledge-types.md"
+      ]
+    },
+    {
+      "id": "update",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "75_self-evolution/02_auto-update-loop.md"
+      ]
+    },
+    {
+      "id": "use",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "90_ecc-usage/02_when-to-use-ecc.md"
+      ]
+    },
+    {
+      "id": "user-role",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "01_overview/05_user-as-hands.md"
+      ]
+    },
+    {
+      "id": "utf8",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "65_pitfalls/02_windows-utf8-line-endings.md"
+      ]
+    },
+    {
+      "id": "v1.0.0",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "99_distribution/03_v1.0.0-release-checklist.md"
+      ]
+    },
+    {
+      "id": "verify",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "60_quality-gates/02_independent-verify.md"
+      ]
+    },
+    {
+      "id": "via",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "45_runbook/runbooks/RB-005-subagent-realtime-streaming-via-hooks.md"
+      ]
+    },
+    {
+      "id": "viewer",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "12_knowledge-vault/01_obsidian-as-viewer.md"
+      ]
+    },
+    {
+      "id": "voice",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "25_writing-style/01_voice.md"
+      ]
+    },
+    {
+      "id": "wikilink",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "12_knowledge-vault/04_wikilink-conventions.md"
+      ]
+    },
+    {
+      "id": "world",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        "85_frontier/06_world-models-for-agents.md"
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "runbook",
+      "to": "runbooks",
+      "rel": "cooccurs",
+      "weight": 10
+    },
+    {
+      "from": "_session-state-template",
+      "to": "runbook",
+      "rel": "cooccurs",
+      "weight": 5
+    },
+    {
+      "from": "user-care",
+      "to": "writing-style",
+      "rel": "cooccurs",
+      "weight": 5
+    },
+    {
+      "from": "runbook",
+      "to": "session",
+      "rel": "cooccurs",
+      "weight": 3
+    },
+    {
+      "from": "sdd-phase",
+      "to": "template",
+      "rel": "cooccurs",
+      "weight": 3
+    },
+    {
+      "from": "acquisition",
+      "to": "knowledge",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "agents",
+      "to": "frontier",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "best",
+      "to": "practices",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "best",
+      "to": "principles",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "corporate",
+      "to": "network",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "delegation",
+      "to": "handoff",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "ecc",
+      "to": "ecc-usage",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "knowledge",
+      "to": "vault",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "loop",
+      "to": "self",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "loop",
+      "to": "self-evolution",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "practices",
+      "to": "principles",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "protocol",
+      "to": "runbook",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "runbook",
+      "to": "subagent",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "runbooks",
+      "to": "session",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "runbooks",
+      "to": "subagent",
+      "rel": "cooccurs",
+      "weight": 2
+    },
+    {
+      "from": "self",
+      "to": "self-evolution",
+      "rel": "cooccurs",
+      "weight": 2
+    }
+  ],
+  "file_index": [
+    {
+      "path": "01_overview/01_purpose.md",
+      "keywords": [
+        "overview",
+        "purpose"
+      ],
+      "related": [
+        "05_principles/05_delegation-first.md",
+        "METHOD.md",
+        "60_quality-gates/01_fact-check-protocol.md",
+        "40_delegation/01_expert-registry.md",
+        "40_delegation/02_routing-rubric.md"
+      ]
+    },
+    {
+      "path": "01_overview/02_audience.md",
+      "keywords": [
+        "overview",
+        "audience"
+      ],
+      "related": [
+        "01_overview/03_how-to-read.md",
+        "METHOD.md",
+        "05_principles/06_context-economy.md",
+        "README.md",
+        "01_overview/04_glossary.md"
+      ]
+    },
+    {
+      "path": "01_overview/03_how-to-read.md",
+      "keywords": [
+        "overview",
+        "read"
+      ],
+      "related": [
+        "METHOD.md",
+        "README.md"
+      ]
+    },
+    {
+      "path": "01_overview/04_glossary.md",
+      "keywords": [
+        "overview",
+        "glossary"
+      ],
+      "related": [
+        "40_delegation/04_orchestrator-system-prompt.md",
+        "40_delegation/01_expert-registry.md",
+        "40_delegation/02_routing-rubric.md",
+        "40_delegation/03_delegation-contract.md",
+        "45_runbook/01_runbook-spec.md"
+      ]
+    },
+    {
+      "path": "01_overview/05_user-as-hands.md",
+      "keywords": [
+        "user-role",
+        "embodiment",
+        "hands-and-eyes",
+        "agent-autonomy",
+        "no-cognitive-load"
+      ],
+      "related": [
+        "../05_principles/05_delegation-first.md",
+        "../45_runbook/runbooks/RB-003-autonomous-decision-framework.md",
+        "../45_runbook/runbooks/RB-006-session-handover-protocol.md"
+      ]
+    },
+    {
+      "path": "05_principles/00_eighth-principle-question-standards.md",
+      "keywords": [
+        "principles",
+        "eighth",
+        "principle",
+        "question",
+        "standards"
+      ],
+      "related": [
+        "05_principles/01_seven-habits-mapping.md",
+        "25_writing-style/03_citation-style.md",
+        "75_self-evolution/01_freshness-policy.md",
+        "75_self-evolution/02_auto-update-loop.md",
+        "75_self-evolution/08_self-modification-loop.md"
+      ]
+    },
+    {
+      "path": "05_principles/01_seven-habits-mapping.md",
+      "keywords": [
+        "principles",
+        "seven",
+        "habits",
+        "mapping"
+      ],
+      "related": [
+        "25_writing-style/06_user-care/03_blocker-removal.md",
+        "40_delegation/02_routing-rubric.md",
+        "05_principles/06_context-economy.md",
+        "60_quality-gates/05_uncertainty-disclosure.md",
+        "40_delegation/06_handoff-patterns.md"
+      ]
+    },
+    {
+      "path": "05_principles/02_north-star.md",
+      "keywords": [
+        "principles",
+        "north",
+        "star"
+      ],
+      "related": [
+        "25_writing-style/03_citation-style.md",
+        "60_quality-gates/06_red-team-loop.md",
+        "60_quality-gates/05_uncertainty-disclosure.md",
+        "60_quality-gates/07_gate-checklist.md",
+        "25_writing-style/02_avoidance-patterns.md"
+      ]
+    },
+    {
+      "path": "05_principles/03_anthropic-best-practices.md",
+      "keywords": [
+        "principles",
+        "anthropic",
+        "best",
+        "practices"
+      ],
+      "related": [
+        "40_delegation/01_expert-registry.md",
+        "05_principles/07_multi-llm-routing.md",
+        "40_delegation/02_routing-rubric.md",
+        "40_delegation/06_handoff-patterns.md",
+        "40_delegation/03_delegation-contract.md"
+      ]
+    },
+    {
+      "path": "05_principles/04_openai-best-practices.md",
+      "keywords": [
+        "principles",
+        "openai",
+        "best",
+        "practices"
+      ],
+      "related": [
+        "40_delegation/01_expert-registry.md",
+        "40_delegation/06_handoff-patterns.md",
+        "05_principles/07_multi-llm-routing.md",
+        "60_quality-gates/06_red-team-loop.md"
+      ]
+    },
+    {
+      "path": "05_principles/05_delegation-first.md",
+      "keywords": [
+        "principles",
+        "delegation",
+        "first"
+      ],
+      "related": [
+        "40_delegation/02_routing-rubric.md",
+        "40_delegation/03_delegation-contract.md",
+        "40_delegation/01_expert-registry.md"
+      ]
+    },
+    {
+      "path": "05_principles/06_context-economy.md",
+      "keywords": [
+        "principles",
+        "context",
+        "economy"
+      ],
+      "related": [
+        "05_principles/05_delegation-first.md",
+        "05_principles/07_multi-llm-routing.md"
+      ]
+    },
+    {
+      "path": "05_principles/07_multi-llm-routing.md",
+      "keywords": [
+        "principles",
+        "multi",
+        "llm",
+        "routing"
+      ],
+      "related": [
+        "60_quality-gates/06_red-team-loop.md",
+        "40_delegation/02_routing-rubric.md",
+        "05_principles/05_delegation-first.md",
+        "05_principles/06_context-economy.md"
+      ]
+    },
+    {
+      "path": "05_principles/08_reasoning-effort-control.md",
+      "keywords": [
+        "principles",
+        "reasoning",
+        "effort",
+        "control"
+      ],
+      "related": [
+        "40_delegation/02_routing-rubric.md",
+        "40_delegation/03_delegation-contract.md",
+        "50_permissions/06_cost-budget-enforcement.md"
+      ]
+    },
+    {
+      "path": "10_discovery/01_repo-recon.md",
+      "keywords": [
+        "discovery",
+        "repo",
+        "recon"
+      ],
+      "related": [
+        "40_delegation/02_routing-rubric.md",
+        "20_repo-bootstrap/03_gitignore-baseline.md",
+        "20_repo-bootstrap/04_profiles.md"
+      ]
+    },
+    {
+      "path": "10_discovery/02_domain-elicitation.md",
+      "keywords": [
+        "discovery",
+        "domain",
+        "elicitation"
+      ],
+      "related": [
+        "10_discovery/01_repo-recon.md",
+        "25_writing-style/06_user-care/02_first-response-protocol.md"
+      ]
+    },
+    {
+      "path": "10_discovery/03_stack-inference.md",
+      "keywords": [
+        "discovery",
+        "stack",
+        "inference"
+      ],
+      "related": [
+        "10_discovery/02_domain-elicitation.md",
+        "75_self-evolution/05_industry-radar.md"
+      ]
+    },
+    {
+      "path": "10_discovery/04_constraint-mapping.md",
+      "keywords": [
+        "discovery",
+        "constraint",
+        "mapping"
+      ],
+      "related": [
+        "15_environment/06_corporate-network.md",
+        "10_discovery/03_stack-inference.md"
+      ]
+    },
+    {
+      "path": "10_discovery/05_knowledge-acquisition.md",
+      "keywords": [
+        "discovery",
+        "knowledge",
+        "acquisition"
+      ],
+      "related": [
+        "40_delegation/02_routing-rubric.md",
+        "60_quality-gates/01_fact-check-protocol.md",
+        "10_discovery/04_constraint-mapping.md",
+        "75_self-evolution/01_freshness-policy.md"
+      ]
+    },
+    {
+      "path": "12_knowledge-vault/_obsidian-template/README.md",
+      "keywords": [
+        "knowledge-vault",
+        "_obsidian-template"
+      ],
+      "related": [
+        "12_knowledge-vault/02_vault-setup.md"
+      ]
+    },
+    {
+      "path": "12_knowledge-vault/01_obsidian-as-viewer.md",
+      "keywords": [
+        "knowledge-vault",
+        "obsidian",
+        "viewer"
+      ],
+      "related": []
+    },
+    {
+      "path": "12_knowledge-vault/02_vault-setup.md",
+      "keywords": [
+        "knowledge-vault",
+        "vault",
+        "setup"
+      ],
+      "related": []
+    },
+    {
+      "path": "12_knowledge-vault/03_directory-structure.md",
+      "keywords": [
+        "knowledge-vault",
+        "directory",
+        "structure"
+      ],
+      "related": []
+    },
+    {
+      "path": "12_knowledge-vault/04_wikilink-conventions.md",
+      "keywords": [
+        "knowledge-vault",
+        "wikilink",
+        "conventions"
+      ],
+      "related": [
+        "12_knowledge-vault/03_directory-structure.md"
+      ]
+    },
+    {
+      "path": "12_knowledge-vault/05_moc-pattern.md",
+      "keywords": [
+        "knowledge-vault",
+        "moc",
+        "pattern"
+      ],
+      "related": []
+    },
+    {
+      "path": "12_knowledge-vault/06_knowledge-types.md",
+      "keywords": [
+        "knowledge-vault",
+        "knowledge",
+        "types"
+      ],
+      "related": []
+    },
+    {
+      "path": "12_knowledge-vault/07_promotion-flow.md",
+      "keywords": [
+        "knowledge-vault",
+        "promotion",
+        "flow"
+      ],
+      "related": []
+    },
+    {
+      "path": "15_environment/01_capabilities-matrix.md",
+      "keywords": [
+        "environment",
+        "capabilities",
+        "matrix"
+      ],
+      "related": [
+        "10_discovery/04_constraint-mapping.md"
+      ]
+    },
+    {
+      "path": "15_environment/02_cli-arsenal.md",
+      "keywords": [
+        "environment",
+        "cli",
+        "arsenal"
+      ],
+      "related": [
+        "15_environment/01_capabilities-matrix.md"
+      ]
+    },
+    {
+      "path": "15_environment/03_browser-automation.md",
+      "keywords": [
+        "environment",
+        "browser",
+        "automation"
+      ],
+      "related": [
+        "10_discovery/04_constraint-mapping.md"
+      ]
+    },
+    {
+      "path": "15_environment/04_mcp-server-bootstrap.md",
+      "keywords": [
+        "environment",
+        "mcp",
+        "server",
+        "bootstrap"
+      ],
+      "related": [
+        "40_delegation/01_expert-registry.md",
+        "10_discovery/05_knowledge-acquisition.md",
+        "15_environment/03_browser-automation.md",
+        "10_discovery/04_constraint-mapping.md"
+      ]
+    },
+    {
+      "path": "15_environment/05_credentials-vault.md",
+      "keywords": [
+        "environment",
+        "credentials",
+        "vault"
+      ],
+      "related": [
+        "10_discovery/01_repo-recon.md",
+        "20_repo-bootstrap/03_gitignore-baseline.md"
+      ]
+    },
+    {
+      "path": "15_environment/06_corporate-network.md",
+      "keywords": [
+        "environment",
+        "corporate",
+        "network"
+      ],
+      "related": [
+        "10_discovery/04_constraint-mapping.md"
+      ]
+    },
+    {
+      "path": "15_environment/07_permission-delegation.md",
+      "keywords": [
+        "environment",
+        "permission",
+        "delegation"
+      ],
+      "related": []
+    },
+    {
+      "path": "15_environment/08_session-persistence.md",
+      "keywords": [
+        "environment",
+        "session",
+        "persistence"
+      ],
+      "related": [
+        "05_principles/06_context-economy.md"
+      ]
+    },
+    {
+      "path": "15_environment/10_agent-memory-hierarchy.md",
+      "keywords": [
+        "environment",
+        "agent",
+        "memory",
+        "hierarchy"
+      ],
+      "related": [
+        "15_environment/08_session-persistence.md",
+        "75_self-evolution/01_freshness-policy.md",
+        "75_self-evolution/07_review-cadence.md",
+        "45_runbook/05_maintenance.md"
+      ]
+    },
+    {
+      "path": "20_repo-bootstrap/01_checklist.md",
+      "keywords": [
+        "repo-bootstrap",
+        "checklist"
+      ],
+      "related": [
+        "20_repo-bootstrap/04_profiles.md"
+      ]
+    },
+    {
+      "path": "20_repo-bootstrap/02_directory-skeleton.md",
+      "keywords": [
+        "repo-bootstrap",
+        "directory",
+        "skeleton"
+      ],
+      "related": [
+        "20_repo-bootstrap/04_profiles.md"
+      ]
+    },
+    {
+      "path": "20_repo-bootstrap/03_gitignore-baseline.md",
+      "keywords": [
+        "repo-bootstrap",
+        "gitignore",
+        "baseline"
+      ],
+      "related": []
+    },
+    {
+      "path": "20_repo-bootstrap/04_profiles.md",
+      "keywords": [
+        "repo-bootstrap",
+        "profiles"
+      ],
+      "related": [
+        "10_discovery/03_stack-inference.md",
+        "15_environment/03_browser-automation.md",
+        "40_delegation/01_expert-registry.md",
+        "20_repo-bootstrap/02_directory-skeleton.md"
+      ]
+    },
+    {
+      "path": "25_writing-style/01_voice.md",
+      "keywords": [
+        "writing-style",
+        "voice"
+      ],
+      "related": [
+        "25_writing-style/03_citation-style.md",
+        "25_writing-style/04_uncertainty-language.md",
+        "25_writing-style/02_avoidance-patterns.md"
+      ]
+    },
+    {
+      "path": "25_writing-style/02_avoidance-patterns.md",
+      "keywords": [
+        "avoidance",
+        "sycophancy",
+        "anti-praise",
+        "neutrality",
+        "writing-style",
+        "quality-gate"
+      ],
+      "related": [
+        "03_citation-style.md",
+        "04_uncertainty-language.md",
+        "../60_quality-gates/03_anti-sycophancy.md"
+      ]
+    },
+    {
+      "path": "25_writing-style/03_citation-style.md",
+      "keywords": [
+        "writing-style",
+        "citation",
+        "style"
+      ],
+      "related": [
+        "METHOD.md",
+        "25_writing-style/04_uncertainty-language.md"
+      ]
+    },
+    {
+      "path": "25_writing-style/04_uncertainty-language.md",
+      "keywords": [
+        "writing-style",
+        "uncertainty",
+        "language"
+      ],
+      "related": []
+    },
+    {
+      "path": "25_writing-style/05_examples.md",
+      "keywords": [
+        "writing-style",
+        "examples"
+      ],
+      "related": [
+        "25_writing-style/01_voice.md",
+        "25_writing-style/02_avoidance-patterns.md",
+        "25_writing-style/04_uncertainty-language.md"
+      ]
+    },
+    {
+      "path": "25_writing-style/06_user-care/01_emotion-detection.md",
+      "keywords": [
+        "writing-style",
+        "user-care",
+        "emotion",
+        "detection"
+      ],
+      "related": [
+        "25_writing-style/06_user-care/02_first-response-protocol.md",
+        "25_writing-style/02_avoidance-patterns.md"
+      ]
+    },
+    {
+      "path": "25_writing-style/06_user-care/02_first-response-protocol.md",
+      "keywords": [
+        "writing-style",
+        "user-care",
+        "first",
+        "response",
+        "protocol"
+      ],
+      "related": [
+        "25_writing-style/06_user-care/01_emotion-detection.md",
+        "25_writing-style/06_user-care/03_blocker-removal.md",
+        "25_writing-style/06_user-care/05_post-incident-runbook.md",
+        "25_writing-style/02_avoidance-patterns.md",
+        "50_permissions/02_pre-authorized-actions.md"
+      ]
+    },
+    {
+      "path": "25_writing-style/06_user-care/03_blocker-removal.md",
+      "keywords": [
+        "writing-style",
+        "user-care",
+        "blocker",
+        "removal"
+      ],
+      "related": [
+        "25_writing-style/06_user-care/02_first-response-protocol.md",
+        "25_writing-style/06_user-care/01_emotion-detection.md",
+        "50_permissions/02_pre-authorized-actions.md",
+        "40_delegation/01_expert-registry.md",
+        "50_permissions/01_consent-economy.md"
+      ]
+    },
+    {
+      "path": "25_writing-style/06_user-care/04_de-escalation.md",
+      "keywords": [
+        "writing-style",
+        "user-care",
+        "escalation"
+      ],
+      "related": [
+        "25_writing-style/06_user-care/02_first-response-protocol.md",
+        "25_writing-style/02_avoidance-patterns.md",
+        "25_writing-style/06_user-care/01_emotion-detection.md",
+        "25_writing-style/06_user-care/03_blocker-removal.md",
+        "25_writing-style/01_voice.md"
+      ]
+    },
+    {
+      "path": "25_writing-style/06_user-care/05_post-incident-runbook.md",
+      "keywords": [
+        "writing-style",
+        "user-care",
+        "post",
+        "incident",
+        "runbook"
+      ],
+      "related": [
+        "25_writing-style/06_user-care/02_first-response-protocol.md",
+        "README.md",
+        "40_delegation/01_expert-registry.md",
+        "25_writing-style/01_voice.md"
+      ]
+    },
+    {
+      "path": "30_sdd-phase/01_prd-flow.md",
+      "keywords": [
+        "sdd-phase",
+        "prd",
+        "flow"
+      ],
+      "related": []
+    },
+    {
+      "path": "30_sdd-phase/02_feature-id-rules.md",
+      "keywords": [
+        "sdd-phase",
+        "feature",
+        "rules"
+      ],
+      "related": [
+        "55_verification/01_traceability.md",
+        "55_verification/02_drift-detection.md"
+      ]
+    },
+    {
+      "path": "30_sdd-phase/03_requirements-template.md",
+      "keywords": [
+        "sdd-phase",
+        "requirements",
+        "template"
+      ],
+      "related": []
+    },
+    {
+      "path": "30_sdd-phase/04_design-template.md",
+      "keywords": [
+        "sdd-phase",
+        "design",
+        "template"
+      ],
+      "related": []
+    },
+    {
+      "path": "30_sdd-phase/05_tasks-template.md",
+      "keywords": [
+        "sdd-phase",
+        "tasks",
+        "template"
+      ],
+      "related": []
+    },
+    {
+      "path": "30_sdd-phase/06_review-gates.md",
+      "keywords": [
+        "sdd-phase",
+        "review",
+        "gates"
+      ],
+      "related": []
+    },
+    {
+      "path": "35_tdd-phase/01_red-green-refactor.md",
+      "keywords": [
+        "tdd-phase",
+        "red",
+        "green",
+        "refactor"
+      ],
+      "related": []
+    },
+    {
+      "path": "35_tdd-phase/02_test-pyramid.md",
+      "keywords": [
+        "tdd-phase",
+        "test",
+        "pyramid"
+      ],
+      "related": []
+    },
+    {
+      "path": "35_tdd-phase/03_coverage-policy.md",
+      "keywords": [
+        "tdd-phase",
+        "coverage",
+        "policy"
+      ],
+      "related": []
+    },
+    {
+      "path": "35_tdd-phase/04_fake-injection.md",
+      "keywords": [
+        "tdd-phase",
+        "fake",
+        "injection"
+      ],
+      "related": []
+    },
+    {
+      "path": "35_tdd-phase/05_tdd-loop-prompts.md",
+      "keywords": [
+        "tdd-phase",
+        "tdd",
+        "loop",
+        "prompts"
+      ],
+      "related": []
+    },
+    {
+      "path": "40_delegation/01_expert-registry.md",
+      "keywords": [
+        "delegation",
+        "expert",
+        "registry"
+      ],
+      "related": [
+        "75_self-evolution/01_freshness-policy.md"
+      ]
+    },
+    {
+      "path": "40_delegation/02_routing-rubric.md",
+      "keywords": [
+        "delegation",
+        "routing",
+        "rubric"
+      ],
+      "related": []
+    },
+    {
+      "path": "40_delegation/03_delegation-contract.md",
+      "keywords": [
+        "delegation",
+        "contract"
+      ],
+      "related": []
+    },
+    {
+      "path": "40_delegation/04_orchestrator-system-prompt.md",
+      "keywords": [
+        "delegation",
+        "orchestrator",
+        "system",
+        "prompt"
+      ],
+      "related": [
+        "75_self-evolution/02_auto-update-loop.md"
+      ]
+    },
+    {
+      "path": "40_delegation/05_self-bootstrap-loop.md",
+      "keywords": [
+        "delegation",
+        "self",
+        "bootstrap",
+        "loop"
+      ],
+      "related": []
+    },
+    {
+      "path": "40_delegation/06_handoff-patterns.md",
+      "keywords": [
+        "delegation",
+        "handoff",
+        "patterns"
+      ],
+      "related": []
+    },
+    {
+      "path": "40_delegation/07_cross-verification.md",
+      "keywords": [
+        "delegation",
+        "cross",
+        "verification"
+      ],
+      "related": []
+    },
+    {
+      "path": "40_delegation/08_synthesis-protocol.md",
+      "keywords": [
+        "delegation",
+        "synthesis",
+        "protocol"
+      ],
+      "related": []
+    },
+    {
+      "path": "40_delegation/09_a2a-and-handoff-standards.md",
+      "keywords": [
+        "delegation",
+        "a2a",
+        "handoff",
+        "standards"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/_session-state-template/COMPLETED.md",
+      "keywords": [
+        "runbook",
+        "_session-state-template",
+        "completed"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/_session-state-template/current_session.md",
+      "keywords": [
+        "runbook",
+        "_session-state-template",
+        "current",
+        "session"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/_session-state-template/GOAL.md",
+      "keywords": [
+        "runbook",
+        "_session-state-template",
+        "goal"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/_session-state-template/HISTORY.md",
+      "keywords": [
+        "runbook",
+        "_session-state-template",
+        "history"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/_session-state-template/PENDING.md",
+      "keywords": [
+        "runbook",
+        "_session-state-template",
+        "pending"
+      ],
+      "related": [
+        "45_runbook/runbooks/RB-006-session-handover-protocol.md"
+      ]
+    },
+    {
+      "path": "45_runbook/01_runbook-spec.md",
+      "keywords": [
+        "runbook",
+        "spec"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/02_indexing-rules.md",
+      "keywords": [
+        "runbook",
+        "indexing",
+        "rules"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/03_capture-trigger.md",
+      "keywords": [
+        "runbook",
+        "capture",
+        "trigger"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/04_search-protocol.md",
+      "keywords": [
+        "runbook",
+        "search",
+        "protocol"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/05_maintenance.md",
+      "keywords": [
+        "runbook",
+        "maintenance"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/INDEX.md",
+      "keywords": [
+        "runbook"
+      ],
+      "related": [
+        "45_runbook/04_search-protocol.md",
+        "45_runbook/05_maintenance.md",
+        "45_runbook/02_indexing-rules.md"
+      ]
+    },
+    {
+      "path": "45_runbook/runbooks/RB-001-agent-registry-hot-reload.md",
+      "keywords": [
+        "runbook",
+        "runbooks",
+        "agent",
+        "registry",
+        "hot",
+        "reload"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/runbooks/RB-002-phased-rollout-plan-index-graph.md",
+      "keywords": [
+        "runbook",
+        "runbooks",
+        "phased",
+        "rollout",
+        "plan",
+        "graph"
+      ],
+      "related": [
+        "RB-001-agent-registry-hot-reload"
+      ]
+    },
+    {
+      "path": "45_runbook/runbooks/RB-003-autonomous-decision-framework.md",
+      "keywords": [
+        "runbook",
+        "runbooks",
+        "autonomous",
+        "decision",
+        "framework"
+      ],
+      "related": [
+        "RB-001-agent-registry-hot-reload",
+        "RB-002-phased-rollout-plan-index-graph"
+      ]
+    },
+    {
+      "path": "45_runbook/runbooks/RB-004-subagent-final-report-narration.md",
+      "keywords": [
+        "runbook",
+        "runbooks",
+        "subagent",
+        "final",
+        "report",
+        "narration"
+      ],
+      "related": [
+        "RB-001-agent-registry-hot-reload",
+        "RB-003-autonomous-decision-framework"
+      ]
+    },
+    {
+      "path": "45_runbook/runbooks/RB-005-subagent-realtime-streaming-via-hooks.md",
+      "keywords": [
+        "runbook",
+        "runbooks",
+        "subagent",
+        "realtime",
+        "streaming",
+        "via",
+        "hooks"
+      ],
+      "related": [
+        "RB-004-subagent-final-report-narration"
+      ]
+    },
+    {
+      "path": "45_runbook/runbooks/RB-006-session-handover-protocol.md",
+      "keywords": [
+        "runbook",
+        "runbooks",
+        "session",
+        "handover",
+        "protocol"
+      ],
+      "related": [
+        "RB-007-1-session-1-task-and-session-state",
+        "RB-009-first-run-sdd-bootstrap",
+        "RB-003-autonomous-decision-framework",
+        "../01_overview/05_user-as-hands.md"
+      ]
+    },
+    {
+      "path": "45_runbook/runbooks/RB-007-1-session-1-task-and-session-state.md",
+      "keywords": [
+        "runbook",
+        "runbooks",
+        "session",
+        "task",
+        "state"
+      ],
+      "related": [
+        "RB-006-session-handover-protocol",
+        "RB-003-autonomous-decision-framework",
+        "../01_overview/05_user-as-hands.md"
+      ]
+    },
+    {
+      "path": "45_runbook/runbooks/RB-008-branch-strategy-and-semver.md",
+      "keywords": [
+        "runbook",
+        "runbooks",
+        "branch",
+        "strategy",
+        "semver"
+      ],
+      "related": [
+        "RB-006-session-handover-protocol",
+        "RB-007-1-session-1-task-and-session-state"
+      ]
+    },
+    {
+      "path": "45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md",
+      "keywords": [
+        "runbook",
+        "runbooks",
+        "first",
+        "run",
+        "sdd",
+        "bootstrap"
+      ],
+      "related": [
+        "RB-006-session-handover-protocol",
+        "RB-007-1-session-1-task-and-session-state",
+        "RB-008-branch-strategy-and-semver"
+      ]
+    },
+    {
+      "path": "45_runbook/runbooks/RB-010-bash-auto-background-on-windows-pytest.md",
+      "keywords": [
+        "runbook",
+        "runbooks",
+        "bash",
+        "auto",
+        "background",
+        "windows",
+        "pytest"
+      ],
+      "related": []
+    },
+    {
+      "path": "45_runbook/runbooks/RB-011-knowledge-promotion-flow.md",
+      "keywords": [
+        "runbook",
+        "knowledge",
+        "promotion",
+        "vault",
+        "obsidian"
+      ],
+      "related": [
+        "12_knowledge-vault/02_vault-setup.md",
+        "12_knowledge-vault/07_promotion-flow.md",
+        "12_knowledge-vault/03_directory-structure.md",
+        "15_environment/10_agent-memory-hierarchy.md"
+      ]
+    },
+    {
+      "path": "50_permissions/01_consent-economy.md",
+      "keywords": [
+        "permissions",
+        "consent",
+        "economy"
+      ],
+      "related": [
+        "50_permissions/03_blast-radius-rubric.md",
+        "50_permissions/02_pre-authorized-actions.md",
+        "50_permissions/04_settings-presets.md",
+        "45_runbook/03_capture-trigger.md"
+      ]
+    },
+    {
+      "path": "50_permissions/02_pre-authorized-actions.md",
+      "keywords": [
+        "permissions",
+        "pre",
+        "authorized",
+        "actions"
+      ],
+      "related": [
+        "50_permissions/01_consent-economy.md",
+        "50_permissions/04_settings-presets.md"
+      ]
+    },
+    {
+      "path": "50_permissions/03_blast-radius-rubric.md",
+      "keywords": [
+        "permissions",
+        "blast",
+        "radius",
+        "rubric"
+      ],
+      "related": [
+        "60_quality-gates/04_guardrails-compliance.md",
+        "50_permissions/04_settings-presets.md"
+      ]
+    },
+    {
+      "path": "50_permissions/04_settings-presets.md",
+      "keywords": [
+        "permissions",
+        "settings",
+        "presets"
+      ],
+      "related": [
+        "50_permissions/03_blast-radius-rubric.md"
+      ]
+    },
+    {
+      "path": "50_permissions/05_escalation-policy.md",
+      "keywords": [
+        "permissions",
+        "escalation",
+        "policy"
+      ],
+      "related": [
+        "50_permissions/01_consent-economy.md",
+        "40_delegation/02_routing-rubric.md",
+        "40_delegation/03_delegation-contract.md",
+        "50_permissions/03_blast-radius-rubric.md",
+        "25_writing-style/06_user-care/02_first-response-protocol.md"
+      ]
+    },
+    {
+      "path": "50_permissions/06_cost-budget-enforcement.md",
+      "keywords": [
+        "permissions",
+        "cost",
+        "budget",
+        "enforcement"
+      ],
+      "related": [
+        "50_permissions/05_escalation-policy.md",
+        "50_permissions/01_consent-economy.md",
+        "40_delegation/03_delegation-contract.md",
+        "50_permissions/03_blast-radius-rubric.md",
+        "75_self-evolution/01_freshness-policy.md"
+      ]
+    },
+    {
+      "path": "55_verification/01_traceability.md",
+      "keywords": [
+        "verification",
+        "traceability"
+      ],
+      "related": [
+        "55_verification/02_drift-detection.md",
+        "55_verification/03_demo-readiness.md",
+        "40_delegation/03_delegation-contract.md",
+        "60_quality-gates/07_gate-checklist.md"
+      ]
+    },
+    {
+      "path": "55_verification/02_drift-detection.md",
+      "keywords": [
+        "verification",
+        "drift",
+        "detection"
+      ],
+      "related": [
+        "55_verification/01_traceability.md",
+        "60_quality-gates/06_red-team-loop.md",
+        "50_permissions/05_escalation-policy.md",
+        "55_verification/03_demo-readiness.md"
+      ]
+    },
+    {
+      "path": "55_verification/03_demo-readiness.md",
+      "keywords": [
+        "verification",
+        "demo",
+        "readiness"
+      ],
+      "related": [
+        "55_verification/01_traceability.md",
+        "60_quality-gates/01_fact-check-protocol.md",
+        "60_quality-gates/05_uncertainty-disclosure.md",
+        "25_writing-style/02_avoidance-patterns.md",
+        "45_runbook/03_capture-trigger.md"
+      ]
+    },
+    {
+      "path": "55_verification/04_eval-regression.md",
+      "keywords": [
+        "verification",
+        "eval",
+        "regression"
+      ],
+      "related": []
+    },
+    {
+      "path": "60_quality-gates/01_fact-check-protocol.md",
+      "keywords": [
+        "quality-gates",
+        "fact",
+        "check",
+        "protocol"
+      ],
+      "related": [
+        "60_quality-gates/05_uncertainty-disclosure.md",
+        "60_quality-gates/02_independent-verify.md",
+        "60_quality-gates/07_gate-checklist.md"
+      ]
+    },
+    {
+      "path": "60_quality-gates/02_independent-verify.md",
+      "keywords": [
+        "quality-gates",
+        "independent",
+        "verify"
+      ],
+      "related": [
+        "60_quality-gates/06_red-team-loop.md",
+        "60_quality-gates/03_anti-sycophancy.md",
+        "40_delegation/03_delegation-contract.md"
+      ]
+    },
+    {
+      "path": "60_quality-gates/03_anti-sycophancy.md",
+      "keywords": [
+        "quality-gates",
+        "anti",
+        "sycophancy"
+      ],
+      "related": [
+        "60_quality-gates/01_fact-check-protocol.md",
+        "60_quality-gates/02_independent-verify.md",
+        "25_writing-style/02_avoidance-patterns.md",
+        "60_quality-gates/05_uncertainty-disclosure.md",
+        "60_quality-gates/06_red-team-loop.md"
+      ]
+    },
+    {
+      "path": "60_quality-gates/04_guardrails-compliance.md",
+      "keywords": [
+        "quality-gates",
+        "guardrails",
+        "compliance"
+      ],
+      "related": [
+        "50_permissions/04_settings-presets.md",
+        "50_permissions/05_escalation-policy.md",
+        "60_quality-gates/07_gate-checklist.md"
+      ]
+    },
+    {
+      "path": "60_quality-gates/05_uncertainty-disclosure.md",
+      "keywords": [
+        "quality-gates",
+        "uncertainty",
+        "disclosure"
+      ],
+      "related": [
+        "55_verification/02_drift-detection.md",
+        "60_quality-gates/01_fact-check-protocol.md",
+        "60_quality-gates/03_anti-sycophancy.md",
+        "60_quality-gates/07_gate-checklist.md"
+      ]
+    },
+    {
+      "path": "60_quality-gates/06_red-team-loop.md",
+      "keywords": [
+        "quality-gates",
+        "red",
+        "team",
+        "loop"
+      ],
+      "related": [
+        "60_quality-gates/02_independent-verify.md",
+        "60_quality-gates/03_anti-sycophancy.md",
+        "40_delegation/06_handoff-patterns.md",
+        "55_verification/02_drift-detection.md",
+        "40_delegation/03_delegation-contract.md"
+      ]
+    },
+    {
+      "path": "60_quality-gates/07_gate-checklist.md",
+      "keywords": [
+        "quality-gates",
+        "gate",
+        "checklist"
+      ],
+      "related": [
+        "60_quality-gates/01_fact-check-protocol.md",
+        "60_quality-gates/02_independent-verify.md",
+        "60_quality-gates/06_red-team-loop.md",
+        "60_quality-gates/05_uncertainty-disclosure.md",
+        "60_quality-gates/03_anti-sycophancy.md"
+      ]
+    },
+    {
+      "path": "60_quality-gates/08_prompt-injection-defense.md",
+      "keywords": [
+        "quality-gates",
+        "prompt",
+        "injection",
+        "defense"
+      ],
+      "related": []
+    },
+    {
+      "path": "65_pitfalls/01_corporate-network.md",
+      "keywords": [
+        "pitfalls",
+        "corporate",
+        "network"
+      ],
+      "related": []
+    },
+    {
+      "path": "65_pitfalls/02_windows-utf8-line-endings.md",
+      "keywords": [
+        "pitfalls",
+        "windows",
+        "utf8",
+        "line",
+        "endings"
+      ],
+      "related": []
+    },
+    {
+      "path": "65_pitfalls/03_oauth-token-expiry.md",
+      "keywords": [
+        "pitfalls",
+        "oauth",
+        "token",
+        "expiry"
+      ],
+      "related": []
+    },
+    {
+      "path": "65_pitfalls/04_git-divergence.md",
+      "keywords": [
+        "pitfalls",
+        "git",
+        "divergence"
+      ],
+      "related": []
+    },
+    {
+      "path": "65_pitfalls/05_session-context-overflow.md",
+      "keywords": [
+        "pitfalls",
+        "session",
+        "context",
+        "overflow"
+      ],
+      "related": []
+    },
+    {
+      "path": "70_templates/delegation-contract.template.md",
+      "keywords": [
+        "templates",
+        "delegation",
+        "contract.template"
+      ],
+      "related": []
+    },
+    {
+      "path": "70_templates/demo-scenario.template.md",
+      "keywords": [
+        "templates",
+        "demo",
+        "scenario.template"
+      ],
+      "related": []
+    },
+    {
+      "path": "70_templates/design.template.md",
+      "keywords": [
+        "templates",
+        "design.template"
+      ],
+      "related": []
+    },
+    {
+      "path": "70_templates/knowledge-vault-INDEX.template.md",
+      "keywords": [
+        "templates",
+        "knowledge",
+        "vault",
+        "index.template"
+      ],
+      "related": []
+    },
+    {
+      "path": "70_templates/PRD.template.md",
+      "keywords": [
+        "templates",
+        "prd.template"
+      ],
+      "related": []
+    },
+    {
+      "path": "70_templates/presentation.template.md",
+      "keywords": [
+        "templates",
+        "presentation.template"
+      ],
+      "related": []
+    },
+    {
+      "path": "70_templates/README.md",
+      "keywords": [
+        "templates",
+        "frontmatter",
+        "codegraph"
+      ],
+      "related": [
+        "../_index/README.md",
+        "../20_repo-bootstrap/02_directory-skeleton.md",
+        "../80_commands/generate-concept-graph.mjs"
+      ]
+    },
+    {
+      "path": "70_templates/requirements.template.md",
+      "keywords": [
+        "templates",
+        "requirements.template"
+      ],
+      "related": []
+    },
+    {
+      "path": "70_templates/runbook.template.md",
+      "keywords": [
+        "runbook",
+        "{{topic1}}",
+        "{{topic2}}"
+      ],
+      "related": [
+        "RB-{{NNN}}"
+      ]
+    },
+    {
+      "path": "70_templates/tasks.template.md",
+      "keywords": [
+        "templates",
+        "tasks.template"
+      ],
+      "related": []
+    },
+    {
+      "path": "75_self-evolution/01_freshness-policy.md",
+      "keywords": [
+        "self-evolution",
+        "freshness",
+        "policy"
+      ],
+      "related": [
+        "75_self-evolution/02_auto-update-loop.md",
+        "75_self-evolution/04_self-repair.md",
+        "75_self-evolution/06_health-metrics.md",
+        "40_delegation/01_expert-registry.md",
+        "45_runbook/01_runbook-spec.md"
+      ]
+    },
+    {
+      "path": "75_self-evolution/02_auto-update-loop.md",
+      "keywords": [
+        "self-evolution",
+        "auto",
+        "update",
+        "loop"
+      ],
+      "related": [
+        "40_delegation/03_delegation-contract.md"
+      ]
+    },
+    {
+      "path": "75_self-evolution/03_knowledge-acquisition.md",
+      "keywords": [
+        "self-evolution",
+        "knowledge",
+        "acquisition"
+      ],
+      "related": [
+        "75_self-evolution/08_self-modification-loop.md",
+        "40_delegation/03_delegation-contract.md"
+      ]
+    },
+    {
+      "path": "75_self-evolution/04_self-repair.md",
+      "keywords": [
+        "self-evolution",
+        "self",
+        "repair"
+      ],
+      "related": [
+        "75_self-evolution/08_self-modification-loop.md",
+        "75_self-evolution/01_freshness-policy.md",
+        "75_self-evolution/02_auto-update-loop.md",
+        "75_self-evolution/06_health-metrics.md"
+      ]
+    },
+    {
+      "path": "75_self-evolution/05_industry-radar.md",
+      "keywords": [
+        "self-evolution",
+        "industry",
+        "radar"
+      ],
+      "related": [
+        "75_self-evolution/08_self-modification-loop.md"
+      ]
+    },
+    {
+      "path": "75_self-evolution/06_health-metrics.md",
+      "keywords": [
+        "self-evolution",
+        "health",
+        "metrics"
+      ],
+      "related": [
+        "75_self-evolution/01_freshness-policy.md",
+        "75_self-evolution/02_auto-update-loop.md",
+        "75_self-evolution/04_self-repair.md",
+        "75_self-evolution/05_industry-radar.md",
+        "75_self-evolution/07_review-cadence.md"
+      ]
+    },
+    {
+      "path": "75_self-evolution/07_review-cadence.md",
+      "keywords": [
+        "self-evolution",
+        "review",
+        "cadence"
+      ],
+      "related": [
+        "75_self-evolution/08_self-modification-loop.md",
+        "75_self-evolution/01_freshness-policy.md",
+        "75_self-evolution/02_auto-update-loop.md",
+        "75_self-evolution/03_knowledge-acquisition.md",
+        "75_self-evolution/04_self-repair.md"
+      ]
+    },
+    {
+      "path": "75_self-evolution/08_self-modification-loop.md",
+      "keywords": [
+        "self-evolution",
+        "self",
+        "modification",
+        "loop"
+      ],
+      "related": [
+        "40_delegation/03_delegation-contract.md",
+        "50_permissions/01_consent-economy.md"
+      ]
+    },
+    {
+      "path": "80_commands/01_slash-commands.md",
+      "keywords": [
+        "commands",
+        "slash"
+      ],
+      "related": []
+    },
+    {
+      "path": "80_commands/02_bootstrap.md",
+      "keywords": [
+        "commands",
+        "bootstrap"
+      ],
+      "related": [
+        "80_commands/01_slash-commands.md"
+      ]
+    },
+    {
+      "path": "85_frontier/01_horizon-scanning.md",
+      "keywords": [
+        "frontier",
+        "horizon",
+        "scanning"
+      ],
+      "related": []
+    },
+    {
+      "path": "85_frontier/02_self-modifying-agents.md",
+      "keywords": [
+        "frontier",
+        "self",
+        "modifying",
+        "agents"
+      ],
+      "related": []
+    },
+    {
+      "path": "85_frontier/03_dynamic-skill-synthesis.md",
+      "keywords": [
+        "frontier",
+        "dynamic",
+        "skill",
+        "synthesis"
+      ],
+      "related": []
+    },
+    {
+      "path": "85_frontier/04_emergent-multi-agent.md",
+      "keywords": [
+        "frontier",
+        "emergent",
+        "multi",
+        "agent"
+      ],
+      "related": []
+    },
+    {
+      "path": "85_frontier/05_continual-learning.md",
+      "keywords": [
+        "frontier",
+        "continual",
+        "learning"
+      ],
+      "related": []
+    },
+    {
+      "path": "85_frontier/06_world-models-for-agents.md",
+      "keywords": [
+        "frontier",
+        "world",
+        "models",
+        "agents"
+      ],
+      "related": []
+    },
+    {
+      "path": "85_frontier/07_post-llm-architectures.md",
+      "keywords": [
+        "frontier",
+        "post",
+        "llm",
+        "architectures"
+      ],
+      "related": []
+    },
+    {
+      "path": "85_frontier/README.md",
+      "keywords": [
+        "frontier"
+      ],
+      "related": []
+    },
+    {
+      "path": "90_ecc-usage/01_ecc-overview.md",
+      "keywords": [
+        "ecc-usage",
+        "ecc",
+        "overview"
+      ],
+      "related": [
+        "90_ecc-usage/02_when-to-use-ecc.md",
+        "90_ecc-usage/03_feature-map.md",
+        "90_ecc-usage/04_routing-recipes.md",
+        "90_ecc-usage/05_anti-patterns.md",
+        "90_ecc-usage/06_cost-and-context.md"
+      ]
+    },
+    {
+      "path": "90_ecc-usage/02_when-to-use-ecc.md",
+      "keywords": [
+        "ecc-usage",
+        "use",
+        "ecc"
+      ],
+      "related": [
+        "40_delegation/03_delegation-contract.md",
+        "90_ecc-usage/06_cost-and-context.md",
+        "75_self-evolution/06_health-metrics.md"
+      ]
+    },
+    {
+      "path": "90_ecc-usage/03_feature-map.md",
+      "keywords": [
+        "ecc-usage",
+        "feature",
+        "map"
+      ],
+      "related": []
+    },
+    {
+      "path": "90_ecc-usage/04_routing-recipes.md",
+      "keywords": [
+        "ecc-usage",
+        "routing",
+        "recipes"
+      ],
+      "related": [
+        "40_delegation/02_routing-rubric.md",
+        "15_environment/10_agent-memory-hierarchy.md",
+        "40_delegation/09_a2a-and-handoff-standards.md"
+      ]
+    },
+    {
+      "path": "90_ecc-usage/05_anti-patterns.md",
+      "keywords": [
+        "ecc-usage",
+        "anti",
+        "patterns"
+      ],
+      "related": []
+    },
+    {
+      "path": "90_ecc-usage/06_cost-and-context.md",
+      "keywords": [
+        "ecc-usage",
+        "cost",
+        "context"
+      ],
+      "related": [
+        "40_delegation/03_delegation-contract.md"
+      ]
+    },
+    {
+      "path": "90_ecc-usage/07_adoption-roadmap.md",
+      "keywords": [
+        "ecc-usage",
+        "adoption",
+        "roadmap"
+      ],
+      "related": []
+    },
+    {
+      "path": "99_distribution/01_how-to-redistribute.md",
+      "keywords": [
+        "distribution",
+        "redistribute"
+      ],
+      "related": [
+        "99_distribution/02_license-note.md",
+        "25_writing-style/02_avoidance-patterns.md",
+        "75_self-evolution/06_health-metrics.md"
+      ]
+    },
+    {
+      "path": "99_distribution/02_license-note.md",
+      "keywords": [
+        "distribution",
+        "note"
+      ],
+      "related": [
+        "99_distribution/01_how-to-redistribute.md",
+        "25_writing-style/03_citation-style.md",
+        "75_self-evolution/01_freshness-policy.md"
+      ]
+    },
+    {
+      "path": "99_distribution/03_v1.0.0-release-checklist.md",
+      "keywords": [
+        "distribution",
+        "v1.0.0",
+        "release",
+        "checklist"
+      ],
+      "related": []
+    },
+    {
+      "path": "99_distribution/04_developer-self-dogfooding.md",
+      "keywords": [
+        "distribution",
+        "developer",
+        "self",
+        "dogfooding"
+      ],
+      "related": [
+        "45_runbook/runbooks/RB-008-branch-strategy-and-semver.md",
+        "45_runbook/runbooks/RB-006-session-handover-protocol.md",
+        "99_distribution/03_v1.0.0-release-checklist.md"
+      ]
+    },
+    {
+      "path": "CHANGELOG.md",
+      "keywords": [
+        "changelog"
+      ],
+      "related": []
+    },
+    {
+      "path": "Knowledge/00_INDEX.md",
+      "keywords": [
+        "knowledge",
+        "index",
+        "ecc-method-project"
+      ],
+      "related": [
+        "12_knowledge-vault/03_directory-structure.md",
+        "12_knowledge-vault/07_promotion-flow.md"
+      ]
+    },
+    {
+      "path": "METHOD.md",
+      "keywords": [
+        "method"
+      ],
+      "related": [
+        "05_principles/05_delegation-first.md",
+        "40_delegation/01_expert-registry.md",
+        "05_principles/06_context-economy.md",
+        "60_quality-gates/01_fact-check-protocol.md",
+        "60_quality-gates/06_red-team-loop.md"
+      ]
+    },
+    {
+      "path": "README.md",
+      "keywords": [
+        "readme"
+      ],
+      "related": [
+        "45_runbook/runbooks/RB-001-agent-registry-hot-reload.md",
+        "45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md",
+        "45_runbook/runbooks/RB-006-session-handover-protocol.md",
+        "METHOD.md",
+        "45_runbook/INDEX.md"
+      ]
+    }
+  ]
+}

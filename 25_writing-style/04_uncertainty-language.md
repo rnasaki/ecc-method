@@ -1,3 +1,7 @@
+---
+keywords: [writing-style, uncertainty, language]
+related: []
+---
 # 04 — Uncertainty Language (未検証・推測の明示語彙)
 
 不確実な主張を「断定」と区別するための語彙規約。ハルシネーションの抑止と読み手の判断材料の確保が目的。

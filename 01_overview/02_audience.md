@@ -1,3 +1,7 @@
+---
+keywords: [overview, audience]
+related: [01_overview/03_how-to-read.md, METHOD.md, 05_principles/06_context-economy.md, README.md, 01_overview/04_glossary.md]
+---
 # 02 — Audience (想定読者)
 
 ecc-method は、ECC 上で開発を進める実務者・チームを主読者とする。本ファイルでは読者像を 3 軸 (役割 / 経験 / チーム形態) で具体化し、各読者がどの章から読み始めるべきかを示す。

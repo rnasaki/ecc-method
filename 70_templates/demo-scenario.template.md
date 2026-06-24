@@ -1,4 +1,15 @@
+---
+keywords: [templates, demo, scenario.template]
+related: []
+---
 # Demo Scenario: {{demo-name}}
+
+<!-- 展開時はファイル冒頭に CodeGraph 用 frontmatter を追加すること:
+---
+keywords: [demo, {{demo-name}}, scenario]
+related: [docs/PRD.md, <該当 feature の design.md など>]
+---
+詳細: 70_templates/README.md -->
 
 > 関係者にプロダクトを動かして見せるためのシナリオ雛形。
 > 「誰に / 何を / どう見せるか」を 1 ファイルで完結させる。

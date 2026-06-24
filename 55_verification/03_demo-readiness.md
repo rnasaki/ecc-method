@@ -1,3 +1,7 @@
+---
+keywords: [verification, demo, readiness]
+related: [55_verification/01_traceability.md, 60_quality-gates/01_fact-check-protocol.md, 60_quality-gates/05_uncertainty-disclosure.md, 25_writing-style/02_avoidance-patterns.md, 45_runbook/03_capture-trigger.md]
+---
 # 03 — Demo Readiness (デモ完了条件)
 
 「動いた」だけではデモ可能ではない。AC カバレッジ・シナリオ脚本・代替経路の 3 点を満たして初めてデモ完了とみなす。

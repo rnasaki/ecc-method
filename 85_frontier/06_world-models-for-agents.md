@@ -1,3 +1,7 @@
+---
+keywords: [frontier, world, models, agents]
+related: []
+---
 # 06 World Models for Agents — 実行前のシミュレーション / sleep-time compute
 
 > 5 段構成: **現状 → 先端 (2025-2026 H1) → 基礎研究 → 未来 → 今すぐ準備**

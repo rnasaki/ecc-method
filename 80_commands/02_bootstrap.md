@@ -1,3 +1,7 @@
+---
+keywords: [commands, bootstrap]
+related: [80_commands/01_slash-commands.md]
+---
 # 02 — bootstrap.sh の使い方
 
 新規リポを本パッケージの規約で立ち上げるための初期化スクリプト `bootstrap.sh` の操作手順。

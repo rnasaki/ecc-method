@@ -1,3 +1,7 @@
+---
+keywords: [frontier, self, modifying, agents]
+related: []
+---
 # 02. Self-Modifying Agents — agent 自己改変
 
 agent が自身の prompt / tool / policy / コードを書き換え、評価ループを回しながら改善していく方向性。

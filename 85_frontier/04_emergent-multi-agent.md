@@ -1,3 +1,7 @@
+---
+keywords: [frontier, emergent, multi, agent]
+related: []
+---
 # 04. Emergent Multi-Agent — 創発的 agent 編成
 
 > 静的な orchestrator-worker から、query 解析に応じて subagent が動的に

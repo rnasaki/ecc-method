@@ -1,3 +1,7 @@
+---
+keywords: [quality-gates, prompt, injection, defense]
+related: []
+---
 # 08. Prompt Injection Defense (LLM01 対策)
 
 retrieved_at: 2026-06-23

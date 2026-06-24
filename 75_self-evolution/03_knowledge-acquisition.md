@@ -1,3 +1,7 @@
+---
+keywords: [self-evolution, knowledge, acquisition]
+related: [75_self-evolution/08_self-modification-loop.md, 40_delegation/03_delegation-contract.md]
+---
 # 03 — Knowledge Acquisition (新ナレッジ取り込み)
 
 > **Stage 8** (本章は self-evolution の Stage 8。Stage 体系の全体像は [08_self-modification-loop.md §9](./08_self-modification-loop.md))

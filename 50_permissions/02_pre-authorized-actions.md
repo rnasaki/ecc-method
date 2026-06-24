@@ -1,3 +1,7 @@
+---
+keywords: [permissions, pre, authorized, actions]
+related: [50_permissions/01_consent-economy.md, 50_permissions/04_settings-presets.md]
+---
 # 02 — Pre-Authorized Actions (事前承認リスト)
 
 承認エコノミー ([01_consent-economy.md](./01_consent-economy.md)) の運用実体。category 別の事前承認リスト雛形と、`.claude/settings.local.json` の JSON 雛形を提供する。

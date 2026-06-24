@@ -1,3 +1,7 @@
+---
+keywords: [principles, context, economy]
+related: [05_principles/05_delegation-first.md, 05_principles/07_multi-llm-routing.md]
+---
 # 06 — Context Economy (コンテキスト経済 / 6 ルール)
 
 主 context を希少資源として扱い、性能崩壊とコスト爆発を防ぐための 6 ルール。

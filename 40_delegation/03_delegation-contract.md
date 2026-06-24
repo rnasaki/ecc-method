@@ -1,3 +1,7 @@
+---
+keywords: [delegation, contract]
+related: []
+---
 # 03 — Delegation Contract
 
 全委任に共通する契約形式。Orchestrator が専門家にタスクを投げる際、必ずこの形式で記述する。

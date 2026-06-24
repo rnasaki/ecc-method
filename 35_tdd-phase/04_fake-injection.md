@@ -1,3 +1,7 @@
+---
+keywords: [tdd-phase, fake, injection]
+related: []
+---
 # 35_tdd-phase / 04 Fake Injection
 
 > LLM / 外部 API / I/O などの非決定的・高コストな依存を、テスト中はフェイク (Fake / Stub) に差し替える。

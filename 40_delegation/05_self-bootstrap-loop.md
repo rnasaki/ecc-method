@@ -1,3 +1,7 @@
+---
+keywords: [delegation, self, bootstrap, loop]
+related: []
+---
 # 05 — Self-Bootstrap Loop
 
 新しい案件・新しいリポを引き取った瞬間に、Orchestrator が自動で走らせる起動ループ。Discovery → Method 適用 → 専門家編成 → 初動 Runbook 化までを 1 サイクルで閉じる。

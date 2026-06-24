@@ -1,3 +1,7 @@
+---
+keywords: [ecc-usage, ecc, overview]
+related: [90_ecc-usage/02_when-to-use-ecc.md, 90_ecc-usage/03_feature-map.md, 90_ecc-usage/04_routing-recipes.md, 90_ecc-usage/05_anti-patterns.md, 90_ecc-usage/06_cost-and-context.md]
+---
 # 01 — ECC Overview (ECC とは何か)
 
 ECC (Everything Claude Code) は、Claude Code を中核に、専門家エージェント・スキル・MCP サーバ・hooks・slash commands・memory を統合運用するエコシステム。本パッケージはこの ECC の上で SDD → TDD ハイブリッドを回すための運用論を提供する。

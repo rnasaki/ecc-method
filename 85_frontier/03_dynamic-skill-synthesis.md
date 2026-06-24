@@ -1,3 +1,7 @@
+---
+keywords: [frontier, dynamic, skill, synthesis]
+related: []
+---
 # 03. Dynamic Skill Synthesis — skill 動的合成
 
 > 観測日: 2026-06-23

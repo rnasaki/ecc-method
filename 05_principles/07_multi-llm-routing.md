@@ -1,3 +1,7 @@
+---
+keywords: [principles, multi, llm, routing]
+related: [60_quality-gates/06_red-team-loop.md, 40_delegation/02_routing-rubric.md, 05_principles/05_delegation-first.md, 05_principles/06_context-economy.md]
+---
 # 07 — Multi-LLM Routing (Opus / Sonnet / Haiku / 外部 LLM)
 
 複数モデル間でタスクをルーティングする原則。重要度・推論深度・コストの 3 軸で選定する。

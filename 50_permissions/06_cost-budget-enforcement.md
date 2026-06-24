@@ -1,3 +1,7 @@
+---
+keywords: [permissions, cost, budget, enforcement]
+related: [50_permissions/05_escalation-policy.md, 50_permissions/01_consent-economy.md, 40_delegation/03_delegation-contract.md, 50_permissions/03_blast-radius-rubric.md, 75_self-evolution/01_freshness-policy.md]
+---
 # 06 — Cost / Budget Enforcement (コスト上限と自動停止)
 
 エージェント運用の予算超過を **検知 / 警告 / 停止 / 巻き戻し** で制御するための独立章。Delegation Contract のプレースホルダ「コスト上限」を実体化し、escalation policy ([05_escalation-policy.md](./05_escalation-policy.md)) の L2 条件「コスト上限超過予測」に実行可能な発火条件を与える。

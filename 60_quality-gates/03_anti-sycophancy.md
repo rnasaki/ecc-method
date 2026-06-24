@@ -1,3 +1,7 @@
+---
+keywords: [quality-gates, anti, sycophancy]
+related: [60_quality-gates/01_fact-check-protocol.md, 60_quality-gates/02_independent-verify.md, 25_writing-style/02_avoidance-patterns.md, 60_quality-gates/05_uncertainty-disclosure.md, 60_quality-gates/06_red-team-loop.md]
+---
 # 03 — Anti-Sycophancy (迎合抑止)
 
 LLM は ユーザーへの同意を最小コストの応答として選びやすい。これを **迎合 (sycophancy)** と呼び、品質ゲートで明示的に抑止する。

@@ -1,3 +1,7 @@
+---
+keywords: [frontier]
+related: []
+---
 # 85_frontier — 業界標準の半歩先
 
 > retrieved_at: 2026-06-23

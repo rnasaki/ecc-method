@@ -1,3 +1,7 @@
+---
+keywords: [overview, read]
+related: [METHOD.md, README.md]
+---
 # 03 — How to Read (推奨読み順と各章サマリ)
 
 ecc-method は 17 ディレクトリ + ルート 2 ファイルで構成される。本ファイルは、目的別に最短ルートを提示する読み順ガイドである。

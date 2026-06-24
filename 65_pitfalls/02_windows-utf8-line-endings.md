@@ -1,3 +1,7 @@
+---
+keywords: [pitfalls, windows, utf8, line, endings]
+related: []
+---
 # 02 — UTF-8 BOM / CRLF・LF 混在の事故 (Windows 開発時)
 
 Windows で開発しつつ Linux でデプロイする構成では、文字コードと改行コードの差異が静かにビルドや実行を壊す。本ファイルは典型事象と恒久対策をまとめる。

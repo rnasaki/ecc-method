@@ -1,3 +1,7 @@
+---
+keywords: [self-evolution, health, metrics]
+related: [75_self-evolution/01_freshness-policy.md, 75_self-evolution/02_auto-update-loop.md, 75_self-evolution/04_self-repair.md, 75_self-evolution/05_industry-radar.md, 75_self-evolution/07_review-cadence.md]
+---
 # 06 — Health Metrics (健全性 KPI)
 
 本パッケージの健全性を継続監視するための KPI 定義。`02_auto-update-loop.md` および `04_self-repair.md` のトリガとして用い、四半期ベンチ (`05_industry-radar.md`) で再評価する。

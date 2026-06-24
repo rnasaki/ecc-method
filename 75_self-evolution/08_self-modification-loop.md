@@ -1,3 +1,7 @@
+---
+keywords: [self-evolution, self, modification, loop]
+related: [40_delegation/03_delegation-contract.md, 50_permissions/01_consent-economy.md]
+---
 # 08 — Self-Modification Loop (自己改変ループ)
 
 retrieved_at: 2026-06-23

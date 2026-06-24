@@ -1,3 +1,7 @@
+---
+keywords: [discovery, repo, recon]
+related: [40_delegation/02_routing-rubric.md, 20_repo-bootstrap/03_gitignore-baseline.md, 20_repo-bootstrap/04_profiles.md]
+---
 # 10-01 — Repo Recon (既存リポ走査)
 
 未知リポを引き継いだ際、人間に質問する前に **エージェントが自動で取得すべき事実** を定義する。Pattern P-004 (Discovery) の実体。

@@ -1,3 +1,7 @@
+---
+keywords: [ecc-usage, use, ecc]
+related: [40_delegation/03_delegation-contract.md, 90_ecc-usage/06_cost-and-context.md, 75_self-evolution/06_health-metrics.md]
+---
 # 02 — When to Use ECC (適する/適さないケース)
 
 ECC は汎用基盤だが、すべての作業に適合するわけではない。適合・不適合の境界を明示し、誤用を避ける。

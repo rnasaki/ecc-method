@@ -1,3 +1,7 @@
+---
+keywords: [frontier, post, llm, architectures]
+related: []
+---
 # 07 Post-LLM Architectures — LLM の次
 
 > 5 段構成: **現状 → 先端 (2025-2026 H1) → 基礎研究 → 未来 → 今すぐ準備**

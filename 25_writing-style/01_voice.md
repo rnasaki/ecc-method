@@ -1,3 +1,7 @@
+---
+keywords: [writing-style, voice]
+related: [25_writing-style/03_citation-style.md, 25_writing-style/04_uncertainty-language.md, 25_writing-style/02_avoidance-patterns.md]
+---
 # 01 — Voice (第三者中立・コンサル文体)
 
 本パッケージおよび本パッケージを適用する案件で生成される全ドキュメント (PRD / requirements / design / tasks / Runbook / review レポート等) に適用する文体規範。

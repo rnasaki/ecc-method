@@ -1,3 +1,7 @@
+---
+keywords: [self-evolution, self, repair]
+related: [75_self-evolution/08_self-modification-loop.md, 75_self-evolution/01_freshness-policy.md, 75_self-evolution/02_auto-update-loop.md, 75_self-evolution/06_health-metrics.md]
+---
 # 04 — Self-Repair (整合性自動修復)
 
 > **Stage 9** (本章は self-evolution の Stage 9。Stage 体系の全体像は [08_self-modification-loop.md §9](./08_self-modification-loop.md))

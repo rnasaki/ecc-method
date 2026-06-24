@@ -1,3 +1,7 @@
+---
+keywords: [tdd-phase, coverage, policy]
+related: []
+---
 # 35_tdd-phase / 03 Coverage Policy
 
 > テストカバレッジ 80% を最低ラインとし、CI でゲーティングする。

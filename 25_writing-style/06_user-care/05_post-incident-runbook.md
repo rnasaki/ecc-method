@@ -1,3 +1,7 @@
+---
+keywords: [writing-style, user-care, post, incident, runbook]
+related: [25_writing-style/06_user-care/02_first-response-protocol.md, README.md, 40_delegation/01_expert-registry.md, 25_writing-style/01_voice.md]
+---
 # 05 — Post-Incident Runbook (衝突原因の Runbook 化手順)
 
 [02_first-response-protocol.md](./02_first-response-protocol.md) Step 6 の詳細手順。ユーザーとの衝突 (感情検知 / 同一訂正 / 明示的停止指示) が発生し解消した後、原因と解消手順を Runbook 化して再発を防ぐ。

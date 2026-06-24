@@ -1,3 +1,7 @@
+---
+keywords: [delegation, a2a, handoff, standards]
+related: []
+---
 # 09. A2A 通信と Handoff 標準 (Agent-to-Agent Standards)
 
 > 異種ベンダー / 異種フレームワークにまたがる Agent 間通信の標準プロトコルを、ECC の delegation 設計にどう接続するかをまとめる。本ファイルは ECC 内部の同質ハンドオフ (`06_handoff-patterns.md`) を補完し、外部標準 (Anthropic MCP / OpenAI Agents SDK Handoffs) との接続規約を定義する。

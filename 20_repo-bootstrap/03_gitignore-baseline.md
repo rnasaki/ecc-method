@@ -1,3 +1,7 @@
+---
+keywords: [repo-bootstrap, gitignore, baseline]
+related: []
+---
 # 20-03 — .gitignore Baseline
 
 全プロジェクト共通の `.gitignore` 雛形。secret / 一時生成物 / IDE 固有を確実に弾く。

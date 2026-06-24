@@ -1,3 +1,7 @@
+---
+keywords: [principles, north, star]
+related: [25_writing-style/03_citation-style.md, 60_quality-gates/06_red-team-loop.md, 60_quality-gates/05_uncertainty-disclosure.md, 60_quality-gates/07_gate-checklist.md, 25_writing-style/02_avoidance-patterns.md]
+---
 # 02 — North Star (北極星指針)
 
 このパッケージで判断に迷ったとき、常に立ち返る最上位指針を定義する。すべての他の原則・章はこの North Star を満たすために存在する。
