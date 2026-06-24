@@ -6,13 +6,13 @@ tags: [phased-rollout, index, concept-graph, keywords, search-protocol, deferred
 created: 2026-06-24
 updated: 2026-06-24
 last-verified: 2026-06-24
-status: active
+status: completed
 phase-status:
   phase-1-3: completed (commit 3154624)
   phase-4: completed (2026-06-24, 80_commands/generate-keywords-frontmatter.mjs)
   phase-5: completed (2026-06-24, 80_commands/generate-concept-graph.mjs, _index/concept-graph.json)
-  phase-6: pending (Runbook 件数 < 10)
-  phase-7: pending (Phase 6 待ち)
+  phase-6: completed (2026-06-24, 80_commands/generate-runbook-indexes.mjs, 45_runbook/_index/by-{category,tag,trigger}.md)
+  phase-7: completed (2026-06-24, 45_runbook/04_search-protocol.md と 40_delegation/04_orchestrator-system-prompt.md を CodeGraph 主体に更新)
 trigger: ecc-method の探索コストを下げるためのインデックス導線整備、Concept Graph 化、検索プロトコル更新を段階導入する計画。Phase 1-3 (avoidance-patterns 概念化) 完了後の次ステップ。
 expert-routing: [orchestrator, architect]
 related: [RB-001-agent-registry-hot-reload]
@@ -24,7 +24,7 @@ keywords: [runbook, runbooks, phased, rollout, plan, graph]
 
 ## TL;DR (30 秒で読める結論)
 
-ecc-method の探索コスト削減のため、Phase 4-7 を段階導入する。Phase 1-3 (avoidance-patterns 概念化、commit `3154624`) と **Phase 4-5 (keywords frontmatter / concept-graph.json) は 2026-06-24 に完了**。残り Phase 6-7 は影響範囲とトリガ条件 (Runbook 件数 ≥ 10、実機テスト環境) を待ってから進める。
+ecc-method の探索コスト削減のため、Phase 4-7 を段階導入。**全 Phase (1-7) を 2026-06-24 に完了**。Phase 4-5 で CodeGraph 本体を生成、Phase 6 で Runbook 二段索引化 (件数 ≥ 10 達成)、Phase 7 で orchestrator / search-protocol を CodeGraph 主体に更新した。Runbook 自体は履歴・運用手順として保持 (status: completed)。
 
 ## 前提
 
@@ -88,36 +88,19 @@ related: [<相対パス1>, <相対パス2>]
 - Phase 4 完了後
 - 自動生成スクリプト (`80_commands/generate-concept-graph.sh`) も同時整備
 
-## Phase 6: `45_runbook/_index/` 二段構造化
+## Phase 6: `45_runbook/_index/` 二段構造化 ✅ 完了 (2026-06-24)
 
-### 内容
-- 現状: `45_runbook/INDEX.md` が単一索引
-- 二段化: `_index/by-category.md` `_index/by-tag.md` `_index/by-trigger.md`
-- 検索: tag → trigger → 個別 Runbook の順で絞り込み
+**実装**: `80_commands/generate-runbook-indexes.mjs`
+**生成物**: `45_runbook/_index/by-category.md` `by-tag.md` `by-trigger.md` (`INDEX.md` の YAML 索引から自動生成)
+**実行**: `node 80_commands/generate-runbook-indexes.mjs`
+**着手条件達成**: Runbook 件数 11 (RB-001〜RB-011)
 
-### 影響範囲
-- `45_runbook/INDEX.md` を分割
-- 既存参照の更新
+## Phase 7: Orchestrator system prompt の検索プロトコル更新 ✅ 完了 (2026-06-24)
 
-### 着手判断
-- Phase 5 完了後
-- Runbook が 10 件以上溜まってから (現在 RB-001, RB-002 のみ、二段化は早すぎる)
-
-## Phase 7: Orchestrator system prompt の検索プロトコル更新
-
-### 内容
-- 現状: Step 1-6 で全文 Read 中心
-- 更新後: keywords / concept-graph / index を辿る順序に書き換え
-- grep 廃止、grep は LLM judge fallback のみ
-
-### 影響範囲
-- `40_delegation/04_orchestrator-system-prompt.md`
-- `~/.claude/agents/ecc-orchestrator.md` (実体ファイル)
-- 動作テスト必須
-
-### 着手判断
-- Phase 4, 5, 6 全完了後
-- 実機スモークテストで動作確認
+**更新ファイル**:
+- `40_delegation/04_orchestrator-system-prompt.md` — Step 0 として `_index/concept-graph.json` 検索を追加。Step 1 で Runbook 索引 (`INDEX.md` + `_index/by-*.md`) を引く。grep は最終手段に格下げ。Step 6 完了時に CodeGraph 再生成を必須化。
+- `45_runbook/04_search-protocol.md` — 決定木を Step 0 (CodeGraph) → Step 1 (Runbook 索引) → Step 2 (本文 grep fallback) → Step 3 (Registry 委任) に再構成。
+**残作業**: 実機スモークテストでの動作確認 (本セッション以降の運用で検証)。
 
 ## 段階導入の理由 (一気に進めない根拠)
 
@@ -169,3 +152,5 @@ related: [<相対パス1>, <相対パス2>]
 |---|---|---|
 | 2026-06-24 | 初版 | Phase 1-3 完了後に段階導入計画を永続化 |
 | 2026-06-24 | Phase 4-5 完了反映 | `generate-keywords-frontmatter.mjs` で 155 md に keywords/related 注入、`generate-concept-graph.mjs` で `_index/concept-graph.json` 生成 |
+| 2026-06-24 | A-E 標準化反映 | `_index/` を生成 PJ 骨格に追加 (directory-skeleton / checklist / bootstrap.sh / 70_templates/README.md / SDD-TDD 章の再生成規律) |
+| 2026-06-24 | Phase 6-7 完了反映 | Runbook 11 件で着手条件達成。`generate-runbook-indexes.mjs` で `45_runbook/_index/by-{category,tag,trigger}.md` 生成。`04_search-protocol.md` と `04_orchestrator-system-prompt.md` の検索プロトコルを CodeGraph 主体 (Step 0) に再構成。RB-002 全 Phase 完了で status: completed |

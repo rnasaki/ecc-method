@@ -33,13 +33,13 @@ runbooks:
     last_verified: 2026-06-24
     status: active
   - id: RB-002-phased-rollout-plan-index-graph
-    title: 段階導入予定 - インデックス frontmatter / Concept Graph / 検索プロトコル更新
+    title: 段階導入完了 - インデックス frontmatter / Concept Graph / 検索プロトコル更新 (Phase 1-7 全完了)
     category: bootstrap
-    tags: [phased-rollout, index, concept-graph, keywords, search-protocol, deferred]
-    trigger: ecc-method の探索コスト削減のため Phase 4-7 を段階導入する計画。Phase 1-3 完了後の次ステップ確認時に参照。
+    tags: [phased-rollout, index, concept-graph, keywords, search-protocol, completed]
+    trigger: ecc-method の探索コスト削減用の CodeGraph 導入経緯を確認したい / Phase 4-7 の実装内容を参照したい / 同等の段階導入を別パッケージに適用したい
     path: ./runbooks/RB-002-phased-rollout-plan-index-graph.md
     last_verified: 2026-06-24
-    status: active
+    status: completed
   - id: RB-003-autonomous-decision-framework
     title: 自律判断フレームワーク - ユーザー判断委譲を避け、本リポの原則に判断根拠を求める
     category: review

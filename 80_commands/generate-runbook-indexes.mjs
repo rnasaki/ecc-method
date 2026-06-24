@@ -15,10 +15,10 @@ const OUT_DIR = join(ROOT, '45_runbook', '_index')
 const RUNBOOKS_DIR = join(ROOT, '45_runbook', 'runbooks')
 
 function parseRunbooksYaml(text) {
-  // ```yaml runbooks: ... ``` の最初のブロックを抽出
-  const m = text.match(/```yaml\s*\n([\s\S]*?)```/)
-  if (!m) throw new Error('YAML runbooks block not found in INDEX.md')
-  const yamlText = m[1]
+  // ```yaml ... ``` ブロックを全て取り、`- id: RB-NNN-` パターンが含まれる実索引のみ採用
+  const blocks = [...text.matchAll(/```yaml\s*\n([\s\S]*?)```/g)].map(m => m[1])
+  const yamlText = blocks.find(b => /-\s+id:\s+RB-\d{2,}/.test(b))
+  if (!yamlText) throw new Error('YAML runbooks block (with RB-NNN ids) not found in INDEX.md')
 
   // 簡易 YAML パーサ: 入れ子レベル 2 (entry の field) と list (tags) のみ対応
   const entries = []

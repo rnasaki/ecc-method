@@ -10,26 +10,52 @@ related: []
 
 ```
 タスク受信
-  └─> Step 1: INDEX 検索
-       └─ ヒット → そのまま実行 (聞かない)
+  └─> Step 0: CodeGraph 検索 (`_index/concept-graph.json`)
+       └─ keywords / file_index に当てる → 候補 md を抽出
+       └─ 候補 md の `related` で 1-hop 拡張
+       └─ 該当ファイルの先頭 (frontmatter + TL;DR) のみ Read
+       └─ 解決可 → 終了
+       └─ 不足 ↓
+  └─> Step 1: Runbook 索引 (`45_runbook/INDEX.md` + `_index/by-*.md`)
+       └─ trigger / category / tag のいずれかでヒット → Runbook 採用
        └─ ヒットせず ↓
-  └─> Step 2: tag 検索
-       └─ ヒット → 関連 Runbook を読み、適用可否判定
-       └─ ヒットせず ↓
-  └─> Step 3: 本文 grep
+  └─> Step 2: 本文 grep (fallback)
        └─ ヒット → 該当箇所を読み、適用可否判定
        └─ ヒットせず ↓
-  └─> Step 4: Registry 委任 (新規問題として処理)
+  └─> Step 3: Registry 委任 (新規問題として処理)
        └─ 完了後に Capture Trigger 評価 (`03_capture-trigger.md`)
 ```
 
-各 Step は短時間で打ち切る (Step 1〜3 合計で 30 秒程度)。長引かせると本来の問題解決が遅延する。
+各 Step は短時間で打ち切る (Step 0〜2 合計で 30 秒程度)。本文 grep は最後の手段で、CodeGraph と Runbook 索引が機能していれば原則不要。
 
-## Step 1: INDEX 検索
+## Step 0: CodeGraph 検索 (最優先)
 
 ### 検索対象
-- `45_runbook/INDEX.md` の `runbooks:` リスト
-- 主に `trigger` / `title` / `tags`
+- `_index/concept-graph.json` の `file_index` (全 md の `keywords` / `related`)
+- `nodes` (keyword → 該当 md ファイル群)
+- `edges` (keyword 共起から関連トピックを推定)
+
+### 手順
+1. タスク本文から keyword 候補を抽出 (動詞・対象・環境)
+2. `file_index` を走査し `keywords` 一致するファイルを列挙
+3. 各候補の `related` を辿って 1-hop 拡張
+4. 候補ファイルの先頭 (frontmatter + TL;DR / 最初の節) のみ Read
+5. 解決可なら終了。不足なら Step 1 へ
+
+### 利点
+- 全文 grep より遥かに低コスト (JSON 1 ファイル走査)
+- 関連トピックが `related` / `edges` で自動拡張される
+- 第 5 原則「コンテキスト最小」を満たす (該当ファイルの先頭のみ)
+
+### 注意
+- `_index/concept-graph.json` が古いと当たらない → ドキュメント追加・改名後は再生成 (`80_commands/generate-concept-graph.mjs`)
+- keywords が粗い場合は手書きで `keywords:` を補強
+
+## Step 1: Runbook 索引検索
+
+### 検索対象
+- `45_runbook/INDEX.md` の `runbooks:` リスト (主に `trigger` / `title` / `tags`)
+- `45_runbook/_index/by-category.md` `by-tag.md` `by-trigger.md` (自動生成ビュー)
 
 ### 検索クエリの組み立て
 タスク本文から以下を抽出:
@@ -55,35 +81,17 @@ grep "category: pitfall" 45_runbook/INDEX.md
 ### ヒット判定
 - 1 件ヒット → そのまま採用
 - 2 件以上 → tag が最も近いものを優先、`last_verified` が新しい方
-- 0 件 → Step 2 へ
+- 0 件 → Step 2 へ (本文 grep)
 
 ### ヒット時の挙動
 - Runbook 本文を読み、TL;DR と前提を確認
 - 前提が満たされている → 手順を実行
 - 前提不一致 → 「該当なし」として Step 4 へ
 
-## Step 2: tag 検索
+## Step 2: 本文 grep (fallback)
 
 ### 適用契機
-INDEX の trigger 文では当たらないが、タグが類似 (動詞違い・言い回し違い)。
-
-### 手順
-1. 関連しそうな tag (1〜3 個) を推定
-2. 各 tag を持つ全 Runbook を列挙
-3. 列挙結果から trigger 文を再走査
-
-### 例
-タスク: 「pip install で証明書エラー」
-INDEX の trigger では当たらない (具体すぎる) が、tag `corporate-proxy` を引くと `RB-NNN-proxy-ssl-failure` が見つかる、というケース。
-
-### 制限
-- 列挙が 5 件超になったら諦めて Step 3 へ (タグが粗すぎ)
-- タグ語彙不在の場合はスキップ
-
-## Step 3: 本文 grep
-
-### 適用契機
-INDEX / tag では当たらないが、Runbook 本文中に解決手順が埋まっている可能性。
+CodeGraph / Runbook 索引では当たらないが、Runbook 本文中に解決手順が埋まっている可能性。
 
 ### 手順
 ```bash
@@ -99,10 +107,10 @@ grep -ril "<keyword1>" 45_runbook/runbooks/ | xargs grep -l "<keyword2>"
 - 本文中の手順が部分一致しただけの場合、全体適用可否を確認
 
 ### 制限
-- 本文 grep は最後の手段。INDEX / tag が機能していれば不要なはず
-- 多用する場合は INDEX の trigger / tag が貧弱な兆候 → INDEX 改善 (`05_maintenance.md`)
+- 本文 grep は最後の手段。CodeGraph / Runbook 索引が機能していれば不要なはず
+- 多用する場合は keywords / trigger / tag が貧弱な兆候 → frontmatter 補強 + CodeGraph 再生成 (`05_maintenance.md`, `_index/README.md`)
 
-## Step 4: Registry 委任 (新規問題)
+## Step 3: Registry 委任 (新規問題)
 
 `45_runbook` で見つからなければ「新規問題」として `40_delegation` 側へ。
 
@@ -113,7 +121,7 @@ grep -ril "<keyword1>" 45_runbook/runbooks/ | xargs grep -l "<keyword2>"
 4. Capture 該当なら Runbook 化 → INDEX 追記
 
 ### 重要
-Step 4 で解決した問題は、**次回同じ問題で Step 1 がヒットするように** Runbook 化することが本質。書かなければ次回も Step 4 まで降りる。
+Step 3 で解決した問題は、**次回同じ問題で Step 0 / Step 1 がヒットするように** Runbook 化 + frontmatter 整備 + CodeGraph 再生成までセットで実施する。書かなければ次回も Step 3 まで降りる。
 
 ## 検索失敗の典型パターン
 
@@ -150,12 +158,12 @@ queries:
 
 ## 検索の Self-check
 
-タスク受信後、Step 1 を必ず実行したか確認するためのチェック:
+タスク受信後、Step 0 を必ず実行したか確認するためのチェック:
 
-- [ ] INDEX を grep した
-- [ ] tag を 1 つ以上当ててみた
-- [ ] ヒットなしを確認してから Step 4 (委任) に進んだ
-- [ ] 解決後に Capture Trigger を評価した
+- [ ] `_index/concept-graph.json` を読んだ (keywords / file_index 走査)
+- [ ] Runbook 索引 (INDEX.md / _index/by-*.md) を確認した
+- [ ] ヒットなしを確認してから Step 3 (委任) に進んだ
+- [ ] 解決後に Capture Trigger を評価し、必要なら CodeGraph を再生成した
 
 このチェックを Stop hook (BP-015) で自動化するのが望ましい。
 
@@ -163,11 +171,12 @@ queries:
 
 | アンチパターン | 症状 | 対処 |
 |---|---|---|
-| 検索せず即委任 | 既存 Runbook を毎回再発明 | Step 1 を必須化 |
-| INDEX を grep せず本文 grep | コスト高・ヒット率低 | Step 順序を厳守 |
-| 部分一致で「ヒットなし」と判断 | 隣接ケースを見逃す | tag / 本文まで降りる |
+| 検索せず即委任 | 既存 Runbook を毎回再発明 | Step 0 を必須化 |
+| CodeGraph / INDEX を読まず本文 grep | コスト高・ヒット率低 | Step 順序を厳守 (0 → 1 → 2) |
+| 部分一致で「ヒットなし」と判断 | 隣接ケースを見逃す | `related` 1-hop / 本文まで降りる |
 | ヒットしたが古いから無視 | 結局再調査 | last_verified 確認 + 必要なら更新コミット |
 | 検索後に Capture を忘れる | 同じ問題が次回も発生 | Stop hook で強制 |
+| ドキュメント追加後に CodeGraph 再生成を忘れる | 次回 Step 0 が当たらない | RGR 完了時 / Gate 通過時の規律化 (`30_sdd-phase/06`, `35_tdd-phase/01`) |
 
 ## 出典
 

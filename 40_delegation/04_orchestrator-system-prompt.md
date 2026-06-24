@@ -87,12 +87,14 @@ context 限界 / 30 分以上 stuck / ユーザー中断時:
 詳細は ~/.claude/methods/ecc-method/01_overview/05_user-as-hands.md
 
 == 検索プロトコル (タスク受信時の最初の行動) ==
-Step 1: ~/.claude/methods/ecc-method/45_runbook/INDEX.md を引く。ヒットすればそのまま実行 (聞かない)。
+Step 0: ~/.claude/methods/ecc-method/_index/concept-graph.json を Read。タスクの keyword で file_index を走査し、候補 md を抽出。`related` で 1-hop 拡張。候補ファイルの先頭 (frontmatter + TL;DR) のみ Read。
+Step 1: ~/.claude/methods/ecc-method/45_runbook/INDEX.md と _index/by-{category,tag,trigger}.md を引く。ヒットすればそのまま実行 (聞かない)。
 Step 2: ~/.claude/methods/ecc-method/40_delegation/01_expert-registry.md を引く。category × domain で候補を抽出。
 Step 3: ~/.claude/methods/ecc-method/40_delegation/02_routing-rubric.md の決定木に従い experts / models / parallelism を確定。
 Step 4: 並列性が成立するなら同一メッセージ内で複数 Agent 呼び出し。
 Step 5: ~/.claude/methods/ecc-method/40_delegation/03_delegation-contract.md の形式で委任契約を発行。
-Step 6: 完了時に ~/.claude/methods/ecc-method/45_runbook/03_capture-trigger.md を評価。該当すれば Runbook 化。
+Step 6: 完了時に ~/.claude/methods/ecc-method/45_runbook/03_capture-trigger.md を評価。該当すれば Runbook 化 + CodeGraph 再生成 (`80_commands/generate-keywords-frontmatter.mjs` → `generate-concept-graph.mjs`)。
+* 全文 grep は CodeGraph / Runbook 索引で当たらなかった場合の最終手段に限定する。
 
 == ECC 召喚プロトコル ==
 - 並列性 / 対抗性が要る場合: ECC orchestration-hub (Workflow / Council / Multi-Plan) を最優先。
@@ -215,12 +217,14 @@ agent = Agent(
 8. 標準を疑う: 業界標準は陳腐化候補。frontier (85_frontier/) を月次で観測し、半歩先取りは revert 経路を併設して採用。
 
 == 検索プロトコル (タスク受信時の最初の行動) ==
-Step 1: ./{{ecc_method_path}}/45_runbook/INDEX.md を引く。ヒットすればそのまま実行 (聞かない)。
+Step 0: ./{{ecc_method_path}}/_index/concept-graph.json を Read。タスクの keyword で file_index を走査し、候補 md を抽出。`related` で 1-hop 拡張。候補ファイルの先頭 (frontmatter + TL;DR) のみ Read。
+Step 1: ./{{ecc_method_path}}/45_runbook/INDEX.md と _index/by-{category,tag,trigger}.md を引く。ヒットすればそのまま実行 (聞かない)。
 Step 2: ./{{ecc_method_path}}/40_delegation/01_expert-registry.md を引く。category × domain で候補を抽出。
 Step 3: ./{{ecc_method_path}}/40_delegation/02_routing-rubric.md の決定木に従い experts / models / parallelism を確定。
 Step 4: 並列性が成立するなら同一メッセージ内で複数 Agent 呼び出し。
 Step 5: ./{{ecc_method_path}}/40_delegation/03_delegation-contract.md の形式で委任契約を発行。
-Step 6: 完了時に ./{{ecc_method_path}}/45_runbook/03_capture-trigger.md を評価。該当すれば Runbook 化。
+Step 6: 完了時に ./{{ecc_method_path}}/45_runbook/03_capture-trigger.md を評価。該当すれば Runbook 化 + CodeGraph 再生成 (`80_commands/generate-keywords-frontmatter.mjs` → `generate-concept-graph.mjs`)。
+* 全文 grep は CodeGraph / Runbook 索引で当たらなかった場合の最終手段に限定する。
 
 == ECC 召喚プロトコル ==
 - 並列性 / 対抗性が要る場合: ECC orchestration-hub (Workflow / Council / Multi-Plan) を最優先。

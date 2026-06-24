@@ -3,10 +3,10 @@
   "generated_at": "2026-06-24",
   "generator": "80_commands/generate-concept-graph.mjs",
   "stats": {
-    "total_files": 158,
-    "files_with_frontmatter": 158,
-    "files_with_keywords": 158,
-    "node_count": 284,
+    "total_files": 160,
+    "files_with_frontmatter": 160,
+    "files_with_keywords": 160,
+    "node_count": 287,
     "edge_count": 21,
     "edge_min_weight": 2
   },
@@ -281,6 +281,18 @@
       ]
     },
     {
+      "id": "distribution",
+      "type": "concept",
+      "file_count": 5,
+      "files": [
+        ".template-claude/README.md",
+        "99_distribution/01_how-to-redistribute.md",
+        "99_distribution/02_license-note.md",
+        "99_distribution/03_v1.0.0-release-checklist.md",
+        "99_distribution/04_developer-self-dogfooding.md"
+      ]
+    },
+    {
       "id": "loop",
       "type": "concept",
       "file_count": 5,
@@ -400,17 +412,6 @@
       ]
     },
     {
-      "id": "distribution",
-      "type": "concept",
-      "file_count": 4,
-      "files": [
-        "99_distribution/01_how-to-redistribute.md",
-        "99_distribution/02_license-note.md",
-        "99_distribution/03_v1.0.0-release-checklist.md",
-        "99_distribution/04_developer-self-dogfooding.md"
-      ]
-    },
-    {
       "id": "repo-bootstrap",
       "type": "concept",
       "file_count": 4,
@@ -419,6 +420,17 @@
         "20_repo-bootstrap/02_directory-skeleton.md",
         "20_repo-bootstrap/03_gitignore-baseline.md",
         "20_repo-bootstrap/04_profiles.md"
+      ]
+    },
+    {
+      "id": "template",
+      "type": "concept",
+      "file_count": 4,
+      "files": [
+        ".template-claude/README.md",
+        "30_sdd-phase/03_requirements-template.md",
+        "30_sdd-phase/04_design-template.md",
+        "30_sdd-phase/05_tasks-template.md"
       ]
     },
     {
@@ -493,22 +505,21 @@
       ]
     },
     {
-      "id": "template",
-      "type": "concept",
-      "file_count": 3,
-      "files": [
-        "30_sdd-phase/03_requirements-template.md",
-        "30_sdd-phase/04_design-template.md",
-        "30_sdd-phase/05_tasks-template.md"
-      ]
-    },
-    {
       "id": "acquisition",
       "type": "concept",
       "file_count": 2,
       "files": [
         "10_discovery/05_knowledge-acquisition.md",
         "75_self-evolution/03_knowledge-acquisition.md"
+      ]
+    },
+    {
+      "id": "adoption",
+      "type": "concept",
+      "file_count": 2,
+      "files": [
+        ".template-claude/README.md",
+        "90_ecc-usage/07_adoption-roadmap.md"
       ]
     },
     {
@@ -862,6 +873,14 @@
       ]
     },
     {
+      "id": ".template-claude",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        ".template-claude/CLAUDE.md"
+      ]
+    },
+    {
       "id": "{{topic1}}",
       "type": "concept",
       "file_count": 1,
@@ -891,14 +910,6 @@
       "file_count": 1,
       "files": [
         "50_permissions/02_pre-authorized-actions.md"
-      ]
-    },
-    {
-      "id": "adoption",
-      "type": "concept",
-      "file_count": 1,
-      "files": [
-        "90_ecc-usage/07_adoption-roadmap.md"
       ]
     },
     {
@@ -1091,6 +1102,22 @@
       "file_count": 1,
       "files": [
         "25_writing-style/03_citation-style.md"
+      ]
+    },
+    {
+      "id": "claude",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        ".template-claude/CLAUDE.md"
+      ]
+    },
+    {
+      "id": "claude-md",
+      "type": "concept",
+      "file_count": 1,
+      "files": [
+        ".template-claude/README.md"
       ]
     },
     {
@@ -2647,6 +2674,28 @@
     }
   ],
   "file_index": [
+    {
+      "path": ".template-claude/CLAUDE.md",
+      "keywords": [
+        ".template-claude",
+        "claude"
+      ],
+      "related": []
+    },
+    {
+      "path": ".template-claude/README.md",
+      "keywords": [
+        "template",
+        "claude-md",
+        "distribution",
+        "adoption"
+      ],
+      "related": [
+        ".template-agents/ecc-orchestrator.md",
+        "99_distribution/01_how-to-redistribute.md",
+        "45_runbook/runbooks/RB-006-session-handover-protocol.md"
+      ]
+    },
     {
       "path": "01_overview/01_purpose.md",
       "keywords": [
