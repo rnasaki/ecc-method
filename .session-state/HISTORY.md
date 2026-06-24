@@ -187,6 +187,102 @@ commit_hashes:
 
 ---
 
+## Session 7 (2026-06-24, HW-B 完了 + 配布テンプレ CodeGraph 同期)
+
+```yaml
+session_id: 7
+session_start: 2026-06-24
+session_end: 2026-06-24
+着手宿題: [HW-B]
+完了宿題: [HW-B]
+新規追加宿題: []
+commit_hashes:
+  - "(本セッション完了 commit) (develop: HW-B RB-005 active 化 + RB-004 deprecated + Orchestrator hook 統合 + 配布テンプレ CodeGraph 同期)"
+本セッションでの主要学習: |
+  ユーザー質問「CodeGraph 機能は Git 配布版で実装されているか?」をトリガーに
+  Method 本体 (commit 7d69a33 で 45_runbook/04_search-protocol.md Step 0 主体化済み) と
+  配布テンプレ (.template-claude/, .template-agents/ — 旧プロトコルのまま) の整合漏れを発見。
+  3 ファイル (.template-claude/CLAUDE.md §3, .template-claude/README.md §テンプレ構成,
+  .template-agents/ecc-orchestrator.md §検索プロトコル) を Method 本体と同期し、
+  Step 0 CodeGraph (_index/concept-graph.json) + Step 2 本文 grep fallback +
+  Step 7 Capture 時 CodeGraph 再生成併記を反映。
+
+  併せて Session 6 終了時に未 commit 残置されていた HW-B 関連 (RB-005 active 化、
+  .template-claude/hooks/subagent-narrator.{sh,ps1}、settings.json hooks ブロック、
+  .template-claude/commands/ecc-orchestrator.md) を Session 7 で commit 化。
+  HW-B 完了基準のうち未対応だった 2 項目:
+    - RB-004 を status: deprecated に変更し、frontmatter に deprecated_by: RB-005 /
+      deprecated_at を追加。本文先頭に RB-005 への移行注記ブロックを追加 (履歴参照用に
+      ファイルは残置)
+    - 40_delegation/04_orchestrator-system-prompt.md 即投入版に
+      == subagent 観測性 (RB-005) == セクションを追加。配布物パス・配置先・
+      stdout 既定空・ECC_NARRATION_INLINE フラグ運用・RB-004 ロールアップ済み旨を規定
+  を仕上げて HW-B 完了。
+
+  CLOSURE GATE 規律 (RB-006 §[0]): Session 6 終了時の untracked / unstaged を
+  「スコープ外」で残置せず、Session 7 で配布テンプレ整合化として束ねて commit 化した。
+  独立 commit (RB-005 配布物 vs CodeGraph 同期) に分割するより、配布利用者から見ると
+  「.template-claude/ が Method 本体と整合する 1 セット」として届く方が自然なため
+  単一セッション・単一目的として束ねる判断 (RB-003 L1 + コンテキスト経済 Rule 4)。
+
+  RB-005 §「検証手順」[1]〜[10] の実機トレースは公式 docs (H1/H2/H3) で仕様確認できたため
+  実機ログ採取はスキップ。実機ログが必要になった時点で hooks/subagent-narrator.{sh,ps1} を
+  実環境で動かして .session-state/agent-narration.log を採取するだけで再現可能。
+```
+
+---
+
+## Session 8 (2026-06-24, HW-J 配布テンプレ Knowledge Vault 駆動規律)
+
+```yaml
+session_id: 8
+session_start: 2026-06-24
+session_end: 2026-06-24
+着手宿題: [HW-J]
+完了宿題: [HW-J]
+新規追加宿題: [HW-K]
+commit_hashes:
+  - "(本セッション完了 commit) (develop: HW-J 配布テンプレ Knowledge Vault 駆動規律実装)"
+本セッションでの主要学習: |
+  ユーザー報告:「ノウハウが Obsidian に溜まらない / 配布版に実装されているか」。
+
+  調査結果: Method 本体に 12_knowledge-vault/ + RB-011 が整備済 (commit
+  時点で全章 + RB) だったが、配布テンプレ (.template-claude/CLAUDE.md /
+  .template-agents/ecc-orchestrator.md / .template-claude/README.md) には
+  Knowledge / vault / RB-011 への言及が 0 件で、駆動 trigger が
+  起動 / 作業中 / クローズのどのループにも存在しなかった (dead spec)。
+  結果、案件 Knowledge/notes/ も中央 ~/Documents/Knowledge/notes/ も 0 ファイル。
+
+  本セッション修正: 駆動点を 5 箇所挿入。
+  - .template-claude/CLAUDE.md §2 SSOT 表 / §3 検索プロトコル Step 6 分岐 /
+    §5 作業中規律 Knowledge 即時記録 / §7 クローズ規律 Step [0.5]
+    KNOWLEDGE CAPTURE GATE / §8 行動規律表 Knowledge Capture First
+  - .template-agents/ecc-orchestrator.md 検索プロトコル Step 6 / 返却
+    フォーマットに ## Knowledge 化候補 セクション (type 分類 + 中央 4 条件判定)
+  - .template-claude/README.md §テンプレ構成 / §採用後 / 冒頭索引
+
+  本セッション自身が dogfood: Knowledge/episodes/2026-06-24-distribution-
+  template-knowledge-vault-wiring.md を作成し、汎用化した
+  ~/Documents/Knowledge/notes/dead-spec-without-trigger.md に昇格して
+  Knowledge Vault 駆動を初めて実証 (案件 episode + 中央 note の双方向マーク
+  済 / RB-011 Step 4-5 完了)。
+
+  汎用学習 (中央 Vault に昇格済): SSOT に規律があっても、配布テンプレ /
+  起動・作業中・クローズの 3 ループのいずれかに駆動点が無いと永久に
+  発火しない (dead spec without trigger)。新規 SSOT 章追加時の DoD に
+  「3 ループへの trigger 配備」を含めるべきという指針。
+
+  CLOSURE GATE 規律 (RB-006 §[0]): Session 7 完了 (current_session.md
+  status: completed) にも関わらず Session 7 編集分多数が untracked /
+  unstaged のまま残置されているのを観測。本セッションのスコープ
+  (HW-J = Knowledge Vault 配布) と混ぜ込まず別 commit にする方が
+  CHANGELOG / 履歴が読みやすいため、HW-K として PENDING に分離残置。
+  「スコープ外で逃げた」のではなく「明示的に新規宿題化して RB-006 §[0]
+  の独立残置 (1 行で根拠明記) 規律を適用」した判断。
+```
+
+---
+
 ## 索引フォーマット (新規追加時)
 
 ```yaml

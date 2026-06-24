@@ -21,6 +21,7 @@ Method を採用するなら本テンプレも採用することを推奨する 
 | ファイル | 配置先 | 担当 |
 |---|---|---|
 | `.template-claude/CLAUDE.md` | `~/.claude/CLAUDE.md` | 主 Claude の規律: 起動プロトコル / `.session-state/` 管理 / クローズ 4 要素 / SDD ヒアリング実行 / TodoWrite 同期 |
+| `.template-claude/commands/ecc-orchestrator.md` | `~/.claude/commands/ecc-orchestrator.md` | `/ecc-orchestrator` slash コマンド本体。orchestrator subagent を明示起動するショートカット |
 | `.template-agents/ecc-orchestrator.md` | `~/.claude/agents/ecc-orchestrator.md` | 主 Claude から呼ばれる委任プランナー: Runbook / Expert Registry 引きと Delegation Contract ドラフト生成のみ。`.session-state/` Write・ユーザー対話・最終応答は行わない |
 
 ## 採用手順 (3 ステップ)
@@ -47,6 +48,13 @@ ECC_METHOD_ROOT="$HOME/.claude/methods/ecc-method"
 sed "s|<ECC_METHOD_ROOT>|$ECC_METHOD_ROOT|g" \
   "$ECC_METHOD_ROOT/.template-claude/CLAUDE.md" \
   > ~/.claude/CLAUDE.md
+
+# (a2) slash コマンド (/ecc-orchestrator 等) を ~/.claude/commands/ に展開
+mkdir -p ~/.claude/commands
+for f in "$ECC_METHOD_ROOT"/.template-claude/commands/*.md; do
+  sed "s|<ECC_METHOD_ROOT>|$ECC_METHOD_ROOT|g" "$f" \
+    > ~/.claude/commands/"$(basename "$f")"
+done
 
 # (b) ~/.claude/settings.json に Method 採用直後に頻出する read-only 調査コマンドを allow 追記
 #     既存 settings.json を退避してから jq で merge する。jq が無い環境は §2.1 を参照。
@@ -145,11 +153,23 @@ jq -s '.[0] * .[1]' \
    - 北極星 → ターゲット → 成功条件 → スコープ外 → 既存資産
    - ユーザーが 1 ターン目で具体タスク文を投げた場合、主 Claude は発話から GOAL を抽出し、不足項目のみ最小 1 問で確認して着手する。
 3. ヒアリング後、主 Claude が `.session-state/` 5 ファイル (GOAL.md / PENDING.md / current_session.md / COMPLETED.md / HISTORY.md) を自動生成し、5 行サマリを提示してそのまま P0 タスクに着手する。
-4. 多段委任プランニングが必要な局面で、主 Claude は `Agent(subagent_type=ecc-orchestrator)` を呼び、Delegation Contract ドラフトを取得してから専門家 subagent を並列起動する。
+4. 多段委任プランニングが必要な局面で、主 Claude は `Agent(subagent_type=ecc-orchestrator)` を呼び、Delegation Contract ドラフトを取得してから専門家 subagent を並列起動する。ユーザー側から明示的に呼びたい場合は `/ecc-orchestrator [タスク本文]` (slash コマンド) を入力すれば同じ subagent が起動し、委任プランが返る。
 
 詳細は本パッケージ `45_runbook/runbooks/RB-009-first-run-sdd-bootstrap.md` を参照。
 
 2 回目以降のセッションは `.session-state/` 既存のため `~/.claude/CLAUDE.md` §0.3 継続モード ルートで自動再開される。
+
+## 同梱 slash コマンド
+
+`.template-claude/commands/` 配下のコマンドを `~/.claude/commands/` に配置すると、主 Claude のセッション内で `/<name>` 形式で呼び出せる。
+
+| コマンド | 役割 | 呼び方 |
+|---|---|---|
+| `/ecc-orchestrator` | orchestrator subagent を明示起動して **委任プラン** を取得する | `/ecc-orchestrator [タスク本文]` |
+
+引数を省略すると直近会話の文脈をそのまま渡す。Method 用語 (北極星 / GOAL / P0 / Pattern P-00X / Runbook RB-00X) で書くと検索プロトコル Step 0〜2 のヒット率が上がる。判定基準は `<ECC_METHOD_ROOT>/05_principles/05_delegation-first.md` §委任判定アルゴリズム を参照。
+
+orchestrator subagent は `.session-state/` Write・専門家 subagent 直接起動・ユーザーへの追加質問・クローズ 4 要素出力を行わない (主 Claude の責務)。詳細は `.template-claude/commands/ecc-orchestrator.md` 本文。
 
 ## テンプレの構成
 
@@ -158,7 +178,7 @@ jq -s '.[0] * .[1]' \
 0. 起動プロトコル (`.session-state/` 二モード判定 / SDD ヒアリング / 継続モード自動再開)
 1. 言語 (派生先で上書き可)
 2. SSOT (Method 各章への索引テーブル)
-3. 検索プロトコル (Runbook → Registry → Pattern → 委任 → Capture)
+3. 検索プロトコル (CodeGraph → Runbook 索引 → 本文 grep → Registry → Pattern → 委任 → Capture)
 4. 並列起動と subagent 利用方針 (`ecc-orchestrator` の使いどころ)
 5. 作業中規律 (RB-007 + Knowledge 即時記録)
 6. 中断時規律 (RB-007)

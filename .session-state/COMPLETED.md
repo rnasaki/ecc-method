@@ -68,6 +68,61 @@ branch: develop
   related_chapters: [99_distribution/04_developer-self-dogfooding.md]
   related_runbooks: [RB-006, RB-008]
 
+- id: HW-B
+  title: RB-005 検証 + 配布 + RB-004 deprecated 化 + Orchestrator system prompt hook 統合
+  category: tooling
+  completed_at: 2026-06-24
+  session_id: 7
+  commit_hashes:
+    - "(本セッション完了 commit) (develop: HW-B RB-005 active 化 + RB-004 deprecated + Orchestrator hook 統合 + 配布テンプレ CodeGraph 同期)"
+  outcome_summary: |
+    公式 docs (https://code.claude.com/docs/en/hooks, retrieved_at 2026-06-24) で
+    H1 (subagent 内 hook 発火) / H2 (PostToolUse stdout は context 非流入) /
+    H3 (日本語 narration 出力可) を確認し、RB-005 を draft → active 昇格。
+    実装一式 (.template-claude/hooks/subagent-narrator.{sh,ps1} +
+    .template-claude/settings.json hooks ブロック) を本パッケージに同梱。
+    RB-004 を deprecated 化し、上部に RB-005 への移行注記を明示。
+    Orchestrator system prompt (40_delegation/04_orchestrator-system-prompt.md)
+    の即投入版に == subagent 観測性 (RB-005) == セクションを追加し、
+    配布物パス・配置先・stdout 既定空・ECC_NARRATION_INLINE フラグの運用を規定。
+    併せて配布テンプレ (.template-claude/CLAUDE.md / README.md / .template-agents/
+    ecc-orchestrator.md) の検索プロトコル節を Method 本体 45_runbook/
+    04_search-protocol.md と同期し、Step 0 に CodeGraph (_index/concept-graph.json)
+    を主体化。前セッションでの CodeGraph 主体化 (commit 7d69a33) が配布テンプレに
+    反映されていなかった整合漏れを解消。
+  related_runbooks: [RB-004, RB-005]
+  related_chapters: [40_delegation/04_orchestrator-system-prompt.md, 45_runbook/04_search-protocol.md]
+
+- id: HW-J
+  title: 配布テンプレに Knowledge Vault 駆動規律を実装
+  category: distribution
+  completed_at: 2026-06-24
+  session_id: 8
+  commit_hashes:
+    - "(本セッション完了 commit) (develop: HW-J Knowledge Vault 駆動規律配布)"
+  outcome_summary: |
+    Method 本体に 12_knowledge-vault/ + 45_runbook/runbooks/RB-011-knowledge-promotion-flow.md
+    が整備済だったが、配布テンプレ (.template-claude/ / .template-agents/) に「いつ案件
+    Knowledge/notes/ を書き始めるか」のトリガが無く、案件 Knowledge/ も中央
+    ~/Documents/Knowledge/ も 0 ファイルのまま機能していなかった (dead spec)。
+    駆動点を 5 箇所挿入して解消:
+    1. .template-claude/CLAUDE.md §2 SSOT 表に Knowledge Vault 行追加
+    2. §3 検索プロトコル Step 6 Capture Trigger を Runbook / Knowledge note の 2 系統に分岐
+    3. §5 作業中規律に Knowledge 即時記録 (notes / procedures / episodes 書込先)
+    4. §7 クローズ規律に Step [0.5] KNOWLEDGE CAPTURE GATE 挿入
+       (中央 Vault 4 条件で RB-011 起動、満たさないなら案件残置)
+    5. §8 行動規律表に Knowledge Capture First (No Scope Dodging 連動)
+    6. .template-agents/ecc-orchestrator.md の検索プロトコル Step 6 / 返却フォーマットに
+       ## Knowledge 化候補 セクションを追加 (type 分類 + 中央 Vault 4 条件暫定判定)
+    7. .template-claude/README.md §テンプレ構成 / §採用後 / 冒頭索引に言及反映
+    本セッション自身が dogfood として:
+    - Knowledge/episodes/2026-06-24-distribution-template-knowledge-vault-wiring.md を作成
+    - 中央 ~/Documents/Knowledge/notes/dead-spec-without-trigger.md に汎用化して昇格
+    する形で駆動を実証。汎用学習: 「SSOT に規律があっても、配布テンプレ /
+    起動・作業中・クローズの 3 ループに駆動点が無いと永久に発火しない」。
+  related_runbooks: [RB-006, RB-011]
+  related_chapters: [12_knowledge-vault/, .template-claude/CLAUDE.md, .template-agents/ecc-orchestrator.md]
+
 - id: HW-D
   title: Method v1.0 リリース整理 (採番再定義 + CHANGELOG + v1.0.0 tag 切り条件)
   category: release

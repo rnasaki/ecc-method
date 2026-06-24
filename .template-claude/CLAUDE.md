@@ -80,19 +80,27 @@ related: []
 
 Method パッケージにアクセスできない / 別案件で適用しない場合のみ、`~/.claude/rules/` 配下の縮約スタブを暫定 SSOT として参照する。スタブと Method が衝突した場合は Method を優先する。
 
-## 3. 検索プロトコル (Method §5.1 抜粋)
+## 3. 検索プロトコル (Method `45_runbook/04_search-protocol.md` 抜粋)
 
-タスクを受けたら次の順で解決する。途中でヒットしたらそこで停止。
+タスクを受けたら次の順で解決する。途中でヒットしたらそこで停止。Step 0〜2 合計 30 秒程度のタイムボックス。
 
 ```
-1. Runbook を引く        → 45_runbook/INDEX.md (ヒット = ユーザー確認なしで実行)
-2. Expert Registry を引く → 40_delegation/01_expert-registry.md
-3. Pattern (P-001..006)   → 並列性 / 対抗性が要るかを判定
-4. 委任契約 (Delegation Contract) を交わして dispatch
-5. 完了時に Capture Trigger を評価 → 該当すれば以下に振り分ける:
-   - 横断手続きの再利用候補 → Runbook 化 (`45_runbook/`)
+0. CodeGraph を引く      → <ECC_METHOD_ROOT>/_index/concept-graph.json
+                           (file_index / nodes / edges を keyword 走査 → 候補 md の先頭のみ Read、
+                            related で 1-hop 拡張)
+1. Runbook 索引を引く    → <ECC_METHOD_ROOT>/45_runbook/INDEX.md + _index/by-*.md
+                           (ヒット = ユーザー確認なしで実行)
+2. 本文 grep (fallback) → <ECC_METHOD_ROOT>/45_runbook/runbooks/ (Step 0/1 で当たらない場合のみ)
+3. Expert Registry を引く → <ECC_METHOD_ROOT>/40_delegation/01_expert-registry.md
+4. Pattern (P-001..006)   → 並列性 / 対抗性が要るかを判定
+5. 委任契約 (Delegation Contract) を交わして dispatch
+6. 完了時に Capture Trigger を評価 → 該当すれば以下に振り分ける:
+   - 横断手続きの再利用候補 → Runbook 化 (`45_runbook/`) + CodeGraph 再生成
+     (`<ECC_METHOD_ROOT>/80_commands/generate-concept-graph.mjs`)
    - 横断知見 / 用語 / 関係 → Knowledge note 化 (`Knowledge/notes/`、後段で中央 Vault 昇格 = RB-011)
 ```
+
+CodeGraph (`_index/concept-graph.json`) は全文 grep より遥かに低コストで `related` / `edges` による関連トピック自動拡張が効くため Step 0 を最優先する。古い場合はドキュメント追加・改名後に再生成する (詳細は `<ECC_METHOD_ROOT>/45_runbook/04_search-protocol.md` §Step 0)。
 
 委任ファースト原則: 「自分 (主 Claude) で全部やる」は最終手段。判定詳細は `<ECC_METHOD_ROOT>/05_principles/05_delegation-first.md`。
 

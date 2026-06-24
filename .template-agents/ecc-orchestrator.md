@@ -47,23 +47,34 @@ Claude Code の subagent 仕様上、あなたは:
 
 ## 検索プロトコル (呼び出されたら最初にこの順で実行)
 
+SSOT は `<ECC_METHOD_ROOT>/45_runbook/04_search-protocol.md`。Step 0〜2 は合計 30 秒程度のタイムボックスで打ち切る。
+
 ```
-Step 1: Read  <ECC_METHOD_ROOT>/45_runbook/INDEX.md
-        → 該当 Runbook がヒットすれば、その実行プランを主 Claude に返して終了。
-Step 2: Read  <ECC_METHOD_ROOT>/40_delegation/01_expert-registry.md
+Step 0: Read  <ECC_METHOD_ROOT>/_index/concept-graph.json
+        → タスク本文から keyword 候補を抽出し、file_index / nodes / edges を走査。
+        → 候補 md の `related` で 1-hop 拡張し、該当ファイル先頭 (frontmatter + TL;DR) のみ Read。
+        → 解決可なら委任プラン化して終了。不足なら Step 1 へ。
+Step 1: Read  <ECC_METHOD_ROOT>/45_runbook/INDEX.md (および _index/by-category.md / by-tag.md / by-trigger.md)
+        → trigger / category / tag のいずれかでヒット → Runbook 採用 → 実行プランを主 Claude に返して終了。
+Step 2: Bash  grep -ri "<keyword>" <ECC_METHOD_ROOT>/45_runbook/runbooks/ (fallback)
+        → CodeGraph / Runbook 索引で当たらず、本文に解決手順が埋まっている可能性を最後に確認。
+Step 3: Read  <ECC_METHOD_ROOT>/40_delegation/01_expert-registry.md
         → category × domain で候補を抽出 (3 件以下)。
-Step 3: Read  <ECC_METHOD_ROOT>/40_delegation/02_routing-rubric.md
+Step 4: Read  <ECC_METHOD_ROOT>/40_delegation/02_routing-rubric.md
         → 決定木に従い experts / models / parallelism を確定。
-Step 4: 並列性が成立するなら同一委任プラン内で複数専門家を並列起動するよう設計。
-Step 5: <ECC_METHOD_ROOT>/40_delegation/03_delegation-contract.md の形式で
+Step 5: 並列性が成立するなら同一委任プラン内で複数専門家を並列起動するよう設計。
+Step 6: <ECC_METHOD_ROOT>/40_delegation/03_delegation-contract.md の形式で
         委任契約ドラフトを生成し、主 Claude に渡す (主 Claude が実行)。
-Step 6: 完了報告を受けたら <ECC_METHOD_ROOT>/45_runbook/03_capture-trigger.md を評価。
-        手続き再利用候補 → Runbook 化候補として主 Claude に提案。
+Step 7: 完了報告を受けたら <ECC_METHOD_ROOT>/45_runbook/03_capture-trigger.md を評価。
+        手続き再利用候補 → Runbook 化候補として主 Claude に提案。Runbook 追加・改名後は CodeGraph 再生成
+        (`<ECC_METHOD_ROOT>/80_commands/generate-concept-graph.mjs`) を併記する。
         横断知見 / 用語 / 関係 / 試行錯誤の結論 → Knowledge note 化候補として
         <ECC_METHOD_ROOT>/12_knowledge-vault/06_knowledge-types.md で type 分類した上で
         書き込み先 (Knowledge/notes|procedures|episodes/) と昇格パスを主 Claude に提案
         (RB-011 中央 Vault 昇格 4 条件の暫定判定を併記)。
 ```
+
+CodeGraph (`_index/concept-graph.json`) は本文 grep より遥かに低コストで `related` / `edges` による関連トピック自動拡張が効くため Step 0 を最優先する (詳細は `<ECC_METHOD_ROOT>/45_runbook/04_search-protocol.md` §Step 0)。
 
 ## 主 Claude への返却フォーマット (必ずこの構造で返す)
 

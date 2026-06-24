@@ -1,6 +1,6 @@
 ---
 last_updated: 2026-06-24
-session_count: 6
+session_count: 8
 schema: RB-006
 branch: develop
 ---
@@ -43,14 +43,33 @@ branch: develop
 
 ## 宿題: HW-B - RB-005 検証 (Hooks 経由のリアルタイム subagent 観測)
 
+- **状態**: completed (Session 7、2026-06-24)
+- **完了詳細**: COMPLETED.md 参照
+
+---
+
+## 宿題: HW-J - 配布テンプレに Knowledge Vault 駆動規律を実装
+
+- **状態**: completed (Session 8、2026-06-24)
+- **完了詳細**: COMPLETED.md 参照
+
+---
+
+## 宿題: HW-K - Session 7 残骸 commit 化 (RB-005 配布物 + CodeGraph 同期)
+
 - **状態**: not_started
-- **優先度**: P2
-- **着手条件**: HW-D / HW-F の進捗で残 budget があるとき
+- **優先度**: P1 (整合漏れ、未 commit が config 不整合源)
+- **着手条件**: なし
+- **背景**:
+  - Session 7 終了時 (`current_session.md` status: completed) にも関わらず
+    [.template-claude/commands/](.template-claude/commands/) [.template-claude/hooks/](.template-claude/hooks/) [.template-claude/settings.json](.template-claude/settings.json) が untracked のまま
+  - [40_delegation/04_orchestrator-system-prompt.md](40_delegation/04_orchestrator-system-prompt.md) [45_runbook/INDEX.md](45_runbook/INDEX.md) [45_runbook/_index/](45_runbook/_index/) [45_runbook/runbooks/RB-004-subagent-final-report-narration.md](45_runbook/runbooks/RB-004-subagent-final-report-narration.md) [45_runbook/runbooks/RB-005-subagent-realtime-streaming-via-hooks.md](45_runbook/runbooks/RB-005-subagent-realtime-streaming-via-hooks.md) [99_distribution/03_v1.0.0-release-checklist.md](99_distribution/03_v1.0.0-release-checklist.md) [_index/concept-graph.json](_index/concept-graph.json) [CHANGELOG.md](CHANGELOG.md) が Session 7 編集分のまま unstaged
+  - Session 8 ではユーザー要請 (Knowledge Vault 配布) のみに集中し、Session 7 残骸は **CLOSURE GATE で 1 行残置判定** (本セッションのスコープと混ぜ込みを避けるため別 commit が安全 / RB-006 §[0])
 - **完了基準**:
-  - RB-005 §「検証手順」の [1]〜[10] を実行
-  - RB-005 status を draft → active or deprecated へ確定
-  - 動作した場合: RB-004 を deprecated 化、Orchestrator system prompt に hook 設定を組み込み
-- **担当 expert role**: orchestrator / explorer-research
+  - Session 7 当初の意図 (HW-B 完了 + 配布テンプレ CodeGraph 同期) を 1 commit で確定
+  - CHANGELOG の Session 7 行が反映済であることを確認
+  - 整合確認 (主に RB-005 deprecated 連動: RB-004 の上部注記 + INDEX / by-category / by-tag / by-trigger の status 同期)
+- **担当 expert role**: 主 Claude / 必要に応じて code-reviewer
 
 ---
 
@@ -97,8 +116,10 @@ branch: develop
 |---|---|---|---|
 | HW-D | completed | P1 | Method v1.0 リリース整理 (Session 3 完了、COMPLETED.md 参照) |
 | HW-I | completed | P1 | self-dogfooding junction 統合 (Session 6 完了、COMPLETED.md 参照) |
+| HW-B | completed | P2 | RB-005 検証 + RB-004 deprecated + Orchestrator hook 統合 (Session 7 完了、COMPLETED.md 参照) |
+| HW-J | completed | P2 | 配布テンプレに Knowledge Vault 駆動規律を実装 (Session 8 完了、COMPLETED.md 参照) |
+| HW-K | not_started | P1 | Session 7 残骸 commit 化 (RB-005 配布物 + CodeGraph 同期、未 commit のまま) |
 | HW-F | in_progress | P1 | SDD/TDD 章の汎用化精査 (2/11 章完了、Session 4: 01_prd-flow / Session 5: 02_feature-id-rules) |
-| HW-B | not_started | P2 | RB-005 検証 (Hooks リアルタイム subagent 観測) |
 | HW-C | not_started | P3 | Phase 4-7 段階導入 |
 | HW-H | not_started | P3 | セッションクローズ時の視覚マーキング (RB-010 候補) |
 
@@ -106,8 +127,8 @@ branch: develop
 
 1. 本ファイルを Read (RB-006 起動時必須)
 2. INDEX.md を Read
-3. current_session.md / HISTORY.md を Read (Session 6 終了時点: HW-D 完了、HW-I 完了 (self-dogfooding junction)、HW-F 2/11 章完了)
-4. ユーザーには「前回までに HW-D / HW-I 完了 + HW-F 2/11 章完了。次は HW-F の続き (推奨: 30_sdd-phase/03_requirements-template または 35_tdd-phase/01_red-green-refactor) または HW-B/HW-C/HW-H から選択」を 1 行で通知
+3. current_session.md / HISTORY.md を Read (Session 8 終了時点: HW-D / HW-I / HW-B / HW-J 完了、HW-K 残置、HW-F 2/11 章完了)
+4. ユーザーには「前回までに HW-J 完了 (配布テンプレ Knowledge Vault 駆動規律)。次は HW-K (Session 7 残骸 commit 化) を最優先、続いて HW-F (推奨: 30_sdd-phase/03_requirements-template または 35_tdd-phase/01_red-green-refactor)」を 1 行で通知
 
 ## 注意 (本リポ MVP との関係)
 
